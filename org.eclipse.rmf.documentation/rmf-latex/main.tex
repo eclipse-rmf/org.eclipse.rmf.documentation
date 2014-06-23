@@ -1,0 +1,59 @@
+\documentclass[twoside,10pt]{book}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage[utf8]{inputenc}
+
+%----------------------------------------------------------------------------------------
+%	MACROS
+%----------------------------------------------------------------------------------------
+
+\newcommand{\pror}[0]{ProR}
+
+%----------------------------------------------------------------------------------------
+%	ENVIRONMENTS
+%----------------------------------------------------------------------------------------
+
+\definecolor{color-info}{RGB}{0,0,128} 
+\newenvironment{info}{\begin{description}\item[\textcolor{color-info}{Information.}]}{\end{description}}
+
+\definecolor{color-warning}{RGB}{128,0,0} 
+\newenvironment{warning}{\begin{description}\item[\textcolor{color-warning}{Warning.}]}{\end{description}}
+
+\newsavebox{\mybox}
+\newenvironment{example}
+{\begin{lrbox}{\mybox}\begin{minipage}{0.9\textwidth}}
+{\end{minipage}\end{lrbox}\fbox{\usebox{\mybox}}}
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT INFO
+%----------------------------------------------------------------------------------------
+
+\title{Eclipse ProR}
+\author{by the RMF Community}
+
+%----------------------------------------------------------------------------------------
+%	START DOCUMENT
+%----------------------------------------------------------------------------------------
+
+\begin{document}        
+
+\maketitle
+
+\chapter{Introduction}
+\input{introduction}
+
+\chapter{Tutorial}
+\input{tutorial}
+
+\chapter{Reference}
+\input{reference}
+
+\chapter{Presentations}
+\input{presentations}
+
+\chapter{Glossary}
+\input{glossary}
+
+\end{document}
+

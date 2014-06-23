@@ -1,0 +1,29 @@
+<project default="generate">
+
+    <target name="generate" depends="copy">
+      <antcall target="generate-pdf" />
+      <antcall target="generate-html" />
+    </target>
+
+    <target name="copy">
+        <copy todir="${basedir}/build">
+    	    <fileset dir="${basedir}" includes="rmf-latex/**"/>
+    	    <fileset dir="${basedir}" includes="rmf-images/**"/>
+    	</copy>
+    </target>
+
+    <target name="generate-html">
+        <exec executable="htlatex" dir="${basedir}/build/rmf-latex">
+            <arg value="main"/>
+            <arg value="html,3,next,frames"/>
+        </exec>
+    </target>
+
+    <target name="generate-pdf">
+        <exec executable="rubber" dir="${basedir}/build/rmf-latex">
+            <arg value="-d"/>
+            <arg value="main"/>
+        </exec>
+    </target>
+
+</project>

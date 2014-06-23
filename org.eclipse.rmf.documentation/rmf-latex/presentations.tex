@@ -1,0 +1,24 @@
+ProR has an extension mechanism that allows custom rendering for certain
+attributes of a SpecObject. The following Presentations have been
+implemented:
+
+\section{ID Generator Presentation}
+
+This presentation allows the designation of Attributes to be used as
+human-readable IDs. The user defines a prefix, and the presentation
+manages a counter. When a new SpecObject with a designated Attribute is
+created, then it will get an ID, consisting of prefix and number.
+
+TODO: The plugin doesn't check whether an ID already exists - it simply
+takes the next number and increments the counter. We should (1) Set the
+counter correctly upon opening a ReqIF and (2) hook in a Validator.
+
+\section{Linewrap Presentation}
+
+This presentation automatically renders long text with linebreaks and
+allows editing with linebreaks.
+
+\section{Headline Presentation}
+
+This presentation renders an attribute in bigger font and bold. It
+allows setting the font size.
