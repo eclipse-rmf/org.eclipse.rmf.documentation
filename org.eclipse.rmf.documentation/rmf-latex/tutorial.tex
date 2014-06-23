@@ -1,4 +1,4 @@
-\section{Basic ReqIF Concepts}
+\section{Basic ReqIF Concepts}\index{Concepts}
 
 A ReqIF model is a structured collection of natural language
 requirements. However, it comes with its own terminology. For instance,
@@ -12,7 +12,7 @@ The following table compares a Spreadsheet model with a ReqIF model,
 introduces the terminology and explains it:
 
 \begin{description}
-  \item[Specification.] (Excel-equivalent: Sheet)  A ReqIF model
+  \item[Specification.\index{Specification}] (Excel-equivalent: Sheet)  A ReqIF model
 consists of an arbitrary number of Specifications. The Specification is
 the ``Container'' for the Requirements. Think of an Excel Document, that
 allows you to create an arbitrary number of Sheets. There are two
@@ -20,21 +20,21 @@ differences to Excel: (1) The requirements in the Specification are
 references (which means that the same requirement can appear in multiple
 places); (2) The content of Specification is hierarchical.
 
-  \item[SpecObject.] (Excel-equivalent: Row) A SpecObject represents the actual
+  \item[SpecObject.\index{SpecObject}] (Excel-equivalent: Row) A SpecObject represents the actual
 Requirement. A requirement typically has a number Attributes. Again
 compared with Excel, each row in a Sheet represents a requirement. In
 contrast to Excel, the ReqIF model may contain SpecObjects that do not
 appear in any Specification (whether this is useful is a different
 question).
 
-  \item[Attribute.] (Excel-equivalent: Cell) Besides the actual text of the
+  \item[Attribute.\index{Attribute}] (Excel-equivalent: Cell) Besides the actual text of the
 requirement, typical Attributes include ID, Status, etc. Note that there
 are no ``standard'' Attributes. The ReqIF model contains the definitions
 of the Attributes. Here the Excel analogy starts to break down. In
 Excel, each row has the same columns. Different SpecObjects may have
 different sets of Attributes.
 
-  \item[SpecType.] (Excel-equivalent: Column configuration) Each SpecObject
+  \item[SpecType.\index{SpecType}] (Excel-equivalent: Column configuration) Each SpecObject
 has a SpecObjectType. The SpecObjectType contains a list of Attributes
 for the SpecObject. For instance, the SpecObjectType ``Headline'' may
 have only one Attribute ``HeadlineText''. Another SpecObjectType
