@@ -54,7 +54,7 @@
     <target name="deploy" depends="deploy-folder.present" if="deploy-folder.present">
         <echo message="Deploy Folder exists: Deploying..."/>
         <copy todir="${deploy-folder}">
-    	    <fileset dir="${basedir}/build/rmf-latex/" includes="**/*"/>
+    	    <fileset dir="${basedir}/build/" includes="**/*"/>
     	</copy>	
     </target>
 
