@@ -1,8 +1,11 @@
 <project default="generate">
 
+    <property name="deploy-folder" value="/home/data/httpd/download.eclipse.org/rmf/documentation"/>
+
     <target name="generate" depends="copy">
       <antcall target="generate-pdf" />
       <antcall target="generate-html" />
+      <antcall target="deploy" />
     </target>
 
     <target name="copy">
@@ -17,12 +20,34 @@
             <arg value="main"/>
             <arg value="html,3,next,frames"/>
         </exec>
+      <antcall target="tweak-css" />
+    </target>
+
+    <target name="tweak-css">
+      <replace
+	file="${basedir}/build/rmf-latex/main.css" 
+	token="body#tex4ht-menu {white-space: nowrap; }" 
+	value="body#tex4ht-menu {white-space: nowrap; background-color:#eee;}"/>
     </target>
 
     <target name="generate-pdf">
-        <exec executable="pdflatex" dir="${basedir}/build/rmf-latex">
-            <arg value="main"/>
-        </exec>
+        <!-- Needs to run twice to get cross-references right -->
+        <exec executable="pdflatex" dir="${basedir}/build/rmf-latex"><arg value="main"/></exec>
+        <exec executable="pdflatex" dir="${basedir}/build/rmf-latex"><arg value="main"/></exec>
+    </target>
+
+    <target name="deploy-folder.present">
+      <available
+	file="${deploy-folder}" 
+	type="dir"
+	property="deploy-folder.present"/>
+    </target>
+
+    <target name="deploy" depends="deploy-folder.present" if="deploy-folder.present">
+        <echo message="Deploy Folder exists: Deploying..."/>
+        <copy todir="${deploy-folder}">
+    	    <fileset dir="${basedir}/build/rmf-latex/" includes="**"/>
+    	</copy>	
     </target>
 
 </project>
