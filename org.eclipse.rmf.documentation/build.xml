@@ -21,6 +21,7 @@
             <arg value="html,3,next,frames"/>
         </exec>
       <antcall target="tweak-css" />
+      <antcall target="tweak-html" />
     </target>
 
     <target name="tweak-css">
@@ -28,6 +29,13 @@
 	file="${basedir}/build/rmf-latex/main.css" 
 	token="body#tex4ht-menu {white-space: nowrap; }" 
 	value="body#tex4ht-menu {white-space: nowrap; background-color:#eee;}"/>
+    </target>
+
+    <target name="tweak-html">
+      <replace
+	file="${basedir}/build/rmf-latex/main2.html" 
+	token="&lt;/body>&lt;/html>" 
+	value="&lt;br/>&lt;br/>&lt;a href='main.pdf'>Download as PDF&lt;/a>&lt;/body>&lt;/html>"/>
     </target>
 
     <target name="generate-pdf">
