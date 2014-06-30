@@ -3,12 +3,17 @@
 \usepackage{hyperref}
 \usepackage{xcolor}
 \usepackage[utf8]{inputenc}
+\usepackage{soul}
 
 %----------------------------------------------------------------------------------------
 %	MACROS
 %----------------------------------------------------------------------------------------
 
 \newcommand{\pror}[0]{ProR}
+
+\definecolor{menugray}{RGB}{230,230,230}
+\sethlcolor{menugray} 
+\newcommand{\menu}[1]{\hl{\texttt{#1}}}
 
 %----------------------------------------------------------------------------------------
 %	ENVIRONMENTS
@@ -39,6 +44,8 @@
 \begin{document}        
 
 \maketitle
+
+\tableofcontents
 
 \chapter{Introduction}
 \input{introduction}
