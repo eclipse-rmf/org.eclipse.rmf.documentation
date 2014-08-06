@@ -11,7 +11,7 @@ We hope you find this reference manual useful.  It's a work in progress and will
 
 Upon opening a ReqIF Model, the editor opens providing an overview of the model.  In essence what you are seeing is the Eclipse Workbench, with several modifications.  Here you will find a quick overview of each component.  A more detailed description of the Workbench can be found in Eclipse's Workbench User Guide.
 
-A model contains any number of specifications, and the details of each specification can be inspected individually.  The windows in which all relevant information appears are called Views. At your disposal are many Views with productivity, debugging, help and team resources.  We will be focusing only on the Views relevant to ProR.
+A model contains any number of specifications, and the details of each specification can be inspected individually.  The windows in which all relevant information appears are called Views.  At your disposal are many Views with productivity, debugging, help and team resources.  We will be focusing only on the Views relevant to ProR.
 \clearpage
 \newpage
 
@@ -28,7 +28,7 @@ This figure was briefly described in the tutorial.  Here we'll go deeper in dept
 
 (1) is the Project Explorer window.  Here you will see a hierarchical listing of the project and the associated models.
 
-(2) The Editor shows you a hierarchical breakdown of the model.  Each specification with it's associated SpecObjects is listed in a spreadsheet.  Because the SpecObjects of each requirement can vary, not all fields will be completed. Because the fields need to  be created and then associated with the SpecObjects, they may not all be (nor do they need to be) represented.  But what appears and how they appear can be customized.
+(2) The Editor shows you a hierarchical breakdown of the model.  Each specification with it's associated SpecObjects is listed in a spreadsheet.  Because the SpecObjects of each requirement can vary, not all fields will be completed.  Because the fields need to  be created and then associated with the SpecObjects, they may not all be (nor do they need to be) represented.  But what appears and how they appear can be customized.
 
 In the Editor, you see the SpecObjects that exist in this Specification.
 There is currently only one, with the description "Start editing here".
@@ -49,7 +49,7 @@ The Outline (3) has four folders:
   "SpecRelations" shows all SpecRelations in the ReqIF as a flat list.
   For now, we will ignore SpecRelations.
 \item
-  "SpecRelationsGroups" ***** I HAVE NO IDEA. SHALL WE IGNORE THIS, TOO?
+  "SpecRelationsGroups" ***** I HAVE NO IDEA.  SHALL WE IGNORE THIS, TOO?
 \end{itemize}
 
 The properties of a selected Element are shown in the Properties view
@@ -57,7 +57,7 @@ The properties of a selected Element are shown in the Properties view
 SpecObjectType ("Requirements Type") and its only Attribute
 ("Description") with the value "Start editing here.".  There are two
 tabs "Standard Attributes" and "All Attributes" at the bottom of the
-Properties view. ***** The "Standard Attributes" tab shows you all standard
+Properties view.  ***** The "Standard Attributes" tab shows you all standard
 attributes of the selected element.  The "All Attributes" shows all
 existing ReqIF attributes of the selected element.
 
@@ -89,17 +89,17 @@ This configuration is opened via ProR \textbar{} Datatype Configuration
 
 The dialog shows two folders, one for SpecTypes and one for Datatypes.
 SpecTypes are created for typing elements that have attributes
-(SpecObjects, Specifications, SpecRelations). New SpecTypes can be
+(SpecObjects, Specifications, SpecRelations).  New SpecTypes can be
 created by right-clicking on the folder and selecting ``New Child''.
 Through the same mechanism, attribute definitions can be added to a
-SpecType. attribute definitions are typed. Selecting an element shows
+SpecType.  attribute definitions are typed.  Selecting an element shows
 its properties in the lower pane, where it can be configured.
 
-Attribute definitions must have a name and a datatype. Some attribute
-definitions allow further customization. The datatype is selected from a
-dropdown. New datatypes can be created by right-clicking on the folder
-``Datatypes'' and selecting ``New Child''. Again, selecting a datatype
-shows its properties in the lower pane, where it can be configured. A
+Attribute definitions must have a name and a datatype.  Some attribute
+definitions allow further customization.  The datatype is selected from a
+dropdown.  New datatypes can be created by right-clicking on the folder
+``Datatypes'' and selecting ``New Child''.  Again, selecting a datatype
+shows its properties in the lower pane, where it can be configured.  A
 datatype should have at least a long name.
 
 As an example, consider the following Datatype Configuration Dialog:
@@ -112,19 +112,19 @@ As an example, consider the following Datatype Configuration Dialog:
 \end{figure}
 
 The Spec Type for ``Requirements Type'', which is applicable to
-SpecObjects, is expanded. The Spec Type has two attributes,
-``Description'' (String) and ``Status'' (Enumeration). Status is
+SpecObjects, is expanded.  The Spec Type has two attributes,
+``Description'' (String) and ``Status'' (Enumeration).  Status is
 selected, and in the pane below the mandatory values, ``Long Name'' and
-``Type'' have been set. Further customization of the attribute is
-possible, e.g. by converting it in a Multi-Valued attribute by setting
+``Type'' have been set.  Further customization of the attribute is
+possible, e.g.  by converting it in a Multi-Valued attribute by setting
 the corresponding flag to ``true''.
 
 \subsubsection{Enumeration Datatypes}
 
-An enumeration datatype must have enumeration values. These are created
+An enumeration datatype must have enumeration values.  These are created
 by right-clicking the enumeration datatype and selecting New Child
-\textbar{} Enum Value. You may have to unfold the enum value to select
-it, so that you can provide it with a Long Name. The following shows a
+\textbar{} Enum Value.  You may have to unfold the enum value to select
+it, so that you can provide it with a Long Name.  The following shows a
 correctly configured enumeration datatype:
 
 \begin{figure}[h!]
@@ -141,7 +141,7 @@ correctly configured enumeration datatype:
 This configuration is specific to the Specification Editor.
 
 The Column Configuration Dialog configures the Columns of a
-Specification. Columns are identified by name. The width of the column
+Specification.  Columns are identified by name.  The width of the column
 can be adjusted directly by dragging the column separator in the table
 header.
 

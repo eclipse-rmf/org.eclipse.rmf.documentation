@@ -7,11 +7,11 @@ A ReqIF model has some similarities to an Excel spreadsheet with some notable di
 The following compares the concept of a spreadsheet with a ReqIF model and differentiates between the terminology:
 
 \begin{description}
-  \item[Specification.\index{Specification}] (Excel-equivalent: Sheet) A ReqIF model consists of an arbitrary number of specifications.  The specification is the "container" for the requirement.  Think of an Excel document that allows you to create an arbitrary number of sheets.  Each sheet can be compared to a single specification.  There are two differences: (1) the specifications are references rather than independant entities (which means that the same requirement can appear in multiple places); (2) the contents of the specification appear in a list, hierarchically.
+  \item[Specification.\index{Specification}] (Excel-equivalent: Sheet) A ReqIF model consists of an arbitrary number of specifications.  The specification is the "container" for the requirement.  Think of an Excel document that allows you to create an arbitrary number of sheets.  Each sheet can be compared to a single specification.  There are two differences: (1) the specifications are references rather than independant entities (which means that the same requirement can be referenced and can appear in multiple places); (2) the contents of the specification appear in a list, hierarchically.
 
-  \item[SpecObject.\index{SpecObject}] (Excel-equivalent: Row) A SpecObject represents the actual requirement.  A requirement typically has a number of attributes.  Again compared to Excel, each row in a sheet represents a requirement.  In contrast to Excel, the ReqIF model may contain SpecObjects that do not appear in any specification.
+  \item[SpecObject.\index{SpecObject}] (Excel-equivalent: Row) A SpecObject represents the actual requirement.  A requirement typically has a number of attributes.  Again compared to Excel, each row in a sheet represents a requirement and each cell contains a SpecObject.  In contrast to Excel, the ReqIF model may contain SpecObjects that do not appear in any specification but can be seen elsewhere.
 
-  \item[Attribute.\index{Attribute}] (Excel-equivalent: Cell) In the columns are the attributes.  Besides the actual text of the requirement, typical attributes include ID, status, etc.  Note that there are no "standard" attributes.  The ReqIF model contains the definitions of the attributes.  Here the Excel analogy starts to breakdown.  In Excel, by default, each row has the same columns.  Different SpecObjects may have different sets of attributes.
+  \item[Attribute.\index{Attribute}] (Excel-equivalent: Cell) In the columns are the attributes. Besides the actual text of the requirement, typical attributes include ID, status, etc.  Note that there are no "standard" attributes.  The ReqIF model contains the definitions of the attributes.  Here the Excel analogy starts to breakdown.  In Excel, by default, each row has the same columns.  Different SpecObjects may have different sets of attributes.
 
   \item[SpecType.\index{SpecType}] (Excel-equivalent: Column configuration) Each SpecObject has a SpecObjectType.  The SpecObjectType contains a list of attributes for the SpecObject.  For instance, the SpecObjectType "Headline" may have only one attribute "HeadlineText".  Another SpecObjectType "Requirement" may have three attributes, "ID", "Description" and "Status".  A specification may then contain a mixture of SpecObjects with different types.
 
@@ -65,7 +65,7 @@ You can download \pror{} from the \href{https://www.eclipse.org/rmf/download.php
 \item
   Select \menu{File | New | Reqif10 Model};
 \item
-  Select the project and name the file tutorial.reqif. Click "Finish";
+  Select the project and name the file tutorial.reqif.  Click "Finish";
 \item
   In the Window named "tutorial.reqif", double-click on "Requirements
   Document" button in the "Specifications" panel.
@@ -93,14 +93,14 @@ The Outline (3) has four folders:
 \item
   "Specifications" shows the Specifications in the ReqIF.  You can expand the tree to expose the hierarchy of SpecObjects in the ReqIF model.
 \item
-  "SpecObjects" shows all SpecObjects in the ReqIF model as a flat list. Keep in mind that SpecObjects in Specifications are references.  In contrast, this folder shows all SpecObjects created for the ReqIF model, whether or not they are referenced.
+  "SpecObjects" shows all SpecObjects in the ReqIF model as a flat list.  Keep in mind that SpecObjects in Specifications are references.  In contrast, this folder shows all SpecObjects created for the ReqIF model, whether or not they are referenced.
 \item
   "SpecRelations" shows all SpecRelations in the ReqIF as a flat list.  For now, we will ignore SpecRelations.
 \item
-  "SpecRelationsGroups" ***** I HAVE NO IDEA. SHALL WE IGNORE THIS, TOO?
+  "SpecRelationsGroups" ***** I HAVE NO IDEA.  SHALL WE IGNORE THIS, TOO?
 \end{itemize}
 
-The properties of a selected Element are shown in the Properties view (4).  As the only Requirement in the model is selected, we see its SpecObjectType ("Requirements Type") and its only Attribute ("Description") with the value "Start editing here.".  There are two tabs "Standard Attributes" and "All Attributes" at the bottom of the Properties view. ***** The "Standard Attributes" tab shows you all standard attributes of the selected element.  The "All Attributes" shows all existing ReqIF attributes of the selected element.
+The properties of a selected Element are shown in the Properties view (4).  As the only Requirement in the model is selected, we see its SpecObjectType ("Requirements Type") and its only Attribute ("Description") with the value "Start editing here.".  There are two tabs "Standard Attributes" and "All Attributes" at the bottom of the Properties view.  ***** The "Standard Attributes" tab shows you all standard attributes of the selected element.  The "All Attributes" shows all existing ReqIF attributes of the selected element.
 
 Above the main working windows it the tool bar (5) and, at the very top, the menu bar (6).
 
@@ -116,13 +116,13 @@ To get familiar with the system, we will:
   We will show those Attributes in the Specification
 \end{itemize}
 
-To add new attributes, we open the Datatype Configuration dialog with \pror{} \textgreater{} Datatype Configuration. Alternatively you can also click on the ``T'' in the Tool Bar.
+To add new attributes, we open the Datatype Configuration dialog with \pror{} \textgreater{} Datatype Configuration.  Alternatively you can also click on the ``T'' in the Tool Bar.
 
 The resulting dialog box has two folders in the upper pane: one for SpecTypes and one for Datatypes.  Currently, there is only one Datatype (T\_String32k) and two SpecTypes, one called "Requirements Type" with one attribute "Description" and one called "Specification Type" with one attribute "Description".
 
 In the lower pane are the details in regards to each attribute.
 
-We add more Attributes to "Requirements Type" by right-clicking "Requirements Type" and selecting "New Child \textgreater{} Attribute Definition String".  This will create a new element.  Upon selecting, we can rename it and tailor the details. Double-click on the ``Long Name'' variable and type in ``ID''. Change the Type by double-clicking the field and choosing ``T\_String32k'' from the drop-down menu.  Repeat the process but this time change the ``Long Name'' to "Owner".  In the end, the dialog should look as follows
+We add more Attributes to "Requirements Type" by right-clicking "Requirements Type" and selecting "New Child \textgreater{} Attribute Definition String".  This will create a new element.  Upon selecting, we can rename it and tailor the details.  Double-click on the ``Long Name'' variable and type in ``ID''.  Change the Type by double-clicking the field and choosing ``T\_String32k'' from the drop-down menu.  Repeat the process but this time change the ``Long Name'' to "Owner".  In the end, the dialog should look as follows
 
 \begin{figure}[h!]
 \centering
@@ -135,7 +135,7 @@ Upon closing the dialog, little will have changed - the Specification still show
 
 \subsection{Showing the new Attributes in the Specification}
 
-To show the new Attributes in the Specification, we have to configure the Specification columns.  We do this by selecting \pror{} \textgreater{} Column Configuration. You can also click on the spreadsheet icon in the Tool Bar.
+To show the new Attributes in the Specification, we have to configure the Specification columns.  We do this by selecting \pror{} \textgreater{} Column Configuration.  You can also click on the spreadsheet icon in the Tool Bar.
 
 The resulting Dialog shows one entry, ``Description'' for the one and only Column of the Specification.  In the ``Value'' column double click on ``Description to choose it and replace it with ``ID''.
 
@@ -162,10 +162,9 @@ In both menus, there are three entries "Spec Hierarchy", "Adding SpecObjects" an
 
 We said before that Specifications contain references to SpecObjects.  A SpecHierarchy is the "Wrapper" that allows the hierarchical structure and that points to the referred SpecObject.  Usually, we don't have to be concerned with them.  Therefore the second option: If selected, a new SpecHierarchy is created and associated with a new SpecObject, which in turn is set immediately to the given SpecObjectType.  If we had more than just one SpecObjectType (besides "Requirements Type"), there would be an entry for each type in the context menu.
 
-To continue the exercise, select the child "SpecObject (Requirement
-Type)".  Now we have two SpecObjects.  The original is numbered on the far left-hand side of the pane with a 1. The second one, the child, is numbered 1.1.  Now we should change the ID's of each entry. Click in the ``ID`` for number 1 and type in INF-1. Under Description, type ''A ProR tutorial``. For the second, change the ID to REQ-1 and ''Learn now to create a new requirement'' in the Description column.
+To continue the exercise, select the child "SpecObject (Requirement Type)".  Now we have two SpecObjects.  The original is numbered on the far left-hand side of the pane with a 1.  The second one, the child, is numbered 1.1.  Now we should change the ID's of each entry.  Click in the ``ID`` for number 1 and type in INF-1.  Under Description, type ''A ProR tutorial``.  For the second, change the ID to REQ-1 and ''Learn now to create a new requirement'' in the Description column.
 
-Feel free to add a few more rows and or even new structures. Yours should look somethinig similar to this:
+Feel free to add a few more rows and or even new structures.  Yours should look somethinig similar to this:
 
 \begin{figure}[h!]
 \centering
@@ -180,13 +179,9 @@ Feel free to add a few more rows and or even new structures. Yours should look s
 \caption{Drag and Drop}      
 \label{fig:dragAndDropChild}
 \end{figure}
-You can drag and drop a SpecObject as a sibling or a child.  The
-highlighting feedback will enable you to see what you're moving and where to.  For instance, if you are dragging a SpecObject over another one, the entire cell will be
-highlighted.  This means, that the SpecObject will be assigned as a
-child to the dropped SpecObject.
+You can drag and drop a SpecObject as a sibling or a child.  The highlighting feedback will enable you to see what you're moving and where to.  For instance, if you are dragging a SpecObject over another one, the entire cell will be highlighted.  This means, that the SpecObject will be assigned as a child to the dropped SpecObject.
 
-If you are dragging a SpecObject between two rows, you also get visual
-feedback sn the SpecObject will be assigned as a sibling.
+If you are dragging a SpecObject between two rows, you also get visual feedback sn the SpecObject will be assigned as a sibling.
 
 After some playing around, our Specification may look somewhat like this:
 
@@ -199,53 +194,37 @@ After some playing around, our Specification may look somewhat like this:
 
 \subsection{Export Specification as HTML}
 
-If you want to export your Specification as HTML, go to File \textgreater{} Export as HTML.
-The HTML representation is generated and saved into your target folder.
+If you want to export your Specification as HTML, go to File \textgreater{} Export as HTML.  The HTML representation is generated and saved into your target folder.
 
 \subsection{Conclusion}
 
-Quite an achievement—but there's still a bit of a way to go.  One improvement 
-we can make is simplifying data entry.  Another is improving 
-the visibility of the descriptions.  In the next part of the
-tutorial, we will address these issues.
+Quite an achievement—but there's still a bit of a way to go.  One improvement we can make is simplifying data entry.  Another is improving  the visibility of the descriptions.  In the next part of the tutorial, we will address these issues.
 
 \section{Tutorial 2: Use Presentations}
-We will continue where we left off at the end of Tutorial 1 and we will assume that
-you have \pror{} open with a model identical or similar to the one we created earlier.
+We will continue where we left off at the end of Tutorial 1 and we will assume that you have \pror{} open with a model identical or similar to the one we created earlier.
 
-In this tutorial we will introduce Presentations.  Presentations are
-Eclipse Plug-Ins that extend the functionality of \pror{}.  Specifically:
+In this tutorial we will introduce Presentations.  Presentations are Eclipse Plug-Ins that extend the functionality of \pror{}.  Specifically:
 
 \begin{itemize}
 \item
-  Presentations can change the way Attributes are rendered in the
-  Specification,
+  Presentations can change the way Attributes are rendered in the Specification,
 \item
-  Presentations can change the way Attributes are edited in the
-  Specification and
+  Presentations can change the way Attributes are edited in the Specification and
 \item
   Presentations can perform tasks in the background.
 \end{itemize}
 
-\pror{} comes with a number of standard presentations that we will
-introduce in this tutorial.
+\pror{} comes with a number of standard presentations that we will introduce in this tutorial.
 
 \subsection{Linewrap Presentation}
 
-By default, text is not wrapped in cells.  We will enable the Linewrap
-Presentation for the Description column.
+By default, text is not wrapped in cells.  We will enable the Linewrap Presentation for the Description column.
 
-To do this, we select, from the menu,  \pror{} \textgreater{} Presentation Configuration. Alternatively you can click the power card in the tool bar.
+To do this, we select, from the menu,  \pror{} \textgreater{} Presentation Configuration.  Alternatively you can click the power card in the tool bar.
 
-The dialog box so far has no entries.  The drop-down menu, "Select Action...",
-at the top allows us to create new Presentations.  We select the
-"Linewrap" Presentation.  This will create a new entry in the upper
-pane.  Upon selecting it, we can configure it in the lower pane.
+The dialog box so far has no entries.  The drop-down menu, "Select Action...", at the top allows us to create new Presentations.  We select the "Linewrap" Presentation.  This will create a new entry in the upper pane.  Upon selecting it, we can configure it in the lower pane.
 
-A Linewrap Presentation has only one configuration element, the
-Datatype.  We select "T\_String32k".  This means that from now on, all
-Attributes of this type will be rendered with the Linewrap Presentation.
-Upon completion, the dialog should look like this:
+A Linewrap Presentation has only one configuration element, the Datatype.  We select "T\_String32k".  This means that from now on, all Attributes of this type will be rendered with the Linewrap Presentation.  Upon completion, the dialog should look like this:
 
 \begin{figure}[h!]
 \centering
@@ -254,25 +233,16 @@ Upon completion, the dialog should look like this:
 \label{fig:presentationConfig}
 \end{figure}
 
-Upon closing the dialog, the lines that are too long should be wrapped
-automatically.  Also, upon clicking on a cell, the content is now wrapped
-in the editor.
+Upon closing the dialog, the lines that are too long should be wrapped automatically.  Also, upon clicking on a cell, the content is now wrapped in the editor.
 
 \subsection{ID Presentation}
 
-It would be nice if every SpecObject had its own unique ID.  Actually, it
-does (it is shown in the Property View, if a SpecObject is selected in
-the Outline View).  But that ID is meant for machines and is not
-practical.
+It would be nice if every SpecObject had its own unique ID.  Actually, it does (it is shown in the Property View, if a SpecObject is selected in
+the Outline View).  But that ID is meant for machines and is not practical.
 
-The ID Presentation allows the automatic creation of more user-friendly IDs.  Let's create
-one.
+The ID Presentation allows the automatic creation of more user-friendly IDs.  Let's create one.
 
-Remember that Presentations are associated with Datatypes, not
-Attributes.  Thus, we first have to create a new Datatype called ``T\_ID``.  We then
-associate that Datatype with the Attribute "ID".  We described this
-process in the first tutorial.  Here is a screen-shot of the
-configuration dialog, when all is done:
+Remember that Presentations are associated with Datatypes, not Attributes.  Thus, we first have to create a new Datatype called ``T\_ID``.  We then associate that Datatype with the Attribute "ID".  We described this process in the first tutorial.  Here is a screen-shot of the configuration dialog, when all is done:
 
 \begin{figure}[h!]
 \centering      
@@ -281,13 +251,9 @@ configuration dialog, when all is done:
 \label{fig:datatypeConfig}
 \end{figure}
 
-The last step is, like before, to associate that Datatype with the
-Presentation.
+The last step is, like before, to associate that Datatype with the Presentation.
 
-We open the Presentation Configuration and create a new Presentation
-from the dropdown menu "Select Action...", this time of type "Id"
-Presentation.  We associate it with the newly created Datatype.  After
-configuration, ould look as follows:
+We open the Presentation Configuration and create a new Presentation from the dropdown menu "Select Action...", this time of type "Id" Presentation.  We associate it with the newly created Datatype.  After configuration, ould look as follows:
 
 \begin{figure}[h!]
 \centering      
@@ -298,22 +264,15 @@ configuration, ould look as follows:
 
 Note that you could adjust the prefix, count and the vertical alignment of the presentation.
 
-NOTE: At this point, the Presentation doesn't check yet for duplicates.
-It simply grabs a new value from count, increments it and uses it.  Also,
-existing values are not overwritten.
+NOTE: At this point, the Presentation doesn't check yet for duplicates.  It simply grabs a new value from count, increments it and uses it.  Also, existing values are not overwritten.
 
 \section{Tutorial 3: Advanced SpecTypes}
 
-So far, we have a model with only one SpecObjectType.  In this tutorial,
-we will show how we can work with multiple SpecTypes, and we will
-introduce other SpecTypes.
+So far, we have a model with only one SpecObjectType.  In this tutorial, we will show how we can work with multiple SpecTypes, and we will introduce other SpecTypes.
 
 \subsection{Multiple SpecTypes}
 
-The first entry in our Specification ("A \pror{} Tutorial") isn't really
-a requirement.  Thus, it doesn't need an ID or an owner, and it would be
-nice to Highlight it somehow.  For Highlighting, we have the Headline
-Presentation.  We will:
+The first entry in our Specification ("A \pror{} Tutorial") isn't really a requirement.  Thus, it doesn't need an ID or an owner, and it would be nice to Highlight it somehow.  For Highlighting, we have the Headline Presentation.  We will:
 
 \begin{itemize}
 
@@ -325,23 +284,15 @@ Presentation.  We will:
   Associate that Datatype with the Headline Presentation
 \end{itemize}
 
-With \pror{} \textgreater{} Datatype Configuration we get the Dialog where
-we can create new SpecTypes and Datatypes.  For the first time, we create
-a new SpecObjectType by right-clicking on "SpecTypes".  One of the
-entries in the child menu is "SpecObject Type".
+With \pror{} \textgreater{} Datatype Configuration we get the Dialog where we can create new SpecTypes and Datatypes.  For the first time, we create a new SpecObjectType by right-clicking on "SpecTypes".  One of the entries in the child menu is "SpecObject Type".
 
-Once created, we select it and rename to "Headline Type" it in the
-properties.
+Once created, we select it and rename to "Headline Type" it in the properties.
 
 Then we give it a new Attribute called "Description".
 
-NOTE: It is important that we call it description.  This matches the
-Attribute from "Requirement Type".  By using the same name, we ensure
-that the Attributes appear in the same column, even though they are
-different Attributes.
+NOTE: It is important that we call it description.  This matches the Attribute from "Requirement Type".  By using the same name, we ensure that the Attributes appear in the same column, even though they are different Attributes.
 
-We do not set the type yet, as we need to create a new one.  We do this
-by right-clicking on "Datatypes" (or on the ''T`` in the tool bar.  Create a child under "Datatypes'' and  ``Definition String". Call it "T\_Headline" and set the length to 50.  Now we can go back to the Description Attribute and set the type to T\_Headline.
+We do not set the type yet, as we need to create a new one.  We do this by right-clicking on "Datatypes" (or on the ''T`` in the tool bar.  Create a child under "Datatypes'' and  ``Definition String".  Call it "T\_Headline" and set the length to 50.  Now we can go back to the Description Attribute and set the type to T\_Headline.
 
 When all this is done, the configuration should look like this:
 
@@ -352,9 +303,7 @@ When all this is done, the configuration should look like this:
 \label{fig:headlineConfig}
 \end{figure}
 
-You can change the type of a SpecObject by selecting it and changing it
-in the Properties view.  Please note that currently all existing values
-are lost when changing the type.
+You can change the type of a SpecObject by selecting it and changing it in the Properties view.  Please note that currently all existing values are lost when changing the type.
 
 After the changes, the GUI should look as follows:
 
@@ -371,15 +320,12 @@ Note the following:
 \item
   The columns "ID" and "Owner" are now empty and cannot be edited
 \item
-  Note how the Property View changes as you select SpecObjects of
-  different types
+  Note how the Property View changes as you select SpecObjects of different types
 \item
-  Right-clicking on a row now shows one more option for child/sibling
-  creation: A new entry of type "Headline Type"
+  Right-clicking on a row now shows one more option for child/sibling creation: A new entry of type "Headline Type"
 \end{itemize}
 
-Last, we will use the Headline Presentation for the type T\_Headline.
-This is done via the Presentation Configuration.  By the way, you can also change the font size of the headline in the "Size" attribute. The result should look something like this:
+Last, we will use the Headline Presentation for the type T\_Headline.  This is done via the Presentation Configuration.  By the way, you can also change the font size of the headline in the "Size" attribute.  The result should look something like this:
 
 \begin{figure}[h!]
 \centering      
@@ -390,15 +336,11 @@ This is done via the Presentation Configuration.  By the way, you can also chang
 
 \subsection{Other SpecTypes}
 
-You may have noticed in the Datatype Configuration Dialog, that
-right-clicking on "SpecTypes" offered more options, besides "Spec
-Object Type".  A number of ReqIF-Elements can have Attributes.
+You may have noticed in the Datatype Configuration Dialog, that right-clicking on "SpecTypes" offered more options, besides "SpecObject Type".  A number of ReqIF-Elements can have Attributes.
 
-We will now create a "Specification Type" and assign it to our
-Specification.
+We will now create a "Specification Type" and assign it to our Specification.
 
-Try to create a "Specification Type" and configure it as shown in the
-screenshot:
+Try to create a "Specification Type" and configure it as shown in the screenshot:
 
 \begin{figure}[h!]
 \centering      
@@ -407,22 +349,17 @@ screenshot:
 \label{fig:newSpecType}
 \end{figure}
 
-Next, we will assign this type to the one Specification that we have.  To
-do this we select the Specification in the Outline View.  That will show
-the Specification's Properties in the Properties View.  The "Type"
-Property is empty.  We select "Specification Type" from the drop down.
-As soon as it is selected, the Attribute "Description" will appear in
-the properties view.
+Next, we will assign this type to the one Specification that we have.  To do this we select the Specification in the Outline View.  That will show
+the Specification's Properties in the Properties View.  The "Type" Property is empty.  We select "Specification Type" from the drop down.
+As soon as it is selected, the Attribute "Description" will appear in the properties view.
 
 \section{Tutorial 4: Links between SpecObjects (SpecRelations)}
 
-The implementation of SpecRelations is not complete yet.  Still here are
-a few pointers to show what is planned.
+The implementation of SpecRelations is not complete yet.  Still here are a few pointers to show what is planned.
 
 \subsection{Creating SpecRelations}
 
-SpecRelations are created by "Link-Dragging".  This is platform
-specific:
+SpecRelations are created by "Link-Dragging".  This is platform specific:
 
 \begin{itemize}
 
@@ -434,8 +371,7 @@ specific:
   Windows: Dragging with Alt
 \end{itemize}
 
-Showing links as children can be switched on or off with the little
-triangle icon in the toolbar:
+Showing links as children can be switched on or off with the little triangle icon in the toolbar:
 
 After creating a link:
 
@@ -446,13 +382,9 @@ After creating a link:
   The SpecRelations are shown as children in the Specification view
 \end{itemize}
 
-SpecRelations can have their own Types.  Once a type is set, the
-corresponding columns in the Specification are rendered using
-Presentations, etc.  However.  the Type has to be set explicitly (a link
-created with dragging has currently no Type).
+SpecRelations can have their own Types.  Once a type is set, the corresponding columns in the Specification are rendered using Presentations, etc.  However.  the Type has to be set explicitly (a link created with dragging has currently no Type).
 
-Here is a Screenshot of a Specification with some Links and a
-SpecRelationType that includes a "Description" Attribute:
+Here is a Screenshot of a Specification with some Links and a SpecRelationType that includes a "Description" Attribute:
 
 \begin{figure}[h!]      
 \centering      
@@ -467,13 +399,11 @@ Note the following:
 \item
   The right column shows incoming and outgoing links
 \item
-  The number to the left of the triangle is incoming links, the other
-  outgoing links
+  The number to the left of the triangle is incoming links, the other outgoing links
 \item
   The outgoing link from REQ-1 is shown
 \item
-  The link from REQ-1 has a description, and it shows the destination
-  name in the "Link" column
+  The link from REQ-1 has a description, and it shows the destination name in the "Link" column
 \end{itemize}
 
 \subsection{Outline View}
