@@ -7,38 +7,19 @@ A ReqIF model has some similarities to an Excel spreadsheet with some notable di
 The following compares the concept of a spreadsheet with a ReqIF model and differentiates between the terminology:
 
 \begin{description}
-  \item[Specification.\index{Specification}] (Excel-equivalent: Sheet) A ReqIF model
-consists of an arbitrary number of specifications.  The specification is
-the "container" for the requirement.  Think of an Excel document that
-allows you to create an arbitrary number of sheets.  Each sheet can be compared to a single specification.  There are two differences: (1) The specifications are references rather than independant entities (which means that the same requirement can appear in multiple places); (2) The contents of the specification appear in a list, hierarchically.
+  \item[Specification.\index{Specification}] (Excel-equivalent: Sheet) A ReqIF model consists of an arbitrary number of specifications.  The specification is the "container" for the requirement.  Think of an Excel document that allows you to create an arbitrary number of sheets.  Each sheet can be compared to a single specification.  There are two differences: (1) the specifications are references rather than independant entities (which means that the same requirement can appear in multiple places); (2) the contents of the specification appear in a list, hierarchically.
 
-  \item[SpecObject.\index{SpecObject}] (Excel-equivalent: Row) A SpecObject represents the actual
-requirement.  A requirement typically has a number of attributes.  Again
-compared to Excel, each row in a sheet represents a requirement.  In
-contrast to Excel, the ReqIF model may contain SpecObjects that do not
-appear in any specification.
+  \item[SpecObject.\index{SpecObject}] (Excel-equivalent: Row) A SpecObject represents the actual requirement.  A requirement typically has a number of attributes.  Again compared to Excel, each row in a sheet represents a requirement.  In contrast to Excel, the ReqIF model may contain SpecObjects that do not appear in any specification.
 
-  \item[Attribute.\index{Attribute}] (Excel-equivalent: Cell) In the columns are the attributes.  
-Besides the actual text of the requirement, typical attributes include ID, status, etc.  
-Note that there are no "standard" attributes.  The ReqIF model contains the definitions
-of the attributes.  Here the Excel analogy starts to breakdown.  In
-Excel, by default, each row has the same columns.  Different SpecObjects may have
-different sets of attributes.
+  \item[Attribute.\index{Attribute}] (Excel-equivalent: Cell) In the columns are the attributes.  Besides the actual text of the requirement, typical attributes include ID, status, etc.  Note that there are no "standard" attributes.  The ReqIF model contains the definitions of the attributes.  Here the Excel analogy starts to breakdown.  In Excel, by default, each row has the same columns.  Different SpecObjects may have different sets of attributes.
 
-  \item[SpecType.\index{SpecType}] (Excel-equivalent: Column configuration) Each SpecObject
-has a SpecObjectType.  The SpecObjectType contains a list of attributes
-for the SpecObject.  For instance, the SpecObjectType "Headline" may
-have only one attribute "HeadlineText".  Another SpecObjectType
-"Requirement" may have three attributes, "ID", "Description" and
-"Status".  A specification may then contain a mixture of SpecObjects
-with different types.
+  \item[SpecType.\index{SpecType}] (Excel-equivalent: Column configuration) Each SpecObject has a SpecObjectType.  The SpecObjectType contains a list of attributes for the SpecObject.  For instance, the SpecObjectType "Headline" may have only one attribute "HeadlineText".  Another SpecObjectType "Requirement" may have three attributes, "ID", "Description" and "Status".  A specification may then contain a mixture of SpecObjects with different types.
 
 \end{description}
 
 There are many more concepts, but this is enough to get us started.
 
-Let's look at a concrete example to understand this.  Here is a snippet
-of a Specification:
+Let's look at a concrete example to understand this.  Here is a snippet of a Specification:
 
 \begin{figure}[H]
   \centering
@@ -47,15 +28,12 @@ of a Specification:
   \label{fig:spec_example}
 \end{figure}
 
-The table shows the first four SpecObjects, as visualized in a
-Specification.  The tree-like structure is recognizable: INF-1 is a node
-with three children, REQ-1, REQ-2 and REQ-3 (this can be seen by the
-indentation).  Let's look at INF-1 and REQ-1.  When one is selectedin the main pain, it's attributes appear in the properties pane below.
+The table shows the first four SpecObjects, as visualized in a specification.  The tree-like structure is recognizable: INF-1 is a node
+with three children, REQ-1, REQ-2 and REQ-3 (this can be seen by the indentation).  Let's look at INF-1 and REQ-1.  When one is selectedin the main pain, it's attributes appear in the properties pane below.
 
 INF-1 has two attributes, "Description" and "ID".  The SpecObjectType is "Information Type" (shown as the root in the properties view).
 
-REQ-1, REQ-2, and REQ-3 have three attributes, "Description", "ID" and "Status".  The
-SpecObjectType is called "Requirements Type".  Let's look closer at the SpecObjectType.
+REQ-1, REQ-2, and REQ-3 have three attributes, "Description", "ID" and "Status".  The SpecObjectType is called "Requirements Type".  Let's look closer at the SpecObjectType.
 
 \begin{figure}[H]
   \centering
@@ -64,21 +42,11 @@ SpecObjectType is called "Requirements Type".  Let's look closer at the SpecObje
   \label{fig:spec_example}
 \end{figure}
 
-The "Requirements Type" SpecObjectType is shown in the picture, with
-arrows indicating how the Attributes relate to the SpecObjectType (a
-simple one-to-one relationship).  A SpecObjectType has one entry for each
-Attribute, consisting of a name and a Datatype.  For instance, the first
-entry has the name "ID" and the datatype "T\_ID\_REQ".  Note that
-multiple Attributes may have the same Datatype: "Description" and
-"Status" both have the Datatype "T\_String32k".
+The "Requirements Type" SpecObjectType is shown in the picture, with arrows indicating how the Attributes relate to the SpecObjectType (a simple one-to-one relationship).  A SpecObjectType has one entry for each Attribute, consisting of a name and a Datatype.  For instance, the first entry has the name "ID" and the datatype "T\_ID\_REQ".  Note that multiple Attributes may have the same Datatype: "Description" and "Status" both have the Datatype "T\_String32k".
 
-Last, The Datatypes must be defined as well.  In this example, there are
-two Datatypes, "T\_String32" and "T\_ID\_REQ".  These are finally
-based on a number of standard types that ReqIF supports.
+Last, The Datatypes must be defined as well.  In this example, there are two Datatypes, "T\_String32" and "T\_ID\_REQ".  These are finally based on a number of standard types that ReqIF supports.
 
-NOTE: As of this writing, we only implemented the simple and the
-enumeration ReqIF types.  This leaves out the complex ones (rich text,
-attachments, embedded files, etc.) for now.
+NOTE: As of this writing, we only implemented the simple and the enumeration ReqIF types.  This leaves out the complex ones (rich text, attachments, embedded files, etc.) for now.
 
 \section{Tutorial 1: Creating a basic ReqIF Model}
 
@@ -86,13 +54,7 @@ In this Section, we will build a ReqIF model from scratch, step by step.
 
 \subsection{Install \pror{}}
 
-You can download \pror{} from the
-\href{https://www.eclipse.org/rmf/download.php}{Download page}.
-Alternatively, you can install \pror{} in any Eclipse-Installation via its
-update site (also listed on the
-\href{https://www.eclipse.org/rmf/download.php}{Download page}).  Using
-the update site allows you to use the Eclipse Update mechanism,
-something that is currently not yet enabled for the standalone version.
+You can download \pror{} from the \href{https://www.eclipse.org/rmf/download.php}{Download page}.  Alternatively, you can install \pror{} in any Eclipse-Installation via its update site (also listed on the \href{https://www.eclipse.org/rmf/download.php}{Download page}).  Using the update site allows you to use the Eclipse Update mechanism, something that is currently not yet enabled for the standalone version.
 
 \subsection{Create the Model}
 
@@ -122,36 +84,23 @@ You will see your ReqIF file in the Project Explorer window (1).
 
 The Editor (2) shows your Specifications.
 
-In the Editor, you see the SpecObjects that exist in this Specification.
-There is currently only one, with the description "Start editing here".
+In the Editor, you see the SpecObjects that exist in this Specification.  There is currently only one, with the description "Start editing here".
 
 The Outline (3) has four folders:
 
 \begin{itemize}
 
 \item
-  "Specifications" shows the Specifications in the ReqIF.  You can
-  expand the tree to expose the hierarchy of SpecObjects in the
-  ReqIF model.
+  "Specifications" shows the Specifications in the ReqIF.  You can expand the tree to expose the hierarchy of SpecObjects in the ReqIF model.
 \item
-  "SpecObjects" shows all SpecObjects in the ReqIF model as a flat list.
-  Keep in mind that SpecObjects in Specifications are references.  In
-  contrast, this folder shows all SpecObjects created for the ReqIF model, whether or not they are referenced.
+  "SpecObjects" shows all SpecObjects in the ReqIF model as a flat list. Keep in mind that SpecObjects in Specifications are references.  In contrast, this folder shows all SpecObjects created for the ReqIF model, whether or not they are referenced.
 \item
-  "SpecRelations" shows all SpecRelations in the ReqIF as a flat list.
-  For now, we will ignore SpecRelations.
+  "SpecRelations" shows all SpecRelations in the ReqIF as a flat list.  For now, we will ignore SpecRelations.
 \item
   "SpecRelationsGroups" ***** I HAVE NO IDEA. SHALL WE IGNORE THIS, TOO?
 \end{itemize}
 
-The properties of a selected Element are shown in the Properties view
-(4).  As the only Requirement in the model is selected, we see its
-SpecObjectType ("Requirements Type") and its only Attribute
-("Description") with the value "Start editing here.".  There are two
-tabs "Standard Attributes" and "All Attributes" at the bottom of the
-Properties view. ***** The "Standard Attributes" tab shows you all standard
-attributes of the selected element.  The "All Attributes" shows all
-existing ReqIF attributes of the selected element.
+The properties of a selected Element are shown in the Properties view (4).  As the only Requirement in the model is selected, we see its SpecObjectType ("Requirements Type") and its only Attribute ("Description") with the value "Start editing here.".  There are two tabs "Standard Attributes" and "All Attributes" at the bottom of the Properties view. ***** The "Standard Attributes" tab shows you all standard attributes of the selected element.  The "All Attributes" shows all existing ReqIF attributes of the selected element.
 
 Above the main working windows it the tool bar (5) and, at the very top, the menu bar (6).
 
@@ -162,26 +111,18 @@ To get familiar with the system, we will:
 \begin{itemize}
 
 \item
-  Add two more attributes to the SpecObjectType called "ID" and
-  "Owner" and
+  Add two more attributes to the SpecObjectType called "ID" and "Owner" and
 \item
   We will show those Attributes in the Specification
 \end{itemize}
 
-To add new attributes, we open the Datatype Configuration dialog with
-\pror{} \textgreater{} Datatype Configuration. Alternatively you can also click on the ``T'' in the Tool Bar.
+To add new attributes, we open the Datatype Configuration dialog with \pror{} \textgreater{} Datatype Configuration. Alternatively you can also click on the ``T'' in the Tool Bar.
 
-The resulting dialog box has two folders in the upper pane: one for SpecTypes and one for Datatypes.
-Currently, there is only one Datatype (T\_String32k) and two SpecTypes,
-one called "Requirements Type" with one attribute "Description" and
-one called "Specification Type" with one attribute "Description".
+The resulting dialog box has two folders in the upper pane: one for SpecTypes and one for Datatypes.  Currently, there is only one Datatype (T\_String32k) and two SpecTypes, one called "Requirements Type" with one attribute "Description" and one called "Specification Type" with one attribute "Description".
 
 In the lower pane are the details in regards to each attribute.
 
-We add more Attributes to "Requirements Type" by right-clicking
-"Requirements Type" and selecting "New Child \textgreater{} Attribute
-Definition String".  This will create a new element.  Upon selecting, we
-can rename it and tailor the details. Double-click on the ``Long Name'' variable and type in ``ID''. Change the Type by double-clicking the field and choosing ``T\_String32k'' from the drop-down menu.  Repeat the process but this time change the ``Long Name'' to "Owner".  In the end, the dialog should look as follows
+We add more Attributes to "Requirements Type" by right-clicking "Requirements Type" and selecting "New Child \textgreater{} Attribute Definition String".  This will create a new element.  Upon selecting, we can rename it and tailor the details. Double-click on the ``Long Name'' variable and type in ``ID''. Change the Type by double-clicking the field and choosing ``T\_String32k'' from the drop-down menu.  Repeat the process but this time change the ``Long Name'' to "Owner".  In the end, the dialog should look as follows
 
 \begin{figure}[h!]
 \centering
@@ -190,23 +131,15 @@ can rename it and tailor the details. Double-click on the ``Long Name'' variable
 \label{fig:datatype_configuration}
 \end{figure}
 
-Upon closing the dialog, little will have changed - the Specification
-still shows just two columns, Description and Link.  However, if you
-select the requirement, you will see the new Properties (ID and Owner)
-in the Property view.
+Upon closing the dialog, little will have changed - the Specification still shows just two columns, Description and Link.  However, if you select the requirement, you will see the new Properties (ID and Owner) in the Property view.
 
 \subsection{Showing the new Attributes in the Specification}
 
-To show the new Attributes in the Specification, we have to configure
-the Specification columns.  We do this by selecting \pror{} \textgreater{}
-Column Configuration. You can also click on the spreadsheet icon in the Tool Bar.
+To show the new Attributes in the Specification, we have to configure the Specification columns.  We do this by selecting \pror{} \textgreater{} Column Configuration. You can also click on the spreadsheet icon in the Tool Bar.
 
-The resulting Dialog shows one entry, ``Description'' for the one and only Column of the
-Specification.  In the ``Value'' column double click on ``Description to choose it and replace it with ``ID''.
+The resulting Dialog shows one entry, ``Description'' for the one and only Column of the Specification.  In the ``Value'' column double click on ``Description to choose it and replace it with ``ID''.
 
-By clicking on the "Add Column" icon at the top of the
-dialog, create a new column and name it ``Description''.  In this view, the columns can be dragged and dropped 
-to change their order as desired.
+By clicking on the "Add Column" icon at the top of the dialog, create a new column and name it ``Description''.  In this view, the columns can be dragged and dropped to change their order as desired.
 
 The resulting window should look like this:
 
@@ -217,32 +150,17 @@ The resulting window should look like this:
 \label{fig:column_configuration}
 \end{figure}
 
-Note that you have to provide free text for the columns for the same
-reason that we used free text for the ``Labels'' earlier: This way we can
-easily match multiple SpecObjects of different types.
+Note that you have to provide free text for the columns for the same reason that we used free text for the ``Labels'' earlier: This way we can easily match multiple SpecObjects of different types.
 
-You can actually adjust the width of the columns simply by dragging the
-column headers.
+You can actually adjust the width of the columns simply by dragging the column headers.
 
 \subsection{Adding new SpecObjects}
 
-Now we can finally add SpecObjects by right-clicking on a row in the
-Specification.  In the context-menu, there are two submenus: "New
-Child" and "New Sibling".  "New Child" is the only way to produce a
-hierarchical structure.
+Now we can finally add SpecObjects by right-clicking on a row in the Specification.  In the context-menu, there are two submenus: "New Child" and "New Sibling".  "New Child" is the only way to produce a hierarchical structure.
 
-In both menus, there are three entries "Spec Hierarchy", "Adding
-SpecObjects" and "SpecObject (Requirement Type)".  Some background is
-needed here:
+In both menus, there are three entries "Spec Hierarchy", "Adding SpecObjects" and "SpecObject (Requirement Type)".  Some background is needed here:
 
-We said before that Specifications contain references to SpecObjects.  A
-SpecHierarchy is the "Wrapper" that allows the hierarchical structure
-and that points to the referred SpecObject.  Usually, we don't have to be
-concerned with them.  Therefore the second option: If selected, a new
-SpecHierarchy is created and associated with a new SpecObject, which in
-turn is set immediately to the given SpecObjectType.  If we had more than
-just one SpecObjectType (besides "Requirements Type"), there would be
-an entry for each type in the context menu.
+We said before that Specifications contain references to SpecObjects.  A SpecHierarchy is the "Wrapper" that allows the hierarchical structure and that points to the referred SpecObject.  Usually, we don't have to be concerned with them.  Therefore the second option: If selected, a new SpecHierarchy is created and associated with a new SpecObject, which in turn is set immediately to the given SpecObjectType.  If we had more than just one SpecObjectType (besides "Requirements Type"), there would be an entry for each type in the context menu.
 
 To continue the exercise, select the child "SpecObject (Requirement
 Type)".  Now we have two SpecObjects.  The original is numbered on the far left-hand side of the pane with a 1. The second one, the child, is numbered 1.1.  Now we should change the ID's of each entry. Click in the ``ID`` for number 1 and type in INF-1. Under Description, type ''A ProR tutorial``. For the second, change the ID to REQ-1 and ''Learn now to create a new requirement'' in the Description column.
