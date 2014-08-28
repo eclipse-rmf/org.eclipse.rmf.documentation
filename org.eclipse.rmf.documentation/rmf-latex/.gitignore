@@ -4,3 +4,8 @@
 *.pdf
 *.backup
 *.toc
+*.dvi
+*.idx
+*.ilg
+*.ind
+

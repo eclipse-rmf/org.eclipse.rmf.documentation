@@ -69,11 +69,15 @@ NOTE: As of this writing, we only implemented the simple and the enumeration Req
 
 In this Section, we will build a ReqIF model from scratch, step by step.
 
+% -----------------------------------------------------------------------------------
 \subsection{Install \pror{}}
+% -----------------------------------------------------------------------------------
 
 You can download \pror{} from the \href{https://www.eclipse.org/rmf/download.php}{Download page}.  Alternatively, you can install \pror{} in any Eclipse-Installation via its update site (also listed on the \href{https://www.eclipse.org/rmf/download.php}{Download page}).  Using the update site allows you to use the Eclipse Update mechanism, something that is currently not yet enabled for the standalone version.
 
+% -----------------------------------------------------------------------------------
 \subsection{Create the Model}
+% -----------------------------------------------------------------------------------
 
 \begin{itemize}
 
@@ -121,7 +125,9 @@ The properties of a selected Element are shown in the Properties view (4).  As t
 
 Above the main working windows it the tool bar (5) and, at the very top, the menu bar (6).
 
+% -----------------------------------------------------------------------------------
 \subsection{Customizing the SpecType}
+% -----------------------------------------------------------------------------------
 
 To get familiar with the system, we will:
 
@@ -150,7 +156,9 @@ We add more Attributes to "Requirements Type" by right-clicking "Requirements Ty
 
 Upon closing the dialog, little will have changed - the Specification still shows just two columns, Description and Link.  However, if you select the requirement, you will see the new Properties (ID and Owner) in the Property view.
 
+% -----------------------------------------------------------------------------------
 \subsection{Showing the new Attributes in the Specification}
+% -----------------------------------------------------------------------------------
 
 To show the new Attributes in the Specification, we have to configure the Specification columns.  We do this by selecting \pror{} \textgreater{} Column Configuration.  You can also click on the spreadsheet icon in the Tool Bar.
 
@@ -171,7 +179,9 @@ Note that you have to provide free text for the columns for the same reason that
 
 You can actually adjust the width of the columns simply by dragging the column headers.
 
+% -----------------------------------------------------------------------------------
 \subsection{Adding new SpecObjects}
+% -----------------------------------------------------------------------------------
 
 Now we can finally add SpecObjects by right-clicking on a row in the Specification.  In the context-menu, there are two submenus: "New Child" and "New Sibling".  "New Child" is the only way to produce a hierarchical structure.
 
@@ -209,11 +219,15 @@ After some playing around, our Specification may look somewhat like this:
 \label{fig:improvedSpec}
 \end{figure}
 
+% -----------------------------------------------------------------------------------
 \subsection{Export Specification as HTML}
+% -----------------------------------------------------------------------------------
 
 If you want to export your Specification as HTML, go to File \textgreater{} Export as HTML.  The HTML representation is generated and saved into your target folder.
 
+% -----------------------------------------------------------------------------------
 \subsection{Conclusion}
+% -----------------------------------------------------------------------------------
 
 Quite an achievement—but there's still a bit of a way to go.  One improvement we can make is simplifying data entry.  Another is improving  the visibility of the descriptions.  In the next part of the tutorial, we will address these issues.
 
@@ -236,7 +250,9 @@ In this tutorial we will introduce Presentations.  Presentations are Eclipse Plu
 
 \pror{} comes with a number of standard presentations that we will introduce in this tutorial.
 
+% -----------------------------------------------------------------------------------
 \subsection{Linewrap Presentation}
+% -----------------------------------------------------------------------------------
 
 By default, text is not wrapped in cells.  We will enable the Linewrap Presentation for the Description column.
 
@@ -255,7 +271,9 @@ A Linewrap Presentation has only one configuration element, the Datatype.  We se
 
 Upon closing the dialog, the lines that are too long should be wrapped automatically.  Also, upon clicking on a cell, the content is now wrapped in the editor.
 
+% -----------------------------------------------------------------------------------
 \subsection{ID Presentation}
+% -----------------------------------------------------------------------------------
 
 It would be nice if every SpecObject had its own unique ID.  Actually, it does (it is shown in the Property View, if a SpecObject is selected in
 the Outline View).  But that ID is meant for machines and is not practical.
@@ -292,7 +310,9 @@ NOTE: At this point, the Presentation doesn't check yet for duplicates.  It simp
 
 So far, we have a model with only one SpecObjectType.  In this tutorial, we will show how we can work with multiple SpecTypes, and we will introduce other SpecTypes.
 
+% -----------------------------------------------------------------------------------
 \subsection{Multiple SpecTypes}
+% -----------------------------------------------------------------------------------
 
 The first entry in our Specification ("A \pror{} Tutorial") isn't really a requirement.  Thus, it doesn't need an ID or an owner, and it would be nice to Highlight it somehow.  For Highlighting, we have the Headline Presentation.  We will:
 
@@ -356,7 +376,9 @@ Last, we will use the Headline Presentation for the type T\_Headline.  This is d
 \label{fig:headlineConfig2}
 \end{figure}
 
+% -----------------------------------------------------------------------------------
 \subsection{Other SpecTypes}
+% -----------------------------------------------------------------------------------
 
 You may have noticed in the Datatype Configuration Dialog, that right-clicking on "SpecTypes" offered more options, besides "SpecObject Type".  A number of ReqIF-Elements can have Attributes.
 
@@ -381,7 +403,9 @@ As soon as it is selected, the Attribute "Description" will appear in the proper
 
 The implementation of SpecRelations is not complete yet.  Still here are a few pointers to show what is planned.
 
+% -----------------------------------------------------------------------------------
 \subsection{Creating SpecRelations}
+% -----------------------------------------------------------------------------------
 
 SpecRelations are created by "Link-Dragging".  This is platform specific:
 
@@ -430,7 +454,9 @@ Note the following:
   The link from REQ-1 has a description, and it shows the destination name in the "Link" column
 \end{itemize}
 
+% -----------------------------------------------------------------------------------
 \subsection{Outline View}
+% -----------------------------------------------------------------------------------
 
 Note that the Outline shows a folder with all SpecRelations.
 
