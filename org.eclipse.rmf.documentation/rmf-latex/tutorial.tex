@@ -73,7 +73,9 @@ In this Section, we will build a ReqIF model from scratch, step by step.
 \subsection{Install \pror{}}
 % -----------------------------------------------------------------------------------
 
-You can download \pror{} from the \href{https://www.eclipse.org/rmf/download.php}{Download page}.  Alternatively, you can install \pror{} in any Eclipse-Installation via its update site (also listed on the \href{https://www.eclipse.org/rmf/download.php}{Download page}).  Using the update site allows you to use the Eclipse Update mechanism, something that is currently not yet enabled for the standalone version.
+The easiest way for installing \pror{} is downloading \href{http://formalmind.com/studio}{formalmind Studio}.  This is a standalone-application that is based on Eclipse ProR, combined with some enhancements.
+
+ Alternatively, you can install ProR in any Eclipse-Installation via its update site (listed on the \href{https://www.eclipse.org/rmf/download.php}{RMF Download page}).  This is recommended for advanced users only who need to integrate RMF with other Eclipse-based components.
 
 % -----------------------------------------------------------------------------------
 \subsection{Create the Model}
@@ -82,11 +84,11 @@ You can download \pror{} from the \href{https://www.eclipse.org/rmf/download.php
 \begin{itemize}
 
 \item
-  If you do not already have one, create a new project: Select  File \textgreater{} New \textgreater{} Project;
+  If you do not already have one, create a new project: Select  \menu{File | New | Project};
 \item
   Select \menu{File | New | Reqif10 Model};
 \item
-  Select the project and name the file tutorial.reqif.  Click "Finish";
+  Select the project and name the file tutorial.reqif.  Click \menu{Finish};
 \item
   In the Window named "tutorial.reqif", double-click on "Requirements
   Document" button in the "Specifications" panel.
@@ -118,10 +120,10 @@ The Outline (3) has four folders:
 \item
   "SpecRelations" shows all SpecRelations in the ReqIF as a flat list.  For now, we will ignore SpecRelations.
 \item
-  "SpecRelationsGroups" ***** I HAVE NO IDEA.  SHALL WE IGNORE THIS, TOO?
+  "SpecRelationsGroups" \marginpar{I HAVE NO IDEA.  SHALL WE IGNORE THIS, TOO?}
 \end{itemize}
 
-The properties of a selected Element are shown in the Properties view (4).  As the only Requirement in the model is selected, we see its SpecObjectType ("Requirements Type") and its only Attribute ("Description") with the value "Start editing here.".  There are two tabs "Standard Attributes" and "All Attributes" at the bottom of the Properties view.  ***** The "Standard Attributes" tab shows you all standard attributes of the selected element.  The "All Attributes" shows all existing ReqIF attributes of the selected element.
+The properties of a selected Element are shown in the Properties view (4).  As the only Requirement in the model is selected, we see its SpecObjectType ("Requirements Type") and its only Attribute ("Description") with the value "Start editing here.".  There are two tabs "Standard Attributes" and "All Attributes" at the bottom of the Properties view.  \marginpar{*****} The "Standard Attributes" tab shows you all standard attributes of the selected element.  The "All Attributes" shows all existing ReqIF attributes of the selected element.
 
 Above the main working windows it the tool bar (5) and, at the very top, the menu bar (6).
 
@@ -160,7 +162,7 @@ Upon closing the dialog, little will have changed - the Specification still show
 \subsection{Showing the new Attributes in the Specification}
 % -----------------------------------------------------------------------------------
 
-To show the new Attributes in the Specification, we have to configure the Specification columns.  We do this by selecting \pror{} \textgreater{} Column Configuration.  You can also click on the spreadsheet icon in the Tool Bar.
+To show the new Attributes in the Specification, we have to configure the Specification columns.  We do this by selecting \menu{\pror{} | Column Configuration}.  You can also click on the spreadsheet icon in the Tool Bar.
 
 The resulting Dialog shows one entry, ``Description'' for the one and only Column of the Specification.  In the ``Value'' column double click on ``Description to choose it and replace it with ``ID''.
 
@@ -208,7 +210,7 @@ Feel free to add a few more rows and or even new structures.  Yours should look 
 \end{figure}
 You can drag and drop a SpecObject as a sibling or a child.  The highlighting feedback will enable you to see what you're moving and where to.  For instance, if you are dragging a SpecObject over another one, the entire cell will be highlighted.  This means, that the SpecObject will be assigned as a child to the dropped SpecObject.
 
-If you are dragging a SpecObject between two rows, you also get visual feedback sn the SpecObject will be assigned as a sibling.
+If you are dragging a SpecObject between two rows, you also get visual feedback on whether the SpecObject will be assigned as a sibling.
 
 After some playing around, our Specification may look somewhat like this:
 
