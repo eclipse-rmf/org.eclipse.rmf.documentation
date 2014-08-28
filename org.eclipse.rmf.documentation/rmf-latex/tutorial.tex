@@ -1,4 +1,19 @@
-\section{Basic ReqIF Concepts}\index{Concepts}
+%*******************************************************************************
+% Copyright (c) 2014 Formal Mind GmbH and others
+% All rights reserved. This program and the accompanying materials
+% are made available under the terms of the Eclipse Public License v1.0
+% which accompanies this distribution, and is available at
+% http://www.eclipse.org/legal/epl-v10.html
+% 
+% Contributors:
+%     Michael Jastram - initial Copy
+%     Maha Jastram - susequent improvements
+%******************************************************************************/
+
+% ===================================================================================
+\section{Basic ReqIF Concepts}
+\index{Concepts}
+% ===================================================================================
 
 A ReqIF model is a structured collection of natural language requirements.  It comes, however, with its own terminology.  For instance, a "requirement" is called a "SpecObject".
 
@@ -48,7 +63,9 @@ Last, The Datatypes must be defined as well.  In this example, there are two Dat
 
 NOTE: As of this writing, we only implemented the simple and the enumeration ReqIF types.  This leaves out the complex ones (rich text, attachments, embedded files, etc.) for now.
 
+% ===================================================================================
 \section{Tutorial 1: Creating a basic ReqIF Model}
+% ===================================================================================
 
 In this Section, we will build a ReqIF model from scratch, step by step.
 
@@ -200,7 +217,10 @@ If you want to export your Specification as HTML, go to File \textgreater{} Expo
 
 Quite an achievement—but there's still a bit of a way to go.  One improvement we can make is simplifying data entry.  Another is improving  the visibility of the descriptions.  In the next part of the tutorial, we will address these issues.
 
+% ===================================================================================
 \section{Tutorial 2: Use Presentations}
+% ===================================================================================
+
 We will continue where we left off at the end of Tutorial 1 and we will assume that you have \pror{} open with a model identical or similar to the one we created earlier.
 
 In this tutorial we will introduce Presentations.  Presentations are Eclipse Plug-Ins that extend the functionality of \pror{}.  Specifically:
@@ -266,7 +286,9 @@ Note that you could adjust the prefix, count and the vertical alignment of the p
 
 NOTE: At this point, the Presentation doesn't check yet for duplicates.  It simply grabs a new value from count, increments it and uses it.  Also, existing values are not overwritten.
 
+% ===================================================================================
 \section{Tutorial 3: Advanced SpecTypes}
+% ===================================================================================
 
 So far, we have a model with only one SpecObjectType.  In this tutorial, we will show how we can work with multiple SpecTypes, and we will introduce other SpecTypes.
 
@@ -353,7 +375,9 @@ Next, we will assign this type to the one Specification that we have.  To do thi
 the Specification's Properties in the Properties View.  The "Type" Property is empty.  We select "Specification Type" from the drop down.
 As soon as it is selected, the Attribute "Description" will appear in the properties view.
 
+% ===================================================================================
 \section{Tutorial 4: Links between SpecObjects (SpecRelations)}
+% ===================================================================================
 
 The implementation of SpecRelations is not complete yet.  Still here are a few pointers to show what is planned.
 
