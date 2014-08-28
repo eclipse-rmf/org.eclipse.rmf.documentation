@@ -108,11 +108,43 @@ dialogs.
 % -----------------------------------------------------------------------------------
 \subsection{General Configuration}
 \index{Configuration!General}
+\label{sec:general_configuration}
 % -----------------------------------------------------------------------------------
+
+This configuration is accessed either via \menu{ProR | General Configuration}, or
+via the \includegraphics[height=0.8em]{../rmf-images/ReqIFUIToolExtension.png} button on the toolbar.
+
+Currently, there is only one configuration element: \menu{Label Configuration}.
+
+\subsubsection{Label Configuration}
+
+The ``Label Configuration'' is used to determine what to use for the text labels of elements
+in places, where a shorthand is needed.  Examples are elements in the Outline or link targets.
+
+\pror{} will determine the label by looking at the label configuration, which is a list of Strings.
+It will go through the list, top to bottom.  If the element has an attribute with a matching name,
+that attribute value is used as the label.
+
+If none is found, then the element's internal ID is displayed.
+
+To configure, select \menu{Label Configuration} in the top pane of the dialog.  On the bottom pane,
+you see the \menu{Default Label} property.  Doubleclick the value (on the right), then click on the
+ellipses (...) to open the configuration dialog.  Under \menu{Feature}, you see the list of attribute
+names that will be used for the label, if found.
+
+Use the \menu{Add} and \menu{Remove} buttons to add more attribute names to be searched for.  The
+search order can be adjusted with \menu{Up} and \menu{Down}.
+
+\begin{info}
+It is good practice to use the ID Presentation (\ref{sec:id_presentation}) to generate
+user-friendly IDs, and to use these as the first match for a label.  As IDs are unique, you'll always
+have a unique identifier that is typically also used for communication.
+\end{info}
 
 % -----------------------------------------------------------------------------------
 \subsection{Datatype Configuration}
 \index{Configuration!Datatype}
+\label{sec:datatype_configuration}
 % -----------------------------------------------------------------------------------
 
 This configuration is opened via ProR \textbar{} Datatype Configuration
@@ -167,10 +199,12 @@ correctly configured enumeration datatype:
 
 % -----------------------------------------------------------------------------------
 \subsection{Presentation Configuration}\index{Configuration!Presentation}
+\label{sec:presentation_configuration}
 % -----------------------------------------------------------------------------------
 
 % -----------------------------------------------------------------------------------
 \subsection{Column Configuration}\index{Configuration!Column}
+\label{sec:column_configuration}
 % -----------------------------------------------------------------------------------
 
 This configuration is specific to the Specification Editor.
