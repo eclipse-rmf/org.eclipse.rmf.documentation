@@ -10,7 +10,61 @@
 %     Maha Jastram - susequent improvements
 %******************************************************************************/
 
-We hope you find this reference manual useful.  It's a work in progress and will be actively improved and expanded.
+\pror{} is a desktop application that is based on Eclipse for systems engineering in general, and requirements engineering in particular.
+
+% ===================================================================================
+\section{Eclipse}
+\label{sec:eclipse}
+% ===================================================================================
+
+\pror{} is an extension of the generic Eclipse Platform.  The following is concerned with Eclipse in general.
+
+\begin{info}
+Please consult the 
+\eclipsehelp{/topic/org.eclipse.platform.doc.user/gettingStarted/intro/overview.htm?cp=0_0}{Eclipse platform overview} for further information.
+\end{info}
+
+% -----------------------------------------------------------------------------------
+\subsection{Prerequisites}
+% -----------------------------------------------------------------------------------
+
+Eclipse is a Java-based application.  You need a Java Runtime Environment (JRE) on your computer, in order to run \pror{}.
+
+\pror{} requires JRE 1.6 or better.  However, some of the features from ProR Essentials require JRE 1.7 or better.  Further, we recommend the Version from Oracle, and not OpenJDK.
+
+\begin{info}
+You can download Java at \href{https://www.java.com}{java.com}.
+\end{info}
+
+% -----------------------------------------------------------------------------------
+\subsection{Installation}
+\label{sec:installation}
+% -----------------------------------------------------------------------------------
+
+Download - extraction - double click on icon - troubleshooting.
+\marginpar{TODO describe the installation process}
+
+% -----------------------------------------------------------------------------------
+\subsection{Updates}
+\label{sec:update}
+% -----------------------------------------------------------------------------------
+
+% -----------------------------------------------------------------------------------
+\subsection{Installing add-ons}
+\label{sec:install-add-on}
+% -----------------------------------------------------------------------------------
+
+% -----------------------------------------------------------------------------------
+\subsection{Workspaces}
+% -----------------------------------------------------------------------------------
+
+The workspace is a folder on your computer, where all information related to \pror{} is stored.  This includes all your ReqIF files, organized into projects, as well as various meta data.
+
+\begin{info}
+Read more about the \eclipsehelp{/topic/org.eclipse.platform.doc.user/gettingStarted/qs-02a.htm?cp=0_1_0_0}{The Workbench} in the Eclipse documentation.
+
+Also, it is possible to have more than one workspace, and to switch between them.  This feature can be useful for advanced users.
+\end{info}
 
 % ===================================================================================
 \section{Editors}
@@ -27,10 +81,9 @@ Upon opening a ReqIF Model, the editor opens providing an overview of the model.
 
 A model contains any number of specifications, and the details of each specification can be inspected individually.  The windows in which all relevant information appears are called Views.  At your disposal are many Views with productivity, debugging, help and team resources.  We will be focusing only on the Views relevant to ProR.
 
-
-% ===================================================================================
+% -----------------------------------------------------------------------------------
 \subsection{ReqIF Overview Editor}
-% ===================================================================================
+% -----------------------------------------------------------------------------------
 
 This figure was briefly described in the tutorial.  Here we'll go deeper in depth.
 
@@ -77,7 +130,10 @@ attributes of the selected element.  The ``All Attributes'' shows all
 existing ReqIF attributes of the selected element.
 
 Above the main working windows it the tool bar (5) and, at the very top, the menu bar (6).
+
+% -----------------------------------------------------------------------------------
 \subsection{Specification Editor}
+% -----------------------------------------------------------------------------------
 
 % ===================================================================================
 \section{Views}
@@ -97,10 +153,11 @@ By default, ProR's Workbench displays the following three views:
 \subsection{Outline View}\index{Outline View}
 % -----------------------------------------------------------------------------------
 
+\marginpar{TODO describe the top-level folders here.  Make sure there is no or little redundancy from the tutorial.}
+
 % ===================================================================================
 \section{Configurations}
 % ===================================================================================
-
 
 The ProR menu contains entries to launch a number of configuration
 dialogs.
@@ -217,3 +274,46 @@ header.
 If the SpecObject has an attribute where the name of the attribute
 matches the name of the column, then that attribute is shown in that
 column.
+
+% ===================================================================================
+\section{Elements with Values}
+% ===================================================================================
+
+TODO: Common properties of SpecObjects, SpecRelations and Specifications / Interplay between SpecType and Element / Default Values / What happens when Values are removed / How the label is determined / What Types exist / Handling of embedded objects.
+
+% ===================================================================================
+\section{SpecObjects}
+% ===================================================================================
+
+Concept of unreferenced SpecObjects in the Outline and referenced SpecObjects from Specifications.
+
+% ===================================================================================
+\section{Specifications}
+% ===================================================================================
+
+Container for SpecHierarchies / Referencing SpecObjects / TableInternal feature
+
+% ===================================================================================
+\section{SpecRelations}
+% ===================================================================================
+
+Navigating Source and Target / Representation in Specification Editor / Linking across ReqIF models.
+
+% ===================================================================================
+\section{SpecRelationGroups}
+% ===================================================================================
+
+History / Limitations due to bug in Schema.
+
+% ===================================================================================
+\section{Access Control}
+% ===================================================================================
+
+% ===================================================================================
+\section{Import and Export}
+% ===================================================================================
+
+% ===================================================================================
+\section{Searching and Filtering}
+% ===================================================================================
+

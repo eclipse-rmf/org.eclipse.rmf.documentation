@@ -1,0 +1,39 @@
+%*******************************************************************************
+% Copyright (c) 2014 Formal Mind GmbH and others
+% All rights reserved. This program and the accompanying materials
+% are made available under the terms of the Eclipse Public License v1.0
+% which accompanies this distribution, and is available at
+% http://www.eclipse.org/legal/epl-v10.html
+% 
+% Contributors:
+%     Michael Jastram - initial Copy
+%******************************************************************************/
+
+The importance of requirements has been recognized for a long time.  And with the advent of computer-aided engineering tools, a number of proprietary solutions popped up all over the place.  While this helped organizations to manage their requirements more efficiently, interoperability became a major issue.
+
+The development of the ReqIF standard for requirements exchange finally provided a standard, feature-rich way of accessing requirements data.  Eclipse was the obvious choice for a reference implementation of this open standard.  The result is the Eclipse Requirements Modeling Framework, a complete, open source, user-friendly implementation of ReqIF.
+
+This handbook is a comprehensive documentation of the \pror{} tool, which is based on Eclipse RMF.  All answers with respect to tool use should be answered here.  Furthermore, it contains a small tutorial (Chapter~\ref{sec:tutorial}) to get you started quickly.
+
+Keep in mind that tools are meant to support processes, not the other way around.  \pror{} is a flexible tool, and it can be tailored to support your processes.  But development processes are explicitly outside the scope of this handbook.
+
+\begin{info}
+If you are interested in adopting a lightweight development process that can be used with \pror{}, visit our initiative \href{http://re-teaching.org}{re-teaching.org}.
+\end{info}
+
+\section{RMF, ProR, Essentials and formalmind Studio}
+\index{formalmind Studio}
+\index{ProR Essentials}
+\index{Essentials}
+
+There are a few derivatives of the RMF project that may be confusing.  The following will
+help you to understand the ecosystem and how the pieces fit together:
+
+\begin{description}
+\item[RMF.] The Requirements Modeling Framework (RMF) is an open source project that is managed by the Eclipse Foundation.  It consists of software code, documentation, mailing lists, online forum, etc.
+\item[ProR.] ProR is the name of the user interface that allows users to work with ReqIF-based requirements.  ProR is typically installed into existing Eclipse installations.  There used to be a stand-alone build of ProR, which has been discontinued.
+\item[RMF Core.] While ProR is the front end of RMF, the Core is the back end.  This distinction is primarily intended for developers.
+\item[ProR Essentials.] The company Formal Mind created this collection of add-ons that make ProR much more usable.  For instance, Essentials allow to edit and render formatted text.
+\item[formalmind Studio.] As there is no stand-alone version of ProR available, Formal Mind created one, which comes with Essentials preinstalled.  For users who ``just want to edit requirements'', this is the most convenient way of getting started.
+\end{description}
+
