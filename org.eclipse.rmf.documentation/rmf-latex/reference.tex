@@ -179,6 +179,53 @@ Above the main working windows it the tool bar (5) and, at the very top, the men
 \subsection{Specification Editor}
 % -----------------------------------------------------------------------------------
 
+In hierarchical order the requirements are layed out in a spreadsheet in a this window along with all their attributes.
+
+The columns display the attributes that can be independantly created via the Column Configurater and associated with each requirement.
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=\linewidth]{../rmf-images/hierarchy_step_1.png}
+  \caption{Click on a requirement and drag onto target parent.}
+  \label{fig:hierarchy_step_1}
+\end{figure}
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=\linewidth]{../rmf-images/hierarchy_step_2.png}
+  \caption{Result: The requirement is now a child of the chosen parent.}
+  \label{fig:hierarchy_step_2}
+\end{figure}
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=\linewidth]{../rmf-images/hierarchy_step_3.png}
+  \caption{Click on a requirement and drag onto target sibling.}
+  \label{fig:hierarchy_step_3}
+\end{figure}
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=\linewidth]{../rmf-images/hierarchy_step_4.png}
+  \caption{Result: The requirement is now a sibling of the chosen requirement.}
+  \label{fig:hierarchy_step_1}
+\end{figure}
+The rows display the hierarchy. The order in which the requirements are displayed can be easily changed by cutting and pasting or by dragging and dropping onto the cell that shall be the parent. Alternatively, as you drag the requirement onto the line below the level you would like to move it, it will become a sibling rather than a child of the requirement above the line.
+
+To duplicate a requirement, simply copy and paste it into the required position. The copying, cutting and pasting funktions are accessible through the traditional dropdown menu or by right-clicking on a desired cell.
+
+By right clicking on any cell in the window, you have a few options at your disposal. Outside of the usual ``Undo,'' ``Cut,'' ``Copy,'' ``Paste'' and ``Delete,'' commands, the following are also available:
+
+\begin{description}
+
+\item
+  [New Child] - A new requirement can be created as a child of right-clicked requirement.
+\item
+  [New Sibling] - A new Sibling can be created on the same lever as the r  ight-clicked requirement.
+\item
+  [Initiate Linking] - This is the option to create a link between requirements. Once a link is initiated and then by right clicking a target selection, the options to complete the links either to or from a selection will appear.
+\item
+  [Show Properties View] - Opens the Properties window below (be default) where one can individually inspect and edit each requirment.
+\end{description}
+
+
+
 % ===================================================================================
 \section{Views}
 % ===================================================================================
