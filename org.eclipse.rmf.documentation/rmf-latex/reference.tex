@@ -39,10 +39,24 @@ You can download Java at \href{https://www.java.com}{java.com}.
 % -----------------------------------------------------------------------------------
 \subsection{Installation}
 \label{sec:installation}
+\index{installation}
 % -----------------------------------------------------------------------------------
 
-Download - extraction - double click on icon - troubleshooting.
-\marginpar{TODO describe the installation process}
+This chapter concerns the installation of \textbf{Eclipse Products}, i.e. software that you can download and run on your computer.  This is in contrast to \textbf{features} or \textbf{plug-ins}, which can be added to an existing product.
+
+When working with Eclipse, you have to start with a base installation.  For working with ProR, we recommend using \href{http://formalmind.com/studio}{formalmind Studio}, but you can start with any Eclipse product.
+
+Once you have identified the product you would like to use, you need to download it, which is typically a zip file.  Create a folder and extract the content of the zip file into that folder.
+
+\begin{info}
+We recommend to call the folder \menu{studio} or \menu{pror}, and to store it where your executables are located: On Windows in \menu{Program Files}, on Linux in \menu{~/bin}.  But any location will do.
+
+We recommend to create a shortcut for launching it.
+\end{info}
+
+You launch the product by double-clicking on the launcher in the folder you created.  For formalmind Studio, this is called \menu{studio.exe} or \menu{studio}.
+
+The first time you launch Eclipse, it will ask you for the \textbf{Workspace} location, see Section \ref{sec:workspaces}.
 
 % -----------------------------------------------------------------------------------
 \subsection{Updates}
@@ -54,8 +68,38 @@ Download - extraction - double click on icon - troubleshooting.
 \label{sec:install-add-on}
 % -----------------------------------------------------------------------------------
 
+Before you start installing new elements, you typically need the update site that is hosting add-on to be installed.
+
+\begin{definition}[Update Site]
+An update site is a machine-readable URL that allows \pror{} to install new functionality.  Note that visiting the update site with a web browser rarely produces anything meaningful.
+\end{definition}
+
+To install a new feature, follow these steps:
+
+\begin{itemize}
+\item Open the installation dialog via \menu{Help | Install new Software...}
+\item In the \menu{Work with:} dropbox, either paste the Update Site URL, or select it from the drop down, if you used it before.  Note that some popular update site URLs may already be preinstalled.
+\item Upon selecting an update site, you will see a list of components available on that update site.  Note the checkboxes below, that may result in some entries being hidden.  In particular, some update sites do not categorize.  Unchecking \menu{Group items by category} may unveil hidden entries.
+\item Click \menu{Next >}.  If all dependencies can be resolved, details about the installation are shown.  Otherwise you have to troubleshoot dependencies (an unthankful job!).
+\item Click \menu{Next >}, review and accept the license.
+\item Click \menu{Finish}.  If the component has not been digitally signed, you will receive a warning, which you can typically ignore.
+\item It is recommended to restart after the installation.
+\end{itemize}
+
+\begin{info}
+\index{unsigned content}
+\index{signed content}
+\textbf{Signatures on Content.}  In this day and age, security is obviously very important, particularly for content downloaded from the Internet.  But note that signing is not enough: content must be signed with a \textbf{trusted, non-expired} signature.
+
+Eclipse content should be signed by eclipse.org.  Especially small projects release plug-ins that are not signed, reasoning that to a user, a self-signed signature is as good (or bad) as a missing signature.
+
+Ultimately, you need to decide for yourself whether you are willing to run unsigned and/or untrusted content.
+\end{info}
+
+
 % -----------------------------------------------------------------------------------
 \subsection{Workspaces}
+\label{sec:workspaces}
 % -----------------------------------------------------------------------------------
 
 The workspace is a folder on your computer, where all information related to \pror{} is stored.  This includes all your ReqIF files, organized into projects, as well as various meta data.
@@ -145,15 +189,19 @@ By default, ProR's Workbench displays the following three views:
 \subsection{Project Explorer View}\index{Project Explorer View}
 % -----------------------------------------------------------------------------------
 
+TBD
+
 % -----------------------------------------------------------------------------------
 \subsection{Properties View}\index{Properties View}
 % -----------------------------------------------------------------------------------
+
+TBD
 
 % -----------------------------------------------------------------------------------
 \subsection{Outline View}\index{Outline View}
 % -----------------------------------------------------------------------------------
 
-\marginpar{TODO describe the top-level folders here.  Make sure there is no or little redundancy from the tutorial.}
+TBD
 
 % ===================================================================================
 \section{Configurations}
