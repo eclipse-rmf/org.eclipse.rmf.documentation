@@ -42,11 +42,11 @@ You can download Java at \href{https://www.java.com}{java.com}.
 \index{installation}
 % -----------------------------------------------------------------------------------
 
-This chapter concerns the installation of \textbf{Eclipse Products}, i.e. software that you can download and run on your computer.  This is in contrast to \textbf{features} or \textbf{plug-ins}, which can be added to an existing product.
+This chapter explores the installation of \textbf{Eclipse Products}, i.e. software that you can download and run on your computer.  This is in contrast to \textbf{features} or \textbf{plug-ins}, which can be added to an existing product.
 
 When working with Eclipse, you have to start with a base installation.  For working with ProR, we recommend using \href{http://formalmind.com/studio}{formalmind Studio}, but you can start with any Eclipse product.
 
-Once you have identified the product you would like to use, you need to download it, which is typically a zip file.  Create a folder and extract the content of the zip file into that folder.
+Once you have identified the product you would like to use, you need to download it, which is typically a .zip file.  Create a folder and extract the content of the .zip file into that folder.
 
 \begin{info}
 We recommend to call the folder \menu{studio} or \menu{pror}, and to store it where your executables are located: On Windows in \menu{Program Files}, on Linux in \menu{~/bin}.  But any location will do.
@@ -68,7 +68,7 @@ The first time you launch Eclipse, it will ask you for the \textbf{Workspace} lo
 \label{sec:install-add-on}
 % -----------------------------------------------------------------------------------
 
-Before you start installing new elements, you typically need the update site that is hosting add-on to be installed.
+Before you start installing new elements, you typically need to connect with the update site that is hosting the add-ons to be installed.
 
 \begin{definition}[Update Site]
 An update site is a machine-readable URL that allows \pror{} to install new functionality.  Note that visiting the update site with a web browser rarely produces anything meaningful.
@@ -91,7 +91,7 @@ To install a new feature, follow these steps:
 \index{signed content}
 \textbf{Signatures on Content.}  In this day and age, security is obviously very important, particularly for content downloaded from the Internet.  But note that signing is not enough: content must be signed with a \textbf{trusted, non-expired} signature.
 
-Eclipse content should be signed by eclipse.org.  Especially small projects release plug-ins that are not signed, reasoning that to a user, a self-signed signature is as good (or bad) as a missing signature.
+Eclipse content should be signed by eclipse.org.  Especially small project release plug-ins that are not signed, reasoning that to a user, a self-signed signature is as good (or bad) as a missing signature.
 
 Ultimately, you need to decide for yourself whether you are willing to run unsigned and/or untrusted content.
 \end{info}
@@ -121,9 +121,9 @@ Also, it is possible to have more than one workspace, and to switch between them
 \label{fig:Views}
 \end{figure}
 
-Upon opening a ReqIF Model, the editor opens providing an overview of the model.  In essence what you are seeing is the Eclipse Workbench, with several modifications.  Here you will find a quick overview of each component.  A more detailed description of the Workbench can be found in Eclipse's Workbench User Guide.
+Upon opening a ReqIF Model, the editor opens providing an overview of the model.  In essence what you are seeing is the Eclipse Workbench, with several modifications.  Here you will find a quick overview of each component.  A more detailed description of the Workbench can be found in  \href{http://help.eclipse.org/luna/index.jsp?topic=%2Forg.eclipse.platform.doc.user%2Freference%2Fref-43.htm}{Eclipse's Workbench User Guide}.
 
-A model contains any number of specifications, and the details of each specification can be inspected individually.  The windows in which all relevant information appears are called Views.  At your disposal are many Views with productivity, debugging, help and team resources.  We will be focusing only on the Views relevant to ProR.
+A model contains any number of specifications, and the details of each specification can be inspected individually.  The windows in which all relevant information appears are called views.  At your disposal are many views with productivity, debugging, help and team resources.  We will be focusing only on the views relevant to ProR.
 
 % -----------------------------------------------------------------------------------
 \subsection{ReqIF Overview Editor}
@@ -140,7 +140,7 @@ This figure was briefly described in the tutorial.  Here we'll go deeper in dept
 
 (1) is the Project Explorer window.  Here you will see a hierarchical listing of the project and the associated models.
 
-(2) The Editor shows you a hierarchical breakdown of the model.  Each specification with it's associated SpecObjects is listed in a spreadsheet.  Because the SpecObjects of each requirement can vary, not all fields will be completed.  Because the fields need to  be created and then associated with the SpecObjects, they may not all be (nor do they need to be) represented.  But what appears and how they appear can be customized.
+(2) The Editor shows you a hierarchical breakdown of the model.  Each specification with its associated SpecObjects is listed in a spreadsheet.  Because the SpecObjects of each requirement can vary, not all fields will be completed.  Because the fields need to be created and then associated with the SpecObjects, they may not all be (nor do they need to be) represented.  But what appears and how they appear can be customized.
 
 In the Editor, you see the SpecObjects that exist in this Specification.
 There is currently only one, with the description ``Start editing here''.
@@ -150,7 +150,7 @@ The Outline (3) has four folders:
 \begin{itemize}
 
 \item
-  ``Specifications'' shows the Specifications in the ReqIF.  You can
+  ``Specifications'' shows the specifications in the ReqIF model.  You can
   expand the tree to expose the hierarchy of SpecObjects in the
   ReqIF model.
 \item
@@ -161,7 +161,7 @@ The Outline (3) has four folders:
   ``SpecRelations'' shows all SpecRelations in the ReqIF as a flat list.
   For now, we will ignore SpecRelations.
 \item
-  ``SpecRelationsGroups'' represent an optional mechanism for grouping SpecRelations between two specific Specifications.
+  ``SpecRelationsGroups'' represent an optional mechanism for grouping SpecRelations between two specific specifications.
 \end{itemize}
 
 The properties of a selected Element are shown in the Properties view
@@ -182,8 +182,8 @@ Above the main working windows it the tool bar (5) and, at the very top, the men
 \begin{figure}[!h]
   \centering
   \includegraphics[width=\linewidth]{../rmf-images/default_spec_view.png}
-  \caption{Default spec window with the right-click menu}
-  \label{fig:default spec window}
+  \caption{Default Specification Editor with the right-click menu}
+  \label{fig:default specification editor}
 \end{figure}
 The requirements are layed out in a spreadsheet in a this window along with all their attributes in hierarchical order.
 
@@ -192,14 +192,14 @@ The columns, laeled across the top, display the attributes associated with each 
 \begin{info}
 Would you like to rearrange the columns?
 
-In the top half of the Column Configurator {\includegraphics[scale=0.6]{../rmf-images/icons/full/obj16/Column.png} window, a list of the exiting columns appear. Simply drag and drop them into the desired order. The changes appear in real time in the Specification Editor. Close the window and the changes will be accepted
+In the top half of the Column Configurator {\includegraphics[scale=0.6]{../rmf-images/icons/full/obj16/Column.png}} window, a list of the exiting columns appear. Simply drag and drop them into the desired order. The changes appear in real time in the Specification Editor. Close the window and the changes will be accepted.
 \end{info}
 
-Information can be entered either directly into the cell by double clicking it or by opening the properties window by right clicking any of the cells in the row. All of the SpecObjects information will then be available for editing in the Properties Editor.
+Information can be entered either directly into the cell by double clicking it or by opening the Properties Editor by right clicking any of the cells in the row. All of the SpecObjects information will then be available for editing in the Properties Editor.
 
 The order of the rows display the hierarchy. The order in which the requirements are displayed can be easily manipulated by cutting and pasting or by dragging and dropping. To move an existing requirement into the position of parent or child of another existing requirement, simply drag the child directly \textit{onto the target parent}. Alternatively, as you drag the requirement \textit{onto the line below} the level you would like to move it, it will become a sibling rather than a child of the requirement above the line.
 
-To duplicate a requirement, simply copy and paste it into the required position. The copying, cutting and pasting funktions are accessible through the traditional dropdown menu or by right-clicking on a desired cell.
+To duplicate a requirement, simply copy and paste it into the required position. The copying, cutting and pasting functions are accessible through the traditional dropdown menu or by right-clicking on a desired cell.
 
 \begin{figure}[!h]
   \centering
@@ -237,7 +237,7 @@ By right clicking on any cell in the window, you have a few options at your disp
 \item
   [Initiate Linking] - This is the option to create a link between requirements. Once a link is initiated and then by right clicking a target selection, the options to complete the links either to or from a selection will appear. By default, the links are illustrated in the ``Link'' column to the right. 
 \item
-  [Show Properties View] - Opens the Properties window below (be default) where one can individually inspect and edit each requirment.
+  [Show Properties View] - Opens the Properties Editor below (be default) where one can individually inspect and edit each requirment.
 \end{description}
 
 
