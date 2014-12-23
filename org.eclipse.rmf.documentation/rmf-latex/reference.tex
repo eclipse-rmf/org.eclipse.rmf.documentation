@@ -462,9 +462,50 @@ History / Limitations due to bug in Schema.
 
 % -----------------------------------------------------------------------------------
 \subsection{ReqIF Search}
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=0.5\textwidth]{../rmf-images/reqIF_search_1.png}
+  \caption{ReqIF Search function with drop-down menu}
+  \label{fig:ReqIF Search Window}
+\end{figure}
 \label{sec:reqif_search}
+In the menu bar at the top of the window is the Search function. When you open it, several tabs will appear, but we will cover ReqIF Search and ReqIF Search (Raw)---our ReqIF search tools.
+
+The ReqIF Search conditions consist of attributes and operators. To begin, click \menu{Add new}.  The drop-down menu immediately appears (for your reference the photo above includes the drop-down menu).  Choose an attribute (datatype) from the list.  The first four (IDENTIFIER, DESC, LONG\_NAME, and LAST\_CHANGE) are Eclipse attributes and are not relevant to the topic at hand.  The others listed are taken directly from the document.  The more attributes you create, the longer the list will grow.  After you have chosen an attribute from the list, the rest of your choices (which are determined by the datatype of the attribute) are displayed.
+
+\begin{table}[h]
+\begin{tabular}{|l|l|l|l|}
+\hline
+\rowcolor[HTML]{000000} 
+\multicolumn{4}{|c|}{\cellcolor[HTML]{000000}{\color[HTML]{FFFFFF} \textbf{SEARCH ATTRIBUTES AND CONDITIONS}}}                                                                                                                                                                                                                                                                                                       \\ \hline
+\rowcolor[HTML]{EFEFEF} 
+{\color[HTML]{000000} \textbf{DATATYPE}} & {\color[HTML]{000000} \textbf{SELECTOR}}                                                     & {\color[HTML]{000000} \textbf{GUI}}                                                                                                       & {\color[HTML]{000000} \textbf{IF EMPTY}}                                                                                \\ \hline
+STRING                                   & \begin{tabular}[c]{@{}l@{}}equal\\ not equal\\ contains\\ not contains\\ regexp\end{tabular} & \begin{tabular}[c]{@{}l@{}}one text field\\ one text field\\ one text field\\ one text field \\ one text field\end{tabular}               & \begin{tabular}[c]{@{}l@{}}false\\ true\\ false\\ true\\ regexp applied to empty string\end{tabular}                    \\ \hline
+\rowcolor[HTML]{EFEFEF} 
+DATE                                     & \begin{tabular}[c]{@{}l@{}}is\\ is not\\ between\\ before\\ after\end{tabular}               & \begin{tabular}[c]{@{}l@{}}one date selector\\ one date selector\\ one date selector\\ one date selector\\ one date selector\end{tabular} & \begin{tabular}[c]{@{}l@{}}false\\ true\\ false\\ false\\ false\end{tabular}                                            \\ \hline
+BOOL                                     & is                                                                                           & drop-down: true/false                                                                                                                     & false                                                                                                                   \\ \hline
+\rowcolor[HTML]{EFEFEF} 
+NUM                                      & \begin{tabular}[c]{@{}l@{}}is\\ is not\\ between\\ greater\\ smaller\end{tabular}            & \begin{tabular}[c]{@{}l@{}}one number field\\ one number field\\ two number fields\\ one number field\\ one number field\end{tabular}     & \begin{tabular}[c]{@{}l@{}}false\\ true\\ false\\ false\\ false\end{tabular}                                            \\ \hline
+XHTML                                    & \begin{tabular}[c]{@{}l@{}}contains\\ not contains\\ regexp\\ regexp plain\end{tabular}      & \begin{tabular}[c]{@{}l@{}}one text field\\ one text field\\ one text field\\ one text field\end{tabular}                                 & \begin{tabular}[c]{@{}l@{}}false\\ true \\ regexp applied to empty string\\ regexp applied to empty string\end{tabular} \\ \hline
+\rowcolor[HTML]{EFEFEF} 
+ENUM                                     & \begin{tabular}[c]{@{}l@{}}equal\\ not equal\\ contains all\\ contains any\end{tabular}      & \begin{tabular}[c]{@{}l@{}}multiple choice\\ multiple choice\\ multiple choice\\ multiple choice\end{tabular}                             & \begin{tabular}[c]{@{}l@{}}false, unless empty\\ false, unless empty\\ false, unless empty\\ false, unless empty\end{tabular} \\ \hline
+\end{tabular}
+\end{table}
 \index{search!ReqIF search}
 \index{ReqIF search}
+
+Each row of attribute and operators can be searched for independantly or with as many conditions as needed. To add another set, click on \menu{Add New}.
+
+Once the attributes and operators have been chosen and the search criteria has been enetered, The results of the executed, a Search view opens to the write, next to the Outline view.
+
+Above the search results are five options. From left to right, they are:
+\begin{itemize}
+\item Run the Current Search Again
+\item Cancel Current search
+\item Show Previous Searches (opens a window with options to remove or view the results of a previous search)
+\item Show Previous Searches (a drop-down appears with the option to view the results a previous search)
+\item Pin the Search View which will keep the results of the current search pinned and any subsequent search will open in a separate view.
+\end{itemize}
 % -----------------------------------------------------------------------------------
 
 % -----------------------------------------------------------------------------------
