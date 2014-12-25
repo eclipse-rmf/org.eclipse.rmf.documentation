@@ -473,6 +473,28 @@ In the menu bar at the top of the window is the Search function. When you open i
 
 The ReqIF Search conditions consist of attributes and operators. To begin, click \menu{Add new}.  The drop-down menu immediately appears (for your reference the photo above includes the drop-down menu).  Choose an attribute (datatype) from the list.  The first four (IDENTIFIER, DESC, LONG\_NAME, and LAST\_CHANGE) are Eclipse attributes and are not relevant to the topic at hand.  The others listed are taken directly from the document.  The more attributes you create, the longer the list will grow.  After you have chosen an attribute from the list, the rest of your choices (which are determined by the datatype of the attribute) are displayed.
 
+The attributes all have different scopes. They are defined as follows:
+\begin{table}[h]
+\begin{tabular}{ll|l|}
+\hline
+\rowcolor[HTML]{000000} 
+\multicolumn{3}{|c|}{\cellcolor[HTML]{000000}{\color[HTML]{FFFFFF} \textbf{DATATYPES AND SCOPES}}}                                                                         \\ \hline
+\rowcolor[HTML]{EFEFEF} 
+\multicolumn{1}{|l|}{\cellcolor[HTML]{EFEFEF}{\color[HTML]{000000} \textbf{Attribute}}} & {\color[HTML]{000000} \textbf{Datatype}} & {\color[HTML]{000000} \textbf{Scope}} \\ \hline
+\multicolumn{1}{|l|}{AttributeValueBoolean}                                             & BOOL                                     & Value                                 \\ \hline
+\rowcolor[HTML]{EFEFEF} 
+\multicolumn{1}{|l|}{\cellcolor[HTML]{EFEFEF}AttributeValueDate}                        & DATE                                     & Value                                 \\ \hline
+\multicolumn{1}{|l|}{AttributeValueEnumeration}                                         & ENUM                                     & Value                                 \\ \hline
+\rowcolor[HTML]{EFEFEF} 
+\multicolumn{1}{|l|}{\cellcolor[HTML]{EFEFEF}AttributeValueInteger}                     & NUM                                      & Value                                 \\ \hline
+\multicolumn{1}{|l|}{AttributeValueReal}                                                & NUM                                      & Value                                 \\ \hline
+\rowcolor[HTML]{EFEFEF} 
+\multicolumn{1}{|l|}{\cellcolor[HTML]{EFEFEF}AttributeValueString}                      & STRING                                   & Value                                 \\ \hline
+AttributeValueXHTML                                                                     & XHTML                                    &                                       \\ \cline{3-3} 
+\end{tabular}
+\end{table}
+
+
 \begin{table}[h]
 \begin{tabular}{|l|l|l|l|}
 \hline
