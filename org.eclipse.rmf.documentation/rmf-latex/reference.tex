@@ -459,6 +459,8 @@ History / Limitations due to bug in Schema.
 \item[Raw Search (Section~\ref{sec:raw_search}).] This interface is powerful, but requires the queries to be constructed by hand.  It allows to fine-tune the search scope, including the search of the whole workspace.
 \end{description}
 
+Except the quicksearch, the results are shown in the \eclipsehelp{/topic/org.eclipse.platform.doc.user/gettingStarted/qs-36b.htm}{Eclipse Search Result View}.
+
 % -----------------------------------------------------------------------------------
 \subsection{Quicksearch}
 \label{sec:quicksearch}
@@ -466,74 +468,154 @@ History / Limitations due to bug in Schema.
 \index{quicksearch}
 % -----------------------------------------------------------------------------------
 
+This feature allows you to search-as-you-type within the open Specification.  The search box is embedded in the toolbar and only visible if a Specification Editor is open.
+
+\begin{center}
+\includegraphics[height=3em]{../rmf-images/quicksearch.png}
+\end{center}
+
+You can just begin typing in the box.  With every keystroke, the view will update and collapse those rows that do not match.  All attributes are searched.
+
 % -----------------------------------------------------------------------------------
 \subsection{ReqIF Search}
+% -----------------------------------------------------------------------------------
+
+Searching is initiated via \menu{Search | Search... | ReqIF Search}, or via the search icon \includegraphics[height=1em]{../rmf-images/icons/full/obj16/search.png} on the toolbar.  This will present you the wizard shown in Figure~\ref{fig:reqif_search}.
+
+\begin{info}
+The search dialog shows several tabs on the top.  This handbook will cover ReqIF Search and ReqIF Search (Raw)---our ReqIF search tools.  
+
+Depending on your Eclipse configuration, other search option may be shown and may still be useful.  For instance, the \eclipsehelp{/topic/org.eclipse.platform.doc.user/reference/ref-45.htm}{File Search} is useful for searching within all files, including .reqif files.
+\end{info}
+
 \begin{figure}[!h]
   \centering
-  \includegraphics[width=0.5\textwidth]{../rmf-images/reqIF_search_1.png}
-  \caption{ReqIF Search function with drop-down menu}
-  \label{fig:ReqIF Search Window}
+  \includegraphics[width=0.8\textwidth]{../rmf-images/reqIF_search_1.png}
+  \caption{ReqIF Search function with attribute drop-down menu}
+  \label{fig:reqif_search}
 \end{figure}
 \label{sec:reqif_search}
-In the menu bar at the top of the window is the Search function. When you open it, several tabs will appear, but we will cover ReqIF Search and ReqIF Search (Raw)---our ReqIF search tools.
 
-The ReqIF Search conditions consist of attributes and operators. To begin, click \menu{Add new}.  The drop-down menu immediately appears (for your reference the photo above includes the drop-down menu).  Choose an attribute (datatype) from the list.  The first four (IDENTIFIER, DESC, LONG\_NAME, and LAST\_CHANGE) are Eclipse attributes and are not relevant to the topic at hand.  The others listed are taken directly from the document.  The more attributes you create, the longer the list will grow.  After you have chosen an attribute from the list, the rest of your choices (which are determined by the datatype of the attribute) are displayed.
+% -----------------------------------------------------------------------------------
+\subsubsection{Search Criteria}
+% -----------------------------------------------------------------------------------
 
-The attributes all have different scopes. They are defined as follows:
-\begin{table}[h]
-\begin{tabular}{ll|l|}
-\hline
-\rowcolor[HTML]{000000} 
-\multicolumn{3}{|c|}{\cellcolor[HTML]{000000}{\color[HTML]{FFFFFF} \textbf{DATATYPES AND SCOPES}}}                                                                         \\ \hline
-\rowcolor[HTML]{EFEFEF} 
-\multicolumn{1}{|l|}{\cellcolor[HTML]{EFEFEF}{\color[HTML]{000000} \textbf{Attribute}}} & {\color[HTML]{000000} \textbf{Datatype}} & {\color[HTML]{000000} \textbf{Scope}} \\ \hline
-\multicolumn{1}{|l|}{AttributeValueBoolean}                                             & BOOL                                     & Value                                 \\ \hline
-\rowcolor[HTML]{EFEFEF} 
-\multicolumn{1}{|l|}{\cellcolor[HTML]{EFEFEF}AttributeValueDate}                        & DATE                                     & Value                                 \\ \hline
-\multicolumn{1}{|l|}{AttributeValueEnumeration}                                         & ENUM                                     & Value                                 \\ \hline
-\rowcolor[HTML]{EFEFEF} 
-\multicolumn{1}{|l|}{\cellcolor[HTML]{EFEFEF}AttributeValueInteger}                     & NUM                                      & Value                                 \\ \hline
-\multicolumn{1}{|l|}{AttributeValueReal}                                                & NUM                                      & Value                                 \\ \hline
-\rowcolor[HTML]{EFEFEF} 
-\multicolumn{1}{|l|}{\cellcolor[HTML]{EFEFEF}AttributeValueString}                      & STRING                                   & Value                                 \\ \hline
-AttributeValueXHTML                                                                     & XHTML                                    &                                       \\ \cline{3-3} 
-\end{tabular}
-\end{table}
+The ReqIF Search conditions consist of \textit{search criteria}, that are added by clicking on \menu{Add new}.  This creates a new criteria panel.  An arbitrary number of criteria can be defined.  Criteria can be removed by clicking on $\times$  on the left side of the panel, or by clicking \menu{clear} to remove all.
 
+The radio button on top allows to either \menu{Match all} or \menu{match any} of the criteria.
 
-\begin{table}[h]
-\begin{tabular}{|l|l|l|l|}
-\hline
-\rowcolor[HTML]{000000} 
-\multicolumn{4}{|c|}{\cellcolor[HTML]{000000}{\color[HTML]{FFFFFF} \textbf{SEARCH ATTRIBUTES AND CONDITIONS}}}                                                                                                                                                                                                                                                                                                       \\ \hline
-\rowcolor[HTML]{EFEFEF} 
-{\color[HTML]{000000} \textbf{DATATYPE}} & {\color[HTML]{000000} \textbf{SELECTOR}}                                                     & {\color[HTML]{000000} \textbf{GUI}}                                                                                                       & {\color[HTML]{000000} \textbf{IF EMPTY}}                                                                                \\ \hline
-STRING                                   & \begin{tabular}[c]{@{}l@{}}equal\\ not equal\\ contains\\ not contains\\ regexp\end{tabular} & \begin{tabular}[c]{@{}l@{}}one text field\\ one text field\\ one text field\\ one text field \\ one text field\end{tabular}               & \begin{tabular}[c]{@{}l@{}}false\\ true\\ false\\ true\\ regexp applied to empty string\end{tabular}                    \\ \hline
-\rowcolor[HTML]{EFEFEF} 
-DATE                                     & \begin{tabular}[c]{@{}l@{}}is\\ is not\\ between\\ before\\ after\end{tabular}               & \begin{tabular}[c]{@{}l@{}}one date selector\\ one date selector\\ one date selector\\ one date selector\\ one date selector\end{tabular} & \begin{tabular}[c]{@{}l@{}}false\\ true\\ false\\ false\\ false\end{tabular}                                            \\ \hline
-BOOL                                     & is                                                                                           & drop-down: true/false                                                                                                                     & false                                                                                                                   \\ \hline
-\rowcolor[HTML]{EFEFEF} 
-NUM                                      & \begin{tabular}[c]{@{}l@{}}is\\ is not\\ between\\ greater\\ smaller\end{tabular}            & \begin{tabular}[c]{@{}l@{}}one number field\\ one number field\\ two number fields\\ one number field\\ one number field\end{tabular}     & \begin{tabular}[c]{@{}l@{}}false\\ true\\ false\\ false\\ false\end{tabular}                                            \\ \hline
-XHTML                                    & \begin{tabular}[c]{@{}l@{}}contains\\ not contains\\ regexp\\ regexp plain\end{tabular}      & \begin{tabular}[c]{@{}l@{}}one text field\\ one text field\\ one text field\\ one text field\end{tabular}                                 & \begin{tabular}[c]{@{}l@{}}false\\ true \\ regexp applied to empty string\\ regexp applied to empty string\end{tabular} \\ \hline
-\rowcolor[HTML]{EFEFEF} 
-ENUM                                     & \begin{tabular}[c]{@{}l@{}}equal\\ not equal\\ contains all\\ contains any\end{tabular}      & \begin{tabular}[c]{@{}l@{}}multiple choice\\ multiple choice\\ multiple choice\\ multiple choice\end{tabular}                             & \begin{tabular}[c]{@{}l@{}}false, unless empty\\ false, unless empty\\ false, unless empty\\ false, unless empty\end{tabular} \\ \hline
-\end{tabular}
-\end{table}
-\index{search!ReqIF search}
-\index{ReqIF search}
+Each criteria consists of three parts, \textit{attribute}, \textit{operator} and \textit{value}.  One such criteria is shown in Figure~\ref{fig:reqif_search}, with the attribute drop-down open.
 
-Each row of attribute and operators can be searched for independantly or with as many conditions as needed. To add another set, click on \menu{Add New}.
+\begin{description}
+\item[Attribute.]  Choose an attribute (datatype) from the list.  The first four (IDENTIFIER, DESC, LONG\_NAME, and LAST\_CHANGE) are ReqIF-internal attributes and are rarely of interest to normal users (see Section~\ref{sec:reqif_internal_attributes}).  The others attributes are taken directly from the document.  The more attributes you create, the longer the list will grow.  After you have chosen an attribute from the list, the rest of your choices (which are determined by the datatype of the attribute) are displayed.
+\item[Operator.] The operator drop-down is specific to the selected attribute and is described for each type below.
+\item[Value.] The value or values are specific to the operator and are also described below.
+\end{description}
 
-Once the attributes and operators have been chosen and the search criteria has been enetered, The results of the executed, a Search view opens to the write, next to the Outline view.
+% -----------------------------------------------------------------------------------
+\subsubsection{Operators for All Types}
+% -----------------------------------------------------------------------------------
 
-Above the search results are five options. From left to right, they are:
-\begin{itemize}
-\item Run the Current Search Again
-\item Cancel Current search
-\item Show Previous Searches (opens a window with options to remove or view the results of a previous search)
-\item Show Previous Searches (a drop-down appears with the option to view the results a previous search)
-\item Pin the Search View which will keep the results of the current search pinned and any subsequent search will open in a separate view.
-\end{itemize}
+The following operators are available for all attributes, no matter what their type:
+
+\begin{description}
+\item[Equals (=).] For a match, the value must match \textit{exactly} as provided.  This implies that the attribute has actually been \textit{set}.  For instance, an empty string matches an empty string.  But it does not match if the value has not been set (i.e. if it is \textit{null}, in technical terms).
+\item[Set.] For a match, the value must be set to any value. \textbf{Note:} A \textit{default value} does not represent a match.
+\item[Not set.] For a match, the value must not be set. \textbf{Note:} If the attribute in question does not exist, then there will not be a match either.  See example below.
+\end{description}
+
+\begin{example}
+\textbf{Not Set Operator.}
+Assume you receive a ReqIF model for review, with two SpecTypes, one called \textit{Information Type} which contains an attribute \textit{Description} and one called \textit{Requirement Type} which contains two attributes, \textit{Description} and \textit{Status}.  You are supposed to fill out the status for all requirements.
+
+To find those that are still missing, you search for \menu{Status} \menu{not set}.  This will deliver all requirements for which no status has been set, even if there is a default value.
+\end{example}
+
+% -----------------------------------------------------------------------------------
+\subsubsection{Operators for Plain and Rich Text}
+% -----------------------------------------------------------------------------------
+
+All text searches can be made case-sensitive by checking the corresponding checkbox \menu{Aa}.
+
+The following operators are available for \textbf{plain text} attributes:
+
+\begin{description}
+\item[Equals ($\neq$).] For a match, the value must not \textit{exactly} as provided.  If the attribute is not set, this constitutes a match.
+\end{description}
+
+The following operators are available for \textbf{plain text and rich text} (XHTML) attributes.
+
+\begin{description}
+\item[Contains.] For a match, the value must be a substring of the attribute.
+\item[Contains not.] For a match, the value must not be a substring of the attribute. If the attribute is not set, this constitutes a match.
+\item[Regexp.] The provided value will be interpreted as a \eclipsehelp{/topic/org.eclipse.platform.doc.isv/guide/st_text_types.htm?cp=2_0_3_9_1\#regex}{regular expression}.  Search will take place across line breaks.
+\end{description}
+
+\begin{info}
+When searching rich text (XHTML), the invisible formatting will be included in the search, except for the \textit{regexp (plain)} operator described below.
+
+Search will take place across line breaks.  But this is only relevant for Regexp search, where linebreaks can be matched explicitly (\menu{\textbackslash n}) or as part of whitespace (\menu{\textbackslash s}).
+\end{info}
+
+The following operators are available for \textbf{rich text} (XHTML) attributes.
+
+\begin{description}
+\item[Regexp (plain).] The provided value will be interpreted as a \eclipsehelp{/topic/org.eclipse.platform.doc.isv/guide/st_text_types.htm?cp=2_0_3_9_1\#regex}{regular expression}.  Search will take place against a version of the attribute value where the tags have been stripped out and been replaced by whitespace.
+\end{description}
+
+\begin{example}
+\textbf{Searching XHTML.}  As XHTML contains invisible formatting tags, this should be taken into account when searching.  For instance, the search \menu{contains} \menu{formalmind.com} will find direct textual references to the domain, as well as hyperlinks (e.g. \menu{<a href="http://formalmind.com">click</a>}.
+\end{example}
+
+% -----------------------------------------------------------------------------------
+\subsubsection{Operators for Numbers (Integer and Real)}
+% -----------------------------------------------------------------------------------
+
+The interfaces for integer attributes and real attributes are identical, but the text boxes will only accept numbers of the appropriate type.
+
+\begin{description}
+\item[Not equal ($\neq$).] The provided value is not equal to the given number. This operator matches if the attribute has no value set.
+\item[Between.] A match exists if the attribute value is between the given numbers, \textbf{including them}.
+\item[Greater than ($>$).] A match exists if the attribute value is greater than the value, \textbf{excluding it}.
+\item[Less than ($<$).] A match exists if the attribute value is less than the value, \textbf{excluding it}.
+\end{description}
+
+% -----------------------------------------------------------------------------------
+\subsubsection{Operators for Dates}
+% -----------------------------------------------------------------------------------
+
+The granularity of the date criteria are one day, while \pror{} date stamps also include the time and have timezones.
+
+\begin{warning}
+\textbf{Timezones.} Dates in \pror{} have timezones.  The dates entered in the search interface assume the local time zone.  This can have implications if the values in the ReqIF model have been created by a user in a different time zone.  For example, consider a date has been written on ``Tuesday 23:00'' in the time zone of User~1.  But for User~2, it is already ``Wednesday 01:00''.  If User~1 would search for ``Tuesday'', there would be a match.  But for User~2, in a different time zone, not.
+\end{warning}.
+
+\begin{description}
+\item[Equal ($=$).] The day matches, no matter what the time (but timezones apply).
+\item[Not equal ($\neq$).] Any day except the given day, or not set.
+\item[Between.] A match exists if the attribute value is between the given numbers, \textbf{including them}.
+\item[Before.] A match exists if the attribute value is before the date, \textbf{excluding it} (i.e. before the time 00:00:00 on that date).
+\item[After.] A match exists if the attribute value is after the date, \textbf{including it} (i.e. after the time 00:00:00 on that date).
+\end{description}
+
+% -----------------------------------------------------------------------------------
+\subsubsection{Operators for Enumeration}
+% -----------------------------------------------------------------------------------
+
+While ReqIF enumerations may be single value or multi value, this distinction is immaterial for the search functionality.
+
+\begin{description}
+\item[Not equal ($\neq$).] Anything except an identical list will match.  \textbf{Note:} An empty list matches an unset attribute value.
+\item[All.] All selected value must also be selected on the attribute (but the attribute may have more).
+\item[Any.] For a match, at least one of the list values must also be set on the attribute.
+\end{description}
+
+% -----------------------------------------------------------------------------------
+\subsubsection{Operators for Boolean}
+% -----------------------------------------------------------------------------------
+
+Only the standard operators (equals, set, not set) are available.
+
 % -----------------------------------------------------------------------------------
 
 % -----------------------------------------------------------------------------------
@@ -542,4 +624,6 @@ Above the search results are five options. From left to right, they are:
 \index{search!raw ReqIF search}
 \index{raw ReqIF search}
 % -----------------------------------------------------------------------------------
+
+The raw search feature has been described in the \href{http://formalmind.com/en/blog/formalmind-studio-pror-improvements-and-beta-program-about-start}{Formal Mind Blog}.
 
