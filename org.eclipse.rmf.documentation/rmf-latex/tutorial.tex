@@ -107,18 +107,14 @@ The Editor (2) shows your Specifications.
 In the Editor, you see the SpecObjects that exist in this Specification.  There is currently only one, with the description ``Start editing here''.
 
 The Outline (3) has four folders:
+\index{outline view}
 
-\begin{itemize}
-
-\item
-  ``Specifications'' shows the Specifications in the ReqIF.  You can expand the tree to expose the hierarchy of SpecObjects in the ReqIF model.
-\item
-  ``SpecObjects'' shows all SpecObjects in the ReqIF model as a flat list.  Keep in mind that SpecObjects in Specifications are references.  In contrast, this folder shows all SpecObjects created for the ReqIF model, whether or not they are referenced.
-\item
-  ``SpecRelations'' shows all SpecRelations in the ReqIF as a flat list.  For now, we will ignore SpecRelations.
-\item
-  ``SpecRelationsGroups'' \marginpar{I HAVE NO IDEA.  SHALL WE IGNORE THIS, TOO?}
-\end{itemize}
+\begin{description}
+\item[Specifications] shows the Specifications in the ReqIF.  You can expand the tree to expose the hierarchy of SpecObjects in the ReqIF model.
+\item[SpecObjects] shows all SpecObjects in the ReqIF model as a flat list.  Keep in mind that SpecObjects in Specifications are references.  In contrast, this folder shows all SpecObjects created for the ReqIF model, whether or not they are referenced.
+\item[SpecRelations] shows all SpecRelations in the ReqIF as a flat list.  For now, we will ignore SpecRelations.
+\item[SpecRelationsGroups] are special constructs to can be used for grouping SpecRelations with the same source and target.
+\end{description}
 
 The properties of a selected Element are shown in the Properties view (4).  As the only Requirement in the model is selected, we see its SpecObjectType (``Requirements Type'') and its only Attribute (``Description'') with the value ``Start editing here.''.  There are two tabs ``Standard Attributes'' and ``All Attributes'' at the bottom of the Properties view.  \marginpar{*****} The ``Standard Attributes'' tab shows you all standard attributes of the selected element.  The ``All Attributes'' shows all existing ReqIF attributes of the selected element.
 
