@@ -138,7 +138,7 @@ A model contains any number of specifications, and the details of each specifica
 
 This figure was briefly described in the tutorial.  Here we'll go deeper in depth.
 
-\begin{figure}[h!]
+\begin{figure}[H]
   \centering
   \includegraphics[width=\linewidth]{../rmf-images/Screenshot_intro.png}
   \caption{The \pror{} user interface}
@@ -186,7 +186,7 @@ Above the main working windows it the tool bar (5) and, at the very top, the men
 \subsection{Specification Editor}
 % -----------------------------------------------------------------------------------
 
-\begin{figure}[!h]
+\begin{figure}[H]
   \centering
   \includegraphics[width=\linewidth]{../rmf-images/default_spec_view.png}
   \caption{Default Specification Editor with the right-click menu}
@@ -208,29 +208,29 @@ The order of the rows display the hierarchy. The order in which the requirements
 
 To duplicate a requirement, simply copy and paste it into the required position. The copying, cutting and pasting functions are accessible through the traditional dropdown menu or by right-clicking on a desired cell.
 
-\begin{figure}[!h]
+\begin{figure}[H]
   \centering
   \includegraphics[width=\linewidth]{../rmf-images/hierarchy_step_1.png}
   \caption{Click on a requirement and drag onto target parent.}
   \label{fig:hierarchy_step_1}
 \end{figure}
-\begin{figure}[!h]
+\begin{figure}[H]
   \centering
   \includegraphics[width=\linewidth]{../rmf-images/hierarchy_step_2.png}
   \caption{Result: The requirement is now a child of the chosen parent.}
   \label{fig:hierarchy_step_2}
 \end{figure}
-\begin{figure}[!h]
+\begin{figure}[H]
   \centering
   \includegraphics[width=\linewidth]{../rmf-images/hierarchy_step_3.png}
   \caption{Click on a requirement and drag onto the line (bolded) below or above target sibling.}
   \label{fig:hierarchy_step_3}
 \end{figure}
-\begin{figure}[!h]
+\begin{figure}[H]
   \centering
   \includegraphics[width=\linewidth]{../rmf-images/hierarchy_step_4.png}
   \caption{Result: The requirement is now a sibling of the chosen requirement.}
-  \label{fig:hierarchy_step_1}
+  \label{fig:hierarchy_step_4}
 \end{figure}
 
 By right clicking on any cell in the window, you have a few options at your disposal. Outside of the usual ``Undo,'' ``Cut,'' ``Copy,'' ``Paste'' and ``Delete,'' commands, the following are also available:
@@ -356,7 +356,7 @@ datatype should have at least a long name.
 
 As an example, consider the following Datatype Configuration Dialog:
 
-\begin{figure}[h!]
+\begin{figure}[H]
 \centering     
 \includegraphics[width=0.8\linewidth]{../rmf-images/pror_datatype_configuration.png}
 \caption{Datatype Configuration Dialog}      
@@ -379,7 +379,7 @@ by right-clicking the enumeration datatype and selecting New Child
 it, so that you can provide it with a Long Name.  The following shows a
 correctly configured enumeration datatype:
 
-\begin{figure}[h!]
+\begin{figure}[H]
 \centering      
 \includegraphics[width=0.4\linewidth]{../rmf-images/rmf_enumeration.png}
 \caption{Enumerations}      
@@ -464,7 +464,7 @@ Except the quicksearch, the results are shown in the \eclipsehelp{/topic/org.ecl
 % -----------------------------------------------------------------------------------
 \subsection{Quicksearch}
 \label{sec:quicksearch}
-\index{search!quicksearch}
+\index{searcHquicksearch}
 \index{quicksearch}
 % -----------------------------------------------------------------------------------
 
@@ -488,7 +488,7 @@ The search dialog shows several tabs on the top.  This handbook will cover ReqIF
 Depending on your Eclipse configuration, other search option may be shown and may still be useful.  For instance, the \eclipsehelp{/topic/org.eclipse.platform.doc.user/reference/ref-45.htm}{File Search} is useful for searching within all files, including .reqif files.
 \end{info}
 
-\begin{figure}[!h]
+\begin{figure}[H]
   \centering
   \includegraphics[width=0.8\textwidth]{../rmf-images/reqIF_search_1.png}
   \caption{ReqIF Search function with attribute drop-down menu}
@@ -554,7 +554,7 @@ The following operators are available for \textbf{plain text and rich text} (XHT
 \begin{info}
 When searching rich text (XHTML), the invisible formatting will be included in the search, except for the \textit{regexp (plain)} operator described below.
 
-Search will take place across line breaks.  But this is only relevant for Regexp search, where linebreaks can be matched explicitly (\menu{\textbackslash n}) or as part of whitespace (\menu{\textbackslash s}).
+Search will take place across line breaks.  But this is only relevant for Regexp search, where linebreaks can be matched explicitly (\menu{$\backslash$ n}) or as part of whitespace (\menu{$\backslash$ s}).
 \end{info}
 
 The following operators are available for \textbf{rich text} (XHTML) attributes.
@@ -621,7 +621,7 @@ Only the standard operators (equals, set, not set) are available.
 % -----------------------------------------------------------------------------------
 \subsection{Raw ReqIF Search}
 \label{sec:raw_search}
-\index{search!raw ReqIF search}
+\index{searcHraw ReqIF search}
 \index{raw ReqIF search}
 % -----------------------------------------------------------------------------------
 

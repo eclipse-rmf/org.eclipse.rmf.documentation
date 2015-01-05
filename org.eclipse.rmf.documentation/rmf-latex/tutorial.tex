@@ -93,11 +93,10 @@ The installation is described in detail in Section~\ref{sec:installation}.
 
 After this, your window should look more or less as follows:
 
-\begin{figure}[h!]
+\begin{figure}[H]
   \centering
   \includegraphics[width=\linewidth]{../rmf-images/Screenshot_intro.png}
   \caption{The \pror{} user interface}
-  \label{fig:user_interface_overview}
 \end{figure}
 
 You will see your ReqIF file in the Project Explorer window (1).
@@ -116,7 +115,7 @@ The Outline (3) has four folders:
 \item[SpecRelationsGroups] are special constructs to can be used for grouping SpecRelations with the same source and target.
 \end{description}
 
-The properties of a selected Element are shown in the Properties view (4).  As the only Requirement in the model is selected, we see its SpecObjectType (``Requirements Type'') and its only Attribute (``Description'') with the value ``Start editing here.''.  There are two tabs ``Standard Attributes'' and ``All Attributes'' at the bottom of the Properties view.  \marginpar{*****} The ``Standard Attributes'' tab shows you all standard attributes of the selected element.  The ``All Attributes'' shows all existing ReqIF attributes of the selected element.
+The properties of a selected Element are shown in the Properties view (4).  As the only Requirement in the model is selected, we see its SpecObjectType (``Requirements Type'') and its only Attribute (``Description'') with the value ``Start editing here.''.  There are two tabs ``Standard Attributes'' and ``All Attributes'' at the bottom of the Properties view.  The ``Standard Attributes'' tab shows you all standard attributes of the selected element.  The ``All Attributes'' shows all existing ReqIF attributes of the selected element.
 
 Above the main working windows it the tool bar (5) and, at the very top, the menu bar (6).
 
@@ -127,14 +126,13 @@ Above the main working windows it the tool bar (5) and, at the very top, the men
 To get familiar with the system, we will:
 
 \begin{itemize}
-
 \item
   Add two more attributes to the SpecObjectType called ``ID'' and ``Owner'' and
 \item
   We will show those Attributes in the Specification
 \end{itemize}
 
-To add new attributes, we open the Datatype Configuration dialog with \pror{} \textgreater{} Datatype Configuration.  Alternatively you can also click on the ``T'' in the Tool Bar.
+To add new attributes, we open the Datatype Configuration dialog with \menu{ProR | Datatype Configuration}.  Alternatively you can also click on \includegraphics[height=0.8em]{../rmf-images/icons/full/obj16/SpecType.png} in the Tool Bar.
 
 The resulting dialog box has two folders in the upper pane: one for SpecTypes and one for Datatypes.  Currently, there is only one Datatype (T\_String32k) and two SpecTypes, one called ``Requirements Type'' with one attribute ``Description'' and one called ``Specification Type'' with one attribute ``Description''.
 
@@ -142,7 +140,7 @@ In the lower pane are the details in regards to each attribute.
 
 We add more Attributes to ``Requirements Type'' by right-clicking ``Requirements Type'' and selecting \menu{New Child | Attribute Definition String}.  This will create a new element.  Upon selecting, we can rename it and tailor the details.  Double-click on the ``Long Name'' variable and type in ``ID''.  Change the Type by double-clicking the field and choosing ``T\_String32k'' from the drop-down menu.  Repeat the process but this time change the ``Long Name'' to ``Owner''.  In the end, the dialog should look as follows
 
-\begin{figure}[h!]
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.8\linewidth]{../rmf-images/datatype.png}
 \caption{Datatype Configuration Dialog}
@@ -163,7 +161,7 @@ By clicking on the ``Add Column'' icon at the top of the dialog, create a new co
 
 The resulting window should look like this:
 
-\begin{figure}[h!]
+\begin{figure}[H]
 \centering      
 \includegraphics[width=0.8\linewidth]{../rmf-images/columnconfig.png}      
 \caption{Column Configuration}
@@ -188,14 +186,14 @@ To continue the exercise, select the child ``SpecObject (Requirement Type)''.  N
 
 Feel free to add a few more rows and or even new structures.  Yours should look somethinig similar to this:
 
-\begin{figure}[h!]
+\begin{figure}[H]
 \centering
 \includegraphics[width=\linewidth]{../rmf-images/hierarchy_example.png}      
 \caption{Adding SpecObjects}      
 \label{fig:Requirements Hierarchy}
 \end{figure}
 
-\begin{figure}[h!]
+\begin{figure}[H]
 \centering
 \includegraphics[width=\linewidth]{../rmf-images/draganddrop.png}    
 \caption{Drag and Drop}      
@@ -207,7 +205,7 @@ If you are dragging a SpecObject between two rows, you also get visual feedback 
 
 After some playing around, our Specification may look somewhat like this:
 
-\begin{figure}[h!]
+\begin{figure}[H]
 \centering      
 \includegraphics[width=\linewidth]{../rmf-images/hierarchy_dad.png}      
 \caption{Improved Specification}      
@@ -257,7 +255,7 @@ The dialog box so far has no entries.  The drop-down menu, ``Select Action...'',
 
 A Linewrap Presentation has only one configuration element, the Datatype.  We select ``T\_String32k''.  This means that from now on, all Attributes of this type will be rendered with the Linewrap Presentation.  Upon completion, the dialog should look like this:
 
-\begin{figure}[h!]
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.8\linewidth]{../rmf-images/presentationconfig.png}      
 \caption{Presentation Configuration Dialog Box}      
@@ -277,7 +275,7 @@ The ID Presentation allows the automatic creation of more user-friendly IDs.  Le
 
 Remember that Presentations are associated with Datatypes, not Attributes.  Thus, we first have to create a new Datatype called ``T\_ID``.  We then associate that Datatype with the Attribute ``ID''.  We described this process in the first tutorial.  Here is a screen-shot of the configuration dialog, when all is done:
 
-\begin{figure}[h!]
+\begin{figure}[H]
 \centering      
 \includegraphics[width=0.8\linewidth]{../rmf-images/t_id.png}      
 \caption{Datatype Configuration Dialog}      
@@ -288,7 +286,7 @@ The last step is, like before, to associate that Datatype with the Presentation.
 
 We open the Presentation Configuration and create a new Presentation from the dropdown menu ``Select Action...'', this time of type ``Id'' Presentation.  We associate it with the newly created Datatype.  After configuration, ould look as follows:
 
-\begin{figure}[h!]
+\begin{figure}[H]
 \centering      
 \includegraphics[width=0.8\linewidth]{../rmf-images/presentation_id.png}      
 \caption{ID Configuration Detail}      
@@ -333,7 +331,7 @@ We do not set the type yet, as we need to create a new one.  We do this by right
 
 When all this is done, the configuration should look like this:
 
-\begin{figure}[h!]
+\begin{figure}[H]
 \centering      
 \includegraphics[width=0.8\linewidth]{../rmf-images/datatype_Headline_desc.png}      
 \caption{Datatype Configuration for the Headline Presentation}      
@@ -344,7 +342,7 @@ You can change the type of a SpecObject by selecting it and changing it in the P
 
 After the changes, the GUI should look as follows:
 
-\begin{figure}[h!]
+\begin{figure}[H]
 \centering      
 \includegraphics[width=\linewidth]{../rmf-images/desc_headline.png}      
 \caption{Activated Headline Configuration}      
@@ -364,7 +362,7 @@ Note the following:
 
 Last, we will use the Headline Presentation for the type T\_Headline.  This is done via the Presentation Configuration.  By the way, you can also change the font size of the headline in the ``Size'' attribute.  The result should look something like this:
 
-\begin{figure}[h!]
+\begin{figure}[H]
 \centering      
 \includegraphics[width=0.8\linewidth]{../rmf-images/Presentation_headline.png}      
 \caption{Presentation Configuration for Headline}      
@@ -381,7 +379,7 @@ We will now create a ``Specification Type'' and assign it to our Specification.
 
 Try to create a ``Specification Type'' and configure it as shown in the screenshot:
 
-\begin{figure}[h!]
+\begin{figure}[H]
 \centering      
 \includegraphics[width=0.8\linewidth]{../rmf-images/new_spectype.png}      
 \caption{Creating a New SpecType}      
@@ -429,7 +427,7 @@ SpecRelations can have their own Types.  Once a type is set, the corresponding c
 
 Here is a Screenshot of a Specification with some Links and a SpecRelationType that includes a ``Description'' Attribute:
 
-\begin{figure}[h!]      
+\begin{figure}[H]      
 \centering      
 \includegraphics[width=\linewidth]{../rmf-images/links.png}      
 \caption{Showing Links in the GUI}      
