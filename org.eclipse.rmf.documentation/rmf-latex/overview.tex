@@ -105,12 +105,139 @@ Internal attributes can be accessed from the Properties View, using the \menu{Al
 \index{Terminology}
 % ===================================================================================
 
-Working with \pror{} can be confusing, as it uses the terminology from ReqIF.  For instance, ReqIF uses \textit{SpecObject}s, rather than \textit{requirements}.  In the following, we define the more important terms.  More terms are defined throughout the document.  You can use the index to find the definition of terms.
+Working with \pror{} can be confusing, as it uses the terminology from ReqIF.  For instance, ReqIF uses \textit{SpecObject}s, rather than \term{requirements}.  In the following, we define the more important terms.  More are defined throughout the document.  You can use the index to find the definition of terms.
 
 \begin{info}
 This book uses ReqIF terminology throughout.  Please refer to this chapter to understand the meaning of these terms.
 \end{info}
 
+A \term{ReqIF model} is the data structure that holds all the information together.  In practical terms, it's just a file, that usually ends in \menu{.reqif} or \menu{.reqifz}.  It contains not just the requirements, but also the data types of those requirements and a lot of other stuff.  It has been described in detail in Section~\ref{sec:reqif}.
 
+\begin{definition}{ReqIF}
+\index{ReqIF}
+\index{Requirements Interchange Format}
+ReqIF is an XML-based format for requirements, with the intention to be used as an exchange format.  It is an open OMG standard and described in detail in Section~\ref{sec:reqif}.
+\end{definition}
+
+Before defining the most important elements, we will provide a brief overview with a concrete example.
+
+% -----------------------------------------------------------------------------------
+\subsection{Example: The Most Important ReqIF Elements}
+% -----------------------------------------------------------------------------------
+
+Figure~\ref{fig:spec_example} shows a simple ReqIF model, open in \pror{}.  
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{../rmf-images/screenshot_INF_1.png}
+  \caption{Specification example}
+  \label{fig:spec_example}
+\end{figure}
+
+The \menu{Specification Editor} (the central table) shows the first four \term{SpecObjects}, as visualized in a specification.  The tree-like structure is recognizable: INF-1 is a node
+with three children, REQ-1, REQ-2 and REQ-3 (this can be seen by the indentation).  Let's look at INF-1 and REQ-1.  When one is selected in the main pain, it's attributes appear in the \menu{Properties View}, the pane at the bottom.
+
+INF-1 has two \term{Attributes}, ``Description'' and ``ID''.  The \term{SpecType} is ``Information Type'' (shown as the header in the properties view).
+
+REQ-1, REQ-2, and REQ-3 have three Attributes, ``Description'', ``ID'' and ``Status'' (this is not obvious from the figure).  To accommodate this, a column called ``Status'' has been created.  As the ``Information Type'' has no ``Status'' Attribute, it is not shown in the \menu{Properties View}.
+
+% -----------------------------------------------------------------------------------
+\subsection{SpecElements}
+\label{sec:specelements}
+\index{SpecElementWithAttributes}
+\index{SpecElement}
+% -----------------------------------------------------------------------------------
+
+A requirement is called a \term{SpecObject}.  This is arguably the most important element in ReqIF, the actual requirements that you are working with.  The SpecObjects of a ReqIF model can be directly accessed in \pror{} via the outline.  It is more common to access them via a \term{Specification}.  When a SpecObject is selected, its details (attributes and internal information) are shown in the \menu{Properties View}.
+
+\begin{definition}{SpecObject}
+\index{SpecObject}
+A SpecObject is a data structure for storing requirements information.  It has a number of \term{attributes}.  The most typical attributes include the requirements text and a human-readable ID. A \term{SpecType} determines the attributes of the SpecObject. It is a \term{SpecElement}.
+\end{definition}
+
+There are other elements in ReqIF that have a type and attributes.  We call these \term{SpecElements}, although in the official ReqIF specification, they are called \term{SpecElementsWithAttributes}.
+
+\begin{definition}{SpecElement}
+\index{SpecElement}
+A SpecElement is an abstract ReqIF element that has a \term{SpecType} and \term{Attributes}.  Concrete manifestations include \term{SpecObjects}, \term{Specifications}, \term{SpecRelations} and \term{SpecRelationGroups}.
+\end{definition}
+
+Creating links between SpecObjects is a central functionality of requirements tools.  In ReqIF terminology, links are called \term{SpecRelations}.
+
+\begin{definition}{SpecRelation}
+\index{SpecRelation}
+A SpecRelation is a data structure for connecting two SpecObjects.  It contains a \term{source} and a \term{target} reference to the SpecObjects that are connected.  As a SpecRelation is a SpecElement, it has a type and attributes.
+\end{definition}
+
+SpecObjects do not have any particular order.  SpecObjects can be organized into a tree-like structure by using a \term{Specification}.  A Specification is a root element for a tree of SpecObjects.  The SpecObjects are referenced.  This means that the same SpecObject can be referenced multiple times, both within one Specification or in different Specifications.
+
+\begin{definition}{Specification}
+\index{Specification}
+A Specification is a data structure for organizing SpecObjects into a tree structure.  This tree consists of references.  As a Specification is a SpecElement, it has a type and attributes.
+\end{definition}
+
+All SpecElements have a \term{SpecType}.  A SpecType defines \term{AttributeDefinitions}, which defines the attributes for the SpecElement of that type.  
+
+\begin{example}
+An AttributeDefinition is just a data type with a label.  Slightly simplified, examples would be:
+\begin{itemize}
+\item Attribute \term{ID} of type \term{String}
+\item Attribute \term{Status} of type \term{Enumeration} with the values \term{accepted} and \term{rejected}
+\item Attribute \term{ReqIF.Text} of type \term{XHTML} (rich text).
+\end{itemize}
+\end{example}
+
+\begin{definition}{SpecType}
+\index{SpecType}
+The SpecType defines a set of \term{AttributeDefinitions}.  A SpecElement with the given type has the attributes defined by the AttributeDefinitions.
+\end{definition}
+
+\begin{definition}{AttributeDefinition}
+\index{AttributeDefinition}
+An AttributeDefinition belongs to a SpecType. It consists of a label and a DatatypeDefinition, which provides the type.  Some AttributeDefinitions can be configured further.  AttributeDefinitions can also have a \term{default value}.
+\end{definition}
+
+Last, there are seven \term{DatatypeDefinitions}, some of which can be customized further.
+
+\begin{definition}{DatatypeDefinition}
+DatatypeDefinitions are the fundamental types in ReqIF and include:
+\begin{itemize}
+\item Boolean
+\item Integer -- the range can be customized
+\item Real -- range and precision can be customized
+\item Date -- also includes a timestamp
+\item String -- the maximum length can be customized
+\item Enumeration -- both single and multiple choice are supported
+\item XHTML -- allow embedding objects of any type
+\end{itemize}
+\end{definition}
+
+% -----------------------------------------------------------------------------------
+\subsection{Comparing Excel and ReqIF}
+% -----------------------------------------------------------------------------------
+
+With the basic terminology in place, we have a quick look at the \pror{} user interface and compare it with Excel.  We do this, as most readers will be familiar with Excel, and it is sometimes used for simple requirements engineering. 
+
+\begin{description}
+  \item[Specification.] (Excel-equivalent: Sheet) A ReqIF model can have an arbitrary number of specifications. In the GUI, it is represented as an Excel-like grid view (see Figure~\ref{fig:spec_example}).
+
+ The \term{Specification} is the ``container'' for the requirements.  Think of an Excel document that allows you to create an arbitrary number of sheets.  Each sheet can be compared to a single Specification.  Most notable differences are: (1) the Specifications are \term{references} rather than independent entities (which means that the same requirement can be referenced and can appear in multiple places); (2) A Specification manages a hierarchy of requirements, while an Excel sheet is a flat list.  This is shown in the Figure, where INF-1 is the parent to three requirements.  The hierarchy is visible both in the main editor, as well as in the outline.
+
+\item[SpecObject.] (Excel-equivalent: Row) A SpecObject represents the actual requirement, and is typically organized in a Specification.
+
+Each row in the Excel spread sheet is the equivalent of a \term{SpecObject}.  A requirement typically has a number of attributes.  Again compared to Excel, each row in a sheet represents a requirement and each cell represents an Attribute.  However, in Excel, all rows have the same columns (all requirements have the same attributes), while ReqIF allows mixing SpecObjects of different SpecTypes.  Also, not all Attributes need to be shown in a Specification.  
+
+Figure~\ref{fig:spec_example} shows in the \menu{Outline View} a flat list of all SpecObjects.  For instance, the SpecObject \_DW2y... is not referenced in the Specification at all.  Selecting a SpecObject shows its SpecType (in the figure, it is ``Information Type'') and all attributes (in the figure, ``Description'' and ``ID'').
+
+  \item[Attribute.\index{Attribute}] (Excel-equivalent: Cell) An Attribute holds the actual content of a SpecObject.
+
+In Excel, a new attribute is simply created by putting a column header on a column.  In ReqIF, columns are created via \menu{ProR | Column Configuration}, or by clicking on \includegraphics[height=0.8em]{../rmf-images/icons/full/obj16/ProRSpecViewConfiguration.png}.  But content will only be shown if the SpecObject of that row has an Attribute of that name.
+
+\index{standard attributes}
+\index{attributes!standard}
+\index{ProStep Implementor Forum}
+Besides the actual text of the requirement, typical Attributes include ID, status, etc.  Note that there are no ``standard'' attributes.  However, the ProSTEP Implementor Forum defined a recommendation for a set of standard attributes.
+
+\end{description}
 
 

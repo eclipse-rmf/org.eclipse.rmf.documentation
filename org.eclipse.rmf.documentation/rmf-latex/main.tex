@@ -29,7 +29,7 @@
 \definecolor{menugray}{RGB}{230,230,230}
 \sethlcolor{menugray} 
 \newcommand{\menu}[1]{\hl{\texttt{#1}}}
-
+\newcommand{\term}[1]{\textit{#1}}
 \newcommand{\eclipsehelp}[2]{\href{http://help.eclipse.org/luna#1}{#2}}
 
 %----------------------------------------------------------------------------------------
@@ -47,7 +47,7 @@
 {\noindent\textbf{Example}\newline\begin{lrbox}{\mybox}\begin{minipage}{0.9\textwidth}}
 {\end{minipage}\end{lrbox}\fbox{\usebox{\mybox}}\vspace{0.3cm}}
 
-\newenvironment{definition}[1][TBD]{\begin{quote}\noindent \textbf{#1.}}{\end{quote}}
+\newenvironment{definition}[1]{\begin{quote}\noindent \textbf{#1.}}{\end{quote}}
 
 %----------------------------------------------------------------------------------------
 %	DOCUMENT INFO

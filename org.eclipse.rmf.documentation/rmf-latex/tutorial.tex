@@ -11,50 +11,15 @@
 %******************************************************************************/
 
 % ===================================================================================
-\section{Basic ReqIF Concepts}
+\section{Basic Concepts}
 \index{Concepts}
 % ===================================================================================
 
-A ReqIF model is a structured collection of natural language requirements.  It comes, however, with its own terminology.  For instance, a ``requirement'' is called a ``SpecObject''.
+In this tutorial, we will use the ReqIF terminology, which can be confusing.  Therefore, please familiarize yourself with the terminology first (Section~\ref{sec:terminology}.
 
-A ReqIF model has some similarities to an Excel spreadsheet with some notable differences.
-
-The following compares the concept of a spreadsheet with a ReqIF model and differentiates between the terminology:
-
-\begin{description}
-  \item[Specification.\index{Specification}] (Excel-equivalent: Sheet) A ReqIF model consists of an arbitrary number of specifications.  The specification is the ``container'' for the requirement.  Think of an Excel document that allows you to create an arbitrary number of sheets.  Each sheet can be compared to a single specification.  There are two differences: (1) the specifications are references rather than independant entities (which means that the same requirement can be referenced and can appear in multiple places); (2) the contents of the specification appear in a list, hierarchically.
-
-  \item[SpecObject.\index{SpecObject}] (Excel-equivalent: Row) A SpecObject represents the actual requirement.  A requirement typically has a number of attributes.  Again compared to Excel, each row in a sheet represents a requirement and each cell contains a SpecObject.  In contrast to Excel, the ReqIF model may contain SpecObjects that do not appear in any specification but can be seen elsewhere.
-
-  \item[Attribute.\index{Attribute}] (Excel-equivalent: Cell) In the columns are the attributes. Besides the actual text of the requirement, typical attributes include ID, status, etc.  Note that there are no ``standard'' attributes.  The ReqIF model contains the definitions of the attributes.  Here the Excel analogy starts to breakdown.  In Excel, by default, each row has the same columns.  Different SpecObjects may have different sets of attributes.
-
-  \item[SpecType.\index{SpecType}] (Excel-equivalent: Column configuration) Each SpecObject has a SpecObjectType.  The SpecObjectType contains a list of attributes for the SpecObject.  For instance, the SpecObjectType ``Headline'' may have only one attribute ``HeadlineText''.  Another SpecObjectType ``Requirement'' may have three attributes, ``ID'', ``Description'' and ``Status''.  A specification may then contain a mixture of SpecObjects with different types.
-
-\end{description}
-
-There are many more concepts, but this is enough to get us started.
-
-A concrete example can be seen in Figure~\ref{fig:spec_example}:
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\textwidth]{../rmf-images/screenshot_INF_1.png}
-  \caption{Specification example}
-  \label{fig:spec_example}
-\end{figure}
-
-The table shows the first four SpecObjects, as visualized in a specification.  The tree-like structure is recognizable: INF-1 is a node
-with three children, REQ-1, REQ-2 and REQ-3 (this can be seen by the indentation).  Let's look at INF-1 and REQ-1.  When one is selectedin the main pain, it's attributes appear in the properties pane below.
-
-INF-1 has two attributes, ``Description'' and ``ID''.  The SpecObjectType is ''Information Type'' (shown as the root in the properties view).
-
-REQ-1, REQ-2, and REQ-3 have three attributes, ``Description'', ``ID'' and ``Status''.  The SpecObjectType is called ``Requirements Type''.  Let's look closer at the SpecObjectType.
-
-The ``Requirements Type'' SpecObjectType is shown in the picture, with arrows indicating how the Attributes relate to the SpecObjectType (a simple one-to-one relationship).  A SpecObjectType has one entry for each Attribute, consisting of a name and a Datatype.  For instance, the first entry has the name ``ID'' and the datatype ``T\_ID\_REQ''.  Note that multiple Attributes may have the same Datatype: ``Description'' and ``Status'' both have the Datatype ``T\_String32k''.
-
-Last, The Datatypes must be defined as well.  In this example, there are two Datatypes, ``T\_String32'' and ``T\_ID\_REQ''.  These are finally based on a number of standard types that ReqIF supports.
-
-NOTE: As of this writing, we only implemented the simple and the enumeration ReqIF types.  This leaves out the complex ones (rich text, attachments, embedded files, etc.) for now.
+\begin{warning}
+In ReqIF terminology, a requirement is called \term{SpecObject}, a link is a \term{SpecRelation}, and the document view consists of \term{SpecHierarchies}.  Confused? Then please take the time to at least glance over Section~\ref{sec:terminology}.
+\end{warning}
 
 % ===================================================================================
 \section{Tutorial 1: Creating a basic ReqIF Model}
