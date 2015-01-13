@@ -42,6 +42,7 @@
         <!-- Needs to run twice to get cross-references right -->
         <exec executable="pdflatex" dir="${basedir}/build/rmf-latex"><arg value="main"/></exec>
         <exec executable="pdflatex" dir="${basedir}/build/rmf-latex"><arg value="main"/></exec>
+        <exec executable="pdflatex" dir="${basedir}/build/rmf-latex"><arg value="main"/></exec>
     </target>
 
     <target name="deploy-folder.present">
