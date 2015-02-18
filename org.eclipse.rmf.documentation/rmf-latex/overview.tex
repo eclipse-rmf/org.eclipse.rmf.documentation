@@ -28,7 +28,7 @@ But engineering the requirements is not enough: they need to be \textit{managed}
 \index{tools}
 % ===================================================================================
 
-There are many tools available for requirements engineering.  These include free or cheap ones, like Microsoft Word and Excel, Wikis and issue trackers.  There are expensive, professional ones available, like IBM\circledR{} Rational\circledR{} DOORS\circledR{}, PTC Integrity or Visure IRQA.  Lately, there are also web-based tools, like Polarion.
+There are many tools available for requirements engineering.  These include free or cheap ones, like Microsoft Word and Excel, Wikis and issue trackers.  There are expensive, professional ones available, like IBM\textregistered{} Rational\textregistered{} DOORS\textregistered{}, PTC Integrity or Visure IRQA.  Lately, there are also web-based tools, like Polarion.
 
 \pror{} falls into the category of free tools.  But compared to the ones mentioned, it contains important features from professional tools, including traceability and typed attributes.  Further, by taking advantage of the Eclipse ecosystem, the tool can be augmented by plug-ins for version support, model integration, and much more.
 
@@ -102,7 +102,7 @@ Internal attributes can be accessed from the Properties View, using the \menu{Al
 % ===================================================================================
 \section{Terminology}
 \label{sec:terminology}
-\index{Terminology}
+\index{terminology}
 % ===================================================================================
 
 Working with \pror{} can be confusing, as it uses the terminology from ReqIF.  For instance, ReqIF uses \textit{SpecObject}s, rather than \term{requirements}.  In the following, we define the more important terms.  More are defined throughout the document.  You can use the index to find the definition of terms.
@@ -115,8 +115,11 @@ A \term{ReqIF model} is the data structure that holds all the information togeth
 
 \begin{definition}{ReqIF}
 \index{ReqIF}
+\index{ReqIF Archive}
+\index{.reqif}
+\index{.reqifz}
 \index{Requirements Interchange Format}
-ReqIF is an XML-based format for requirements, with the intention to be used as an exchange format.  It is an open OMG standard and described in detail in Section~\ref{sec:reqif}.
+ReqIF is an XML-based format for requirements, with the intention to be used as an exchange format.  It is an open OMG standard and described in detail in Section~\ref{sec:reqif}. The XML data is typically stored in a with with the extension \menu{.reqif}.  It is also possible to store the ReqIF file together with associated data (embedded objects) or other ReqIF files.  These are then stored in a ZIP archive with the extension \menu{.reqifz}.
 \end{definition}
 
 Before defining the most important elements, we will provide a brief overview with a concrete example.
@@ -231,12 +234,12 @@ Each row in the Excel spread sheet is the equivalent of a \term{SpecObject}.  A 
 
 Figure~\ref{fig:spec_example} shows in the \menu{Outline View} a flat list of all SpecObjects.  For instance, the SpecObject \_DW2y... is not referenced in the Specification at all.  Selecting a SpecObject shows its SpecType (in the figure, it is ``Information Type'') and all attributes (in the figure, ``Description'' and ``ID'').
 
-  \item[Attribute.\index{Attribute}] (Excel-equivalent: Cell) An Attribute holds the actual content of a SpecObject.
+  \item[Attribute.\index{attribute}] (Excel-equivalent: Cell) An Attribute holds the actual content of a SpecObject.
 
 In Excel, a new attribute is simply created by putting a column header on a column.  In ReqIF, columns are created via \menu{ProR | Column Configuration}, or by clicking on \includegraphics[height=0.8em]{../rmf-images/icons/full/obj16/ProRSpecViewConfiguration.png}.  But content will only be shown if the SpecObject of that row has an Attribute of that name.
 
-\index{standard attributes}
-\index{attributes!standard}
+\index{standard attribute}
+\index{attribute!standard}
 \index{ProStep Implementor Forum}
 Besides the actual text of the requirement, typical Attributes include ID, status, etc.  Note that there are no ``standard'' attributes.  However, the ProSTEP Implementor Forum defined a recommendation for a set of standard attributes.
 

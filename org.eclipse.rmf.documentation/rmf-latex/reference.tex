@@ -249,7 +249,7 @@ By right clicking on any cell, you have a few options at your disposal. Outside 
 \end{description}
 
 % -----------------------------------------------------------------------------------
-\subsection{Project Explorer View}\index{Project Explorer View}
+\subsection{Project Explorer View}\index{project explorer}
 % -----------------------------------------------------------------------------------
 
 The \menu{Project Explorer View} is by default on the left side of the main window. Here you can inspect files and models associated with any project. If for some reason the Project Explorer View does not appear, Navigate to \menu{Window | Show View | Other | Project Explorer View}.
@@ -266,7 +266,7 @@ Both the current model, as well as \pror{} as a whole, can be configured and cus
 
 % -----------------------------------------------------------------------------------
 \subsection{Global Preferences}
-\index{Preferences}
+\index{preferences}
 % -----------------------------------------------------------------------------------
 
 The application-wide setting of \pror{} are accessed via \menu{Window | Preferences | ProR}.  Configuration elements are:
@@ -282,8 +282,8 @@ Particular popular is the free Presentation from formalmind Essentials for handl
 \end{info}
 
 % -----------------------------------------------------------------------------------
-\subsection{General Configuration}
-\index{Configuration!General}
+\subsection{general configuration}
+\index{configuration!general}
 \label{sec:general_configuration}
 % -----------------------------------------------------------------------------------
 
@@ -294,6 +294,8 @@ Currently, there is only one configuration element: \menu{Label Configuration}.
 
 % -----------------------------------------------------------------------------------
 \subsubsection{Label Configuration}
+\index{label configuration}
+\index{configuration!label}
 % -----------------------------------------------------------------------------------
 
 The \menu{Label Configuration} is used to determine what to use for the text labels of elements
@@ -321,7 +323,8 @@ have a unique identifier that is typically also used for communication.
 
 % -----------------------------------------------------------------------------------
 \subsection{Datatype Configuration}
-\index{Configuration!Datatype}
+\index{configuration!datatype}
+\index{datatype configuration}
 \label{sec:datatype_configuration}
 % -----------------------------------------------------------------------------------
 
@@ -371,14 +374,14 @@ An Enumeration Datatype must have enumeration values.  These are created
 by right-clicking the Enumeration Datatype and selecting \menu{New Child |Enum Value}.  You may have to unfold the enum value to select it, so that you can provide it with a \menu{Long Name}.  Figure~\ref{fig:Enumerations} shows a correctly configured Enumeration Datatype.
 
 % -----------------------------------------------------------------------------------
-\subsection{Presentation Configuration}\index{Configuration!Presentation}
+\subsection{Presentation Configuration}\index{configuration!presentation}
 \label{sec:presentation_configuration}
 % -----------------------------------------------------------------------------------
 
 Presentations are software components that extend the functionality of \pror{}.  Chapter~\ref{sec:presentations} is dedicated to Presentations.
 
 % -----------------------------------------------------------------------------------
-\subsection{Column Configuration}\index{Configuration!Column}
+\subsection{Column Configuration}\index{configuration!column}
 \label{sec:column_configuration}
 % -----------------------------------------------------------------------------------
 
@@ -421,9 +424,59 @@ This section also lists Importers and Exporters from third parties. Note that no
 
 \paragraph{ReqIFz Import.} This standard importer takes ReqIF archive (.reqifz) and imports it as an Eclipse project.
 
-\paragraph{CSV.} This standard importer takes comma-separated data and imports it into an existing ReqIF model.  It is described in the \href{http://formalmind.com/blog/new-stuff-new-committer-new-product-new-importer-new-release}{Formal Mind Blog}.
+\paragraph{CSV.} This standard importer takes comma-separated data and imports it into an existing ReqIF model.  It is described further below.
 
-\paragraph{Axiom.} This commercial importer supports the selective merging of exchange data with an existing ReqIF model.  More information at the \href{http://formalmind.com/axiom}{Formal Mind Product Site}.
+\paragraph{Axiom.} This commercial importer supports the selective merging of exchange data with an existing ReqIF model.  It is described in detail in Section~\ref{sec:axiom}.
+
+More information at the \href{http://formalmind.com/axiom}{Formal Mind Product Site}.
+
+% -----------------------------------------------------------------------------------
+\subsubsection{CSV Import}
+\index{import!CSV}
+% -----------------------------------------------------------------------------------
+
+The CSV import adds the content from a comma-separated file into an existing specification.  Therefore, you first need to create a ReqIF model.  Once this is done, the importer is used as follows:
+
+\begin{warning}
+The importer will create new SpecTypes, Attributes and Datatypes.  Your existing types will not be reused!  We recommend to clean up the datatypes after the import.
+\end{warning}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.8\textwidth]{../rmf-images/CSV_import.png}
+  \caption{A complete mapping for a CSV import}
+  \label{fig:reqif_search}
+\end{figure}
+\label{sec:reqif_search}
+
+\begin{itemize}
+\item Initiate the importer via \menu{File | Import... | ReqIF | CSV}.  
+
+\item On the first dialog page, you need to select the source file containing the CSV data. The dialog defaults to comma-separated data, but other separators can be chosen as well.
+
+\item A checkbox allows to indicated whether the file contains a header row.  If it is checked, the first row will be interpreted as the labels for the columns in the file.
+
+\item Last, the destination model has to be chosen.  After this, the \menu{next} button is enabled.  
+
+\item On the next page, the columns have to be mapped.  Initially, there is just a single element, \menu{Library}.
+
+\item Right-click \menu{Library} to open the context menu that allows you to add a new mapping.  There are four options.  They all do the same, but the first three prepopulate the attribute name with a sensible value.
+
+\item You need to create a mapping for each column that you would like to import.  A mapping consists of three elements:
+
+\begin{description}
+\item[Column Mapping.] Select the column from the CSV file.  The column headings are shown if the checkbox was selected on the previous page, otherwise just the column numbers.
+\item[Attribute Name.] The name for the Attribute in the resulting ReqIF model.
+\item[Data Type.] The datatype of the resulting attribute.  The safest option is \menu{String}, for other datatypes, a conversation attempt is made.
+\end{description}
+
+\item You do not need to create a mapping for all columns.  Figure\ref{fig:csv} shows the importer dialog with one complete mapping.
+
+\item  Once all mappings are complete, hitting finish will complete the import.
+
+\end{itemize}
+
+You can read more in the \href{http://formalmind.com/blog/new-stuff-new-committer-new-product-new-importer-new-release}{Formal Mind Blog}.
 
 % -----------------------------------------------------------------------------------
 \subsection{Export}
@@ -455,7 +508,7 @@ Except the quicksearch, the results are shown in the \eclipsehelp{/topic/org.ecl
 % -----------------------------------------------------------------------------------
 \subsection{Quicksearch}
 \label{sec:quicksearch}
-\index{searcHquicksearch}
+\index{search!quicksearch}
 \index{quicksearch}
 % -----------------------------------------------------------------------------------
 
