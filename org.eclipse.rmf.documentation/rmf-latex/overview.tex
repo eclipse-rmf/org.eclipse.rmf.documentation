@@ -10,7 +10,7 @@ This book is concerned with \pror{} a tool for requirements engineering.
 
 \begin{definition}{Requirements Engineering}
 \index{requirements engineering}
-``Requirements engineering (RE) refers to the process of formulating, documenting and maintaining software requirements'' (\href{http://en.wikipedia.org/wiki/Requirements_engineering}{Wikipedia}).
+``Requirements engineering (RE) refers to the process of formulating, documenting and maintaining software requirements.'' (\href{http://en.wikipedia.org/wiki/Requirements_engineering}{Wikipedia}).
 
 We'd argue that RE also includes \textit{system} requirements.  Further, requirements are typically unstructured natural language.  Of high interest these days is model-driven requirements engineering.
 \end{definition}
@@ -19,7 +19,7 @@ But engineering the requirements is not enough: they need to be \textit{managed}
 
 \begin{definition}{Requirements Management}
 \index{requirements management}
-``Requirements management is the process of documenting, analyzing, tracing, prioritizing and agreeing on requirements and then controlling change and communicating to relevant stakeholders. It is a continuous process throughout a project.''
+``Requirements management is the process of documenting, analyzing, tracing, prioritizing and agreeing on requirements and then controlling change and communicating to relevant stakeholders. It is a continuous process throughout a project.'' (\href{http://en.wikipedia.org/wiki/Requirements_management}{Wikipedia}).
 \end{definition}
 
 % ===================================================================================
@@ -30,7 +30,7 @@ But engineering the requirements is not enough: they need to be \textit{managed}
 
 There are many tools available for requirements engineering.  These include free or cheap ones, like Microsoft Word and Excel, Wikis and issue trackers.  There are expensive, professional ones available, like IBM\textregistered{} Rational\textregistered{} DOORS\textregistered{}, PTC Integrity or Visure IRQA.  Lately, there are also web-based tools, like Polarion.
 
-\pror{} falls into the category of free tools.  But compared to the ones mentioned, it contains important features from professional tools, including traceability and typed attributes.  Further, by taking advantage of the Eclipse ecosystem, the tool can be augmented by plug-ins for version support, model integration, and much more.
+\pror{} falls into the category of free tools.  But compared to the ones mentioned, it contains important features from professional tools, including traceability and typed attributes.  Further, by taking advantage of the Eclipse ecosystem, the tool can be augmented by plug-ins for version support, model integration and much more.
 
 \begin{info}
   Professional support, commercial components and integration services are available from \href{http://formalmind.com}{Formal Mind} and other service providers.
@@ -44,11 +44,11 @@ There are many tools available for requirements engineering.  These include free
 \index{Requirements Interchange Format}
 % ===================================================================================
 
-ReqIF stands for Requirements Interchange Format.  It is an exchange format for requirements and a data model.  \pror{} is an editor that can directly view and modify ReqIF data.
+\term{ReqIF} stands for Requirements Interchange Format.  It is an exchange format for requirements and a data model.  \pror{} is an editor that can directly view and modify ReqIF data.
 
 ReqIF was created to support the exchange of requirements across organizations.  For instance, it allows a manufacturer to send requirements to suppliers.  The suppliers can then comment and review the requirements, or they can create a system specification that is linked to the requirements.
 
-ReqIF is an (\href{http://www.omg.org/spec/ReqIF/}{official OMG standard}).
+ReqIF is an \href{http://www.omg.org/spec/ReqIF/}{official OMG standard}.
 
 \begin{warning}
 ReqIF uses its own terminology.  Section~\ref{sec:terminology} defines the ReqIF vocabulary and how it relates to the terms used in classical requirements engineering.
@@ -64,7 +64,7 @@ For technical and organizational reasons, two companies in the manufacturing ind
 
 The Requirements Interchange Format (ReqIF) described in this RFC defines such a tool-independent exchange format.  Requirement information is exchanged by transferring XML documents that comply to the ReqIF format.
 
-In 2004, the HIS (Hersteller Initiative Software), a panel of Germany's automotive manufacturers (Daimler, VW, Porsche, Audi and BMW Group) developed the idea of creating the ``Requirements Interchange Format''.  In 2005, the first version of that format was presented at the REConf®, a conference about requirements engineering and management, in Munich.  In 2008, the HIS Steering Committee decided that the internationalization and maintenance of the Requirements Interchange Format should be proceeded with the ProSTEP iViP Association.  A project was set up and a team was built that includes members of the ProSTEP iViP Association, representatives of manufacturing companies (Audi, BMW  Group, Daimler, VW, Bosch and Continental), tool vendors (Atego, IBM, MKS) and development partners (HOOD GmbH, PROSTEP AG).
+In 2004, the HIS (Hersteller Initiative Software), a panel of Germany's automotive manufacturers (Daimler, VW, Porsche, Audi and BMW Group) developed the idea of creating the ``Requirements Interchange Format''.  In 2005, the first version of that format was presented at the REConf, a conference about requirements engineering and management, in Munich.  In 2008, the HIS Steering Committee decided that the internationalization and maintenance of the Requirements Interchange Format should be proceeded with the ProSTEP iViP Association.  A project was set up and a team was built that includes members of the ProSTEP iViP Association, representatives of manufacturing companies (Audi, BMW  Group, Daimler, VW, Bosch and Continental), tool vendors (Atego, IBM, MKS) and development partners (HOOD GmbH, PROSTEP AG).
 
 \begin{info}
 Further reading: \href{http://formalmind.com/de/blog/his-exchange-process-requirements-all-you-ever-wanted-know}{The HIS Exchange Process for Requirements–all you ever wanted to know}.
@@ -78,12 +78,12 @@ The ReqIF team expects that making the Requirements Interchange Format an OMG st
 \label{sec:RIF}
 % -----------------------------------------------------------------------------------
 
-This document is submitted as RFC of the Requirements Interchange Format (ReqIF) to the OMG.  Before the submission, the Requirements Interchange Format has been a specification proposed by the HIS and in its latest version, a recommendation of ProSTEP iViP.  For these versions, the abbreviation ``RIF'' has been applied.  The HIS released the Requirements Interchange Format as RIF 1.0, RIF1.0a, RIF 1.1; RIF1.1a and the ProSTEP iViP released the recommendation RIF 1.2.
+This document is submitted as RFC of the Requirements Interchange Format (ReqIF) to the OMG.  Before the submission, the Requirements Interchange Format has been a specification proposed by the HIS and in its latest version, a recommendation of ProSTEP iViP.  For these versions, the abbreviation ``RIF'' has been applied.  The HIS released the Requirements Interchange Format as RIF 1.0, RIF 1.0a, RIF 1.1; RIF 1.1a and the ProSTEP iViP released the recommendation RIF 1.2.
 
 As the acronym RIF has an ambiguous meaning within the OMG, the acronym ReqIF has been introduced to separate it from the W3C`s Rule Interchange Format.  ReqIF 1.0 is the direct successor of the ProSTEP iViP recommendation RIF 1.2.
 
 \begin{warning}
-The ProR GUI does currently not support RIF.
+The ProR GUI does not currently support RIF.
 \end{warning}
 
 % -----------------------------------------------------------------------------------
@@ -93,7 +93,7 @@ The ProR GUI does currently not support RIF.
 \index{attributes!internal}
 % -----------------------------------------------------------------------------------
 
-ReqIF allows users to define the attributes that SpecObjects may carry.  In addition to these, there are a number of internal attributes that are defined by the ReqIF standard.  Examples include an internal ID, or the last change timestamp.
+ReqIF allows users to define the attributes that SpecObjects may carry.  In addition to these, there are a number of internal attributes that are defined by the ReqIF standard.  Examples include an internal ID or the last change timestamp.
 
 These internal attributes are rarely of interest to users who just want to work with requirements.  However, they may be of interest to tool experts, or may be inspected for troubleshooting.
 
@@ -105,7 +105,7 @@ Internal attributes can be accessed from the Properties View, using the \menu{Al
 \index{terminology}
 % ===================================================================================
 
-Working with \pror{} can be confusing, as it uses the terminology from ReqIF.  For instance, ReqIF uses \textit{SpecObject}s, rather than \term{requirements}.  In the following, we define the more important terms.  More are defined throughout the document.  You can use the index to find the definition of terms.
+Working with \pror{} can be confusing as it uses the terminology from ReqIF.  For instance, ReqIF uses \textit{SpecObject}s, rather than \term{requirements}.  In the following, we define the more important terms.  More are defined throughout the document.  You can use the index to find the definition of terms.
 
 \begin{info}
 This book uses ReqIF terminology throughout.  Please refer to this chapter to understand the meaning of these terms.
@@ -119,7 +119,7 @@ A \term{ReqIF model} is the data structure that holds all the information togeth
 \index{.reqif}
 \index{.reqifz}
 \index{Requirements Interchange Format}
-ReqIF is an XML-based format for requirements, with the intention to be used as an exchange format.  It is an open OMG standard and described in detail in Section~\ref{sec:reqif}. The XML data is typically stored in a with with the extension \menu{.reqif}.  It is also possible to store the ReqIF file together with associated data (embedded objects) or other ReqIF files.  These are then stored in a ZIP archive with the extension \menu{.reqifz}.
+ReqIF is an XML-based format for requirements, intended to be used as an exchange format.  It is an open OMG standard and described in detail in Section~\ref{sec:reqif}. The XML data is typically stored in a with with the extension \menu{.reqif}.  It is also possible to store the ReqIF file together with associated data (embedded objects) or other ReqIF files.  These are then stored in a ZIP archive with the extension \menu{.reqifz}.
 \end{definition}
 
 Before defining the most important elements, we will provide a brief overview with a concrete example.
@@ -140,9 +140,9 @@ Figure~\ref{fig:spec_example} shows a simple ReqIF model, open in \pror{}.
 The \menu{Specification Editor} (the central table) shows the first four \term{SpecObjects}, as visualized in a specification.  The tree-like structure is recognizable: INF-1 is a node
 with three children, REQ-1, REQ-2 and REQ-3 (this can be seen by the indentation).  Let's look at INF-1 and REQ-1.  When one is selected in the main pain, it's attributes appear in the \menu{Properties View}, the pane at the bottom.
 
-INF-1 has two \term{Attributes}, ``Description'' and ``ID''.  The \term{SpecType} is ``Information Type'' (shown as the header in the properties view).
+INF-1 has two \term{Attributes}, ``Description'' and ``ID''.  The \term{SpecType} is ``Information Type'' (shown as the header in the \menu{Properties View}).
 
-REQ-1, REQ-2, and REQ-3 have three Attributes, ``Description'', ``ID'' and ``Status'' (this is not obvious from the figure).  To accommodate this, a column called ``Status'' has been created.  As the ``Information Type'' has no ``Status'' Attribute, it is not shown in the \menu{Properties View}.
+REQ-1, REQ-2, and REQ-3 have three Attributes, ``Description'', ``ID'' and ``Status'' (this is not obvious from the figure).  To accommodate this, a column called ``Status'' has been created.  As the ``Information Type'' has no ``Status'' attribute, it is not shown in the \menu{Properties View}.
 
 % -----------------------------------------------------------------------------------
 \subsection{SpecElements}
@@ -200,12 +200,13 @@ The SpecType defines a set of \term{AttributeDefinitions}.  A SpecElement with t
 An AttributeDefinition belongs to a SpecType. It consists of a label and a DatatypeDefinition, which provides the type.  Some AttributeDefinitions can be configured further.  AttributeDefinitions can also have a \term{default value}.
 \end{definition}
 
-Last, there are seven \term{DatatypeDefinitions}, some of which can be customized further.
+Lastly, there are seven \term{DatatypeDefinitions}, some of which can be customized further.
 
 \begin{definition}{DatatypeDefinition}
 \index{DatatypeDefinition}
 \index{XHTML}
 DatatypeDefinitions are the fundamental types in ReqIF and include:
+
 \begin{itemize}
 \item Boolean -- true or false
 \item Integer -- the range can be customized
