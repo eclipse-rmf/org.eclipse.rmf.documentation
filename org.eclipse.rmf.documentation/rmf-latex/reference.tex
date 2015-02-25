@@ -26,9 +26,9 @@ Please consult the
 \subsection{Prerequisites}
 % -----------------------------------------------------------------------------------
 
-Eclipse is a Java-based application.  You need a Java Runtime Environment (JRE) on your computer, in order to run \pror{}.
+Eclipse is a Java-based application.  You need a Java Runtime Environment (JRE) on your computer in order to run \pror{}.
 
-\pror{} requires JRE 1.6 or better.  However, some of the features from ProR Essentials require JRE 1.7 or better.  Further, we recommend the Version from Oracle, and not OpenJDK.
+\pror{} requires JRE 1.6 or better.  However, some of the features from ProR Essentials require JRE 1.7 or better.  Further, we recommend the version from Oracle, and not OpenJDK.
 
 \begin{info}
 You can download Java at \href{https://www.java.com}{java.com}.
@@ -40,7 +40,7 @@ You can download Java at \href{https://www.java.com}{java.com}.
 \index{installation}
 % -----------------------------------------------------------------------------------
 
-This chapter explores the installation of \textbf{Eclipse Products}, i.e. software that you can download and run on your computer.  This is in contrast to \textbf{features} or \textbf{plug-ins}, which can be added to an existing product.
+This chapter explores the installation of \term{Eclipse Products}, i.e. software that you can download and run on your computer.  This is in contrast to \term{features} or \term{plugins}, which can be added to an existing product.
 
 When working with Eclipse, you have to start with a base installation.  For working with ProR, we recommend using \href{http://formalmind.com/studio}{formalmind Studio}, but you can start with any Eclipse product.
 
@@ -49,12 +49,12 @@ Once you have identified the product you would like to use, you need to download
 \begin{info}
 We recommend to call the folder \menu{studio} or \menu{pror}, and to store it where your executables are located: On Windows in \menu{Program Files}, on Linux in \menu{~/bin}.  But any location will do.
 
-We recommend to create a shortcut for launching it.
+We recommend to creating a shortcut for launching it.
 \end{info}
 
 You launch the product by double-clicking on the launcher in the folder you created.  For formalmind Studio, this is called \menu{studio.exe} or \menu{studio}.
 
-The first time you launch Eclipse, it will ask you for the \textbf{Workspace} location, see Section \ref{sec:workspaces}.
+The first time you launch Eclipse, it will ask you for the \term{Workspace} location, see Section \ref{sec:workspaces}.
 
 % -----------------------------------------------------------------------------------
 \subsection{Updates}
@@ -80,19 +80,19 @@ An update site is a machine-readable URL that allows \pror{} to install new func
 To install a new feature, follow these steps:
 
 \begin{itemize}
-\item Open the installation dialog via \menu{Help | Install new Software...}
-\item In the \menu{Work with:} dropbox, either paste the Update Site URL, or select it from the drop down, if you used it before.  Note that some popular update site URLs may already be preinstalled.
-\item Upon selecting an update site, you will see a list of components available on that update site.  Note the checkboxes below, that may result in some entries being hidden.  In particular, some update sites do not categorize.  Unchecking \menu{Group items by category} may unveil hidden entries.
+\item Open the installation dialog via \menu{Help | Install new Software...}.
+\item In the \menu{Work with:} dropbox, either paste the Update Site URL, or select it from the drop down, if you have used it before.  Note that some popular update site URLs may already be preinstalled.
+\item Upon selecting an update site, you will see a list of components available from that update site.  Note the checkboxes below that may result in some entries being hidden.  In particular, some update sites do not categorize.  Unchecking \menu{Group items by category} may unveil hidden entries.
 \item Click \menu{Next >}.  If all dependencies can be resolved, details about the installation are shown.  Otherwise you have to troubleshoot dependencies (an unthankful job!).
 \item Click \menu{Next >}, review and accept the license.
 \item Click \menu{Finish}.  If the component has not been digitally signed, you will receive a warning, which you can typically ignore.
 \item It is recommended to restart after the installation.
 \end{itemize}
 
-\begin{info}
 \index{unsigned content}
 \index{signed content}
-\textbf{Signatures on Content.}  In this day and age, security is obviously very important, particularly for content downloaded from the Internet.  But note that signing is not enough: content must be signed with a \textbf{trusted, non-expired} signature.
+\begin{info}
+\textbf{Signatures on Content.}  In this day and age, security is obviously very important, particularly for content downloaded from the Internet.  But note that signing is not enough: content must be signed with a trusted, non-expired signature.
 
 Eclipse content should be signed by eclipse.org.  Especially small project release plug-ins that are not signed, reasoning that to a user, a self-signed signature is as good (or bad) as a missing signature.
 
@@ -135,13 +135,13 @@ Figure~\ref{fig:user_interface_overview} shows the user interface of \pror{}.
 
 \paragraph{(1)} The \menu{Project Explorer} shows a hierarchical listing of the project and the associated models.
 
-\paragraph{(2)} The editor area shows tow kinds of editors.  First, each ReqIF file has a \menu{ReqIF Editor} that shows basic information about the mode.  In addition, \menu{Specification Editors} can be opened for each Specification.
+\paragraph{(2)} The editor area shows two kinds of editors.  First, each ReqIF file has a \menu{ReqIF Editor} that shows basic information about the mode.  In addition, \menu{Specification Editors} can be opened for each Specification.
 
 \paragraph{(3)} The \menu{Outline View} has four folders that show the content of the selected model:
 
 \begin{description}
 
-\item[Specifications] shows the specifications in the ReqIF model.  You can
+\item[Specifications] shows the Specifications in the ReqIF model.  You can
   expand the tree to expose the hierarchy of SpecObjects in each Specification.
 \item[SpecObjects] shows all SpecObjects in the ReqIF model as a flat list.
   Keep in mind that SpecObjects in Specifications are references.  In
@@ -150,9 +150,9 @@ Figure~\ref{fig:user_interface_overview} shows the user interface of \pror{}.
 \item[SpecRelationsGroups] represents an optional mechanism for grouping SpecRelations between two specific specifications.
 \end{description}
 
-\paragraph{(4)} The properties of a selected Element are shown in the \menu{Properties View}.  It has two tabs, one for \menu{Standard Attributes} and \menu{All Attributes}.
+\paragraph{(4)} The properties of a selected Element are shown in the \menu{Properties View}.  It has two tabs, one for \menu{Standard Attributes} and one for \menu{All Attributes}.
 
-\paragraph{(5)} Above the main working windows it the tool bar. which may change according to which editor is active.
+\paragraph{(5)} Above the main working windows is the tool bar, which may change according to which editor is active.
 
 \paragraph{(6)} The menu bar provides access to all Eclipse and \pror{} features.
 
@@ -162,7 +162,7 @@ Figure~\ref{fig:user_interface_overview} shows the user interface of \pror{}.
 \index{view}
 % -----------------------------------------------------------------------------------
 
-The Eclipse user interface consists of \term{Views} and \term{Editors}.  Views change their content according to the current selection and are not savable.  Editors are typically associated with a resource (e.g. a file) and can be saved.  The editor's selection can determine what is shown in the Views.  For instance, the \menu{Properties View} typically shows details about the element selected in the \menu{Specification Editor}.
+The Eclipse user interface consists of \term{Views} and \term{Editors}.  Views change their content according to the current selection and are not savable.  Editors are typically associated with a resource (e.g. a file) and can be saved.  The editors' selection can determine what is shown in the Views.  For instance, the \menu{Properties View} typically shows details about the element selected in the \menu{Specification Editor}.
 
 You can browse through the available Views and open them via \menu{Window | Show Views...}, resulting in a menu similar to the one shown in Figure~\ref{fig:Views}.
 
@@ -173,10 +173,10 @@ You can browse through the available Views and open them via \menu{Window | Show
 \label{fig:Views}
 \end{figure}
 
-Upon opening a ReqIF Model, the editor opens providing an overview of the model.  In essence what you are seeing is the Eclipse Workbench, with several modifications.  Here you will find a quick overview of each component.  A more detailed description of the Workbench can be found in 
+Upon opening a ReqIF model, the editor opens providing an overview of the model.  In essence what you are seeing is the Eclipse Workbench, with several modifications.  Here you will find a quick overview of each component.  A more detailed description of the Workbench can be found in 
 \eclipsehelp{org.eclipse.platform.doc.user/reference/ref-43.htm}{Eclipse's Workbench User Guide}.
 
-A model contains any number of specifications, and the details of each specification can be inspected individually.  The windows in which all relevant information appears are called views.  At your disposal are many views with productivity, debugging, help and team resources.  We will be focusing only on the views relevant to ProR.
+A model contains any number of Specifications, and the details of each Specification can be inspected individually.  The windows in which all relevant information appears are called \term{views}.  At your disposal are many views with productivity, debugging, help and team resources.  We will be focusing only on the views relevant to \pror{}.
 
 % -----------------------------------------------------------------------------------
 \subsection{Specification Editor}
@@ -189,19 +189,19 @@ A model contains any number of specifications, and the details of each specifica
   \label{fig:default specification editor}
 \end{figure}
 
-The Specification Editor shows the SpecObjects of a Specification, arranged in a grid view.  The hierarchy is shown via indenting of the first column, as well as through the numbering in the row header.
+The Specification Editor shows the SpecObjects of a Specification, arranged in a grid view.  The hierarchy is shown via the indent of the first column, as well as through the numbering in the row header.
 
-The columns show the Attributes with the names that match the column names (as shown in the header).  The columns can be resized by dragging.  Other operations, in particular reordering, adding and deleting columns is done via the \menu{Column Dialog}, accessible via \menu{ProR | Column Configuration } or the toolbar \includegraphics[height=0.8em]{../rmf-images/icons/full/obj16/Column.png}. 
+The columns show the Attributes with the names that match the column names (as shown in the header).  The columns can be resized by dragging.  Other operations, in particular reordering, adding and deleting columns are done via the \menu{Column Dialog}, accessible via \menu{ProR | Column Configuration } or the toolbar \includegraphics[height=0.8em]{../rmf-images/icons/full/obj16/Column.png}. 
 
 The leftmost column shows the hierarchy and carries an icon.  The icon indicates whether it is a lone SpecHierarchy \includegraphics[height=0.8em]{../rmf-images/icons/full/obj16/spechierarchy.png} or a SpecObject \includegraphics[height=0.8em]{../rmf-images/icons/full/obj16/requirement.png}.
 
 \begin{info}
 Would you like to rearrange the columns?
 
-In the top half of the Column Configurator {\includegraphics[scale=0.6]{../rmf-images/icons/full/obj16/Column.png}} window, a list of the exiting columns appear. Simply drag and drop them into the desired order. The changes appear in real time in the Specification Editor. Close the window and the changes will be accepted.
+In the top half of the \menu{Column Configurator} {\includegraphics[scale=0.6]{../rmf-images/icons/full/obj16/Column.png}} window, a list of the exiting columns appear. Simply drag and drop them into the desired order. The changes appear in real time in the \menu{Specification Editor}. Close the window and the changes will be accepted.
 \end{info}
 
-Information can be entered either directly into the cell by double clicking it or via the \menu{Properties View}.  While the Specification Editor only allows to edit those Attributes for which a column exists, the \menu{Properties View} will always show all Attributes.
+Information can be entered either directly into the cell by double clicking it or via the \menu{Properties View}.  While the Specification Editor only allows the editing of those attributes for which a column exists, the \menu{Properties View} will always show all attributes.
 
 \begin{figure}
   \centering
@@ -218,7 +218,7 @@ Information can be entered either directly into the cell by double clicking it o
 
 The SpecObjects can be reordered via drag and drop.  To move an existing SpecObject into the position of parent or child of another existing SpecObject, simply drag the child directly \textit{onto the target SpecObject}, as shown in Figure~\ref{fig:hierarchy_step_1}. The result is shown in Figure~\ref{fig:hierarchy_step_2}. 
 
-Alternatively, as you drag the SpecObject \textit{onto the line below or above} the level you would like to move it, it will become a sibling rather than a child of the SpecObject above or below the line.  This is shown in Figure~\ref{fig:hierarchy_step_3}, with the resulting ordering shown in Figure~\ref{fig:hierarchy_step_4}.
+Alternatively, as you drag the SpecObject \textit{onto the line below or above} the level you would like to move it to, it will become a sibling rather than a child of the SpecObject.  This is shown in Figure~\ref{fig:hierarchy_step_3}, with the resulting ordering shown in Figure~\ref{fig:hierarchy_step_4}.
 
 \begin{figure}
   \centering
@@ -239,13 +239,13 @@ By right clicking on any cell, you have a few options at your disposal. Outside 
 
 \begin{description}
 \item
-  [New Child] - A new SpecObject will be created as a child element.
+  [New Child.] A new SpecObject will be created as a child element.
 \item
-  [New Sibling] - A new SpecObject will be created as a sibling element.
+  [New Sibling.] A new SpecObject will be created as a sibling element.
 \item
-  [Initiate Linking] - This is the option to create a link between requirements. Once a link is initiated and then by right clicking a target selection, the options to complete the links either to or from a selection will appear. By default, the links are illustrated in the \menu{Link} column to the right. 
+  [Initiate Linking.] This is the option to create a link between requirements. Once a link is initiated and then by right clicking a target selection, the options to complete the links either to or from a selection will appear. By default, the links are illustrated in the \menu{Link} column to the right. 
 \item
-  [Show Properties View] - Opens the \menu{Properties View}, where the selected element can be inspected and edited.
+  [Show Properties View.] Opens the \menu{Properties View}, where the selected element can be inspected and edited.
 \end{description}
 
 % -----------------------------------------------------------------------------------
@@ -254,7 +254,7 @@ By right clicking on any cell, you have a few options at your disposal. Outside 
 
 The \menu{Project Explorer View} is by default on the left side of the main window. Here you can inspect files and models associated with any project. If for some reason the Project Explorer View does not appear, Navigate to \menu{Window | Show View | Other | Project Explorer View}.
 
-In the main area  of this viewer is a hierarchical listing of the the project and it's components. Use the black arrow to the left to collapse or display the projects contents. Below the view's title and to the right are the options to collapse the project folder and link the project with the editor. To the right of these options is another drop-down menu.
+In the main area  of this viewer is a hierarchical listing of the project and it's components. Use the black arrow to the left to collapse or display the project's contents. Below the view's title and to the right are the options to collapse the project folder and link the project with the editor. To the right of these options is another drop-down menu.
 
 This view is covered in more detail by the \eclipsehelp{/topic/org.eclipse.platform.doc.user/reference/ref-27.htm}{Eclipse documentation}.
 
@@ -269,7 +269,7 @@ Both the current model, as well as \pror{} as a whole, can be configured and cus
 \index{preferences}
 % -----------------------------------------------------------------------------------
 
-The application-wide setting of \pror{} are accessed via \menu{Window | Preferences | ProR}.  Configuration elements are:
+The application-wide settings of \pror{} are accessed via \menu{Window | Preferences | ProR}.  Configuration elements are:
 
 \begin{description}
 \item[Pror.] In the top level menu, the warning message for encountering simplified XHTML can be disabled.
@@ -278,7 +278,7 @@ The application-wide setting of \pror{} are accessed via \menu{Window | Preferen
 
 \begin{info}
 \index{XHTML}
-Particular popular is the free Presentation from formalmind Essentials for handling XHTML.  The standard editor from ProR converts rich text to plain text.  The rich text Presentation is preinstalled with formalmind Studio.
+Particularly popular is the free Presentation from formalmind Essentials for handling XHTML.  The standard editor from ProR converts rich text to plain text.  The rich text Presentation is preinstalled with formalmind Studio.
 \end{info}
 
 % -----------------------------------------------------------------------------------
@@ -307,10 +307,7 @@ that attribute value is used as the label.
 
 If none is found, then the element's internal ID is displayed.
 
-To configure, select \menu{Label Configuration} in the top pane of the dialog.  On the bottom pane,
-you see the \menu{Default Label} property.  Doubleclick the value (on the right), then click on the
-ellipses (...) to open the configuration dialog.  Under \menu{Feature}, you see the list of attribute
-names that will be used for the label, if found.
+To configure, select \menu{Label Configuration} in the top pane of the dialog.  On the bottom pane, you see the \menu{Default Label} property.  Doubleclick the value (on the right), then click on the ellipses (...) to open the configuration dialog.  Under \menu{Feature}, you will see the list of attribute names that will be used for the label, if found.
 
 Use the \menu{Add} and \menu{Remove} buttons to add more attribute names to be searched for.  The
 search order can be adjusted with \menu{Up} and \menu{Down}.
@@ -350,15 +347,15 @@ allow further customization.  The Datatype is selected from a
 dropdown.  New Datatypes can be created by right-clicking on the folder
 \menu{Datatypes} and selecting \menu{New Child}.  Again, selecting a Datatype
 shows its properties in the lower pane, where it can be configured.  A
-Datatype should have at least a long name.
+Datatype should have at least the \menu{long name} property set.
 
 As an example, consider the Datatype Configuration shown in Figure~\ref{fig:DatatypeConfig}.
-The SpecType for ``Requirements Type'', which is applicable to
+The SpecType for ``Requirements Type,'' which is applicable to
 SpecObjects, is expanded.  The SpecType has two Attributes,
 ``Description'' (String) and ``Status'' (Enumeration).  Status is
 selected, and in the pane below the mandatory values, \menu{Long Name} and
 \menu{Type} have been set.  Further customization of the attribute is
-possible, e.g.  by converting it in a multi-valued Attribute by setting
+possible, e.g.  by converting it to a multi-valued Attribute by setting
 the corresponding flag to \menu{true}.
 
 \subsubsection{Enumeration Datatypes}
@@ -422,13 +419,18 @@ This section also lists Importers and Exporters from third parties. Note that no
 \index{import}
 % -----------------------------------------------------------------------------------
 
-\paragraph{ReqIFz Import.} This standard importer takes ReqIF archive (.reqifz) and imports it as an Eclipse project.
+The following importers exist:
 
-\paragraph{CSV.} This standard importer takes comma-separated data and imports it into an existing ReqIF model.  It is described further below.
+\begin{description}
+\item[ReqIFz Import.] This standard importer takes ReqIF archive (.reqifz) and imports it as an Eclipse project.
 
-\paragraph{Axiom.} This commercial importer supports the selective merging of exchange data with an existing ReqIF model.  It is described in detail in Section~\ref{sec:axiom}.
+\item[CSV.] This standard importer takes comma-separated data and imports it into an existing ReqIF model.  It is described further below.
+
+\item[Axiom.] This commercial importer supports the selective merging of exchange data with an existing ReqIF model.  It is described in detail in Section~\ref{sec:axiom}.
 
 More information at the \href{http://formalmind.com/axiom}{Formal Mind Product Site}.
+
+\end{description}
 
 % -----------------------------------------------------------------------------------
 \subsubsection{CSV Import}
@@ -482,11 +484,15 @@ You can read more in the \href{http://formalmind.com/blog/new-stuff-new-committe
 \index{export}
 % -----------------------------------------------------------------------------------
 
-\paragraph{ReqIFz Export.} This standard exporter takes an Eclipse project and produces a ReqIF archive (.reqifz).
+The following exporters exist:
 
-\paragraph{Axiom.} This commercial exporter supports the selective exporting of exchange data for supplier communication.  More information at the \href{http://formalmind.com/axiom}{Formal Mind Product Site}.
+\begin{description}
+\item[ReqIFz Export.] This standard exporter takes an Eclipse project and produces a ReqIF archive (.reqifz).
 
-\paragraph{HTML.} The HTML export is not a ``real'' export, as it is accessed differently.  It produces an HTML view from an open Specification.  To use it, you need to have a Specification Editor open.  Then select \menu{File | Print...}.
+\item[Axiom.] This commercial exporter supports the selective exporting of exchange data for supplier communication.  More information at the \href{http://formalmind.com/axiom}{Formal Mind Product Site}.
+
+\item[HTML.] The HTML export is not a ``real'' export, as it is accessed differently.  It produces an HTML view from an open Specification.  To use it, you need to have a Specification Editor open.  Then select \menu{File | Print...}.
+\end{description}
 
 % ===================================================================================
 \section{Searching and Filtering}
@@ -563,7 +569,7 @@ The following operators are available for all attributes, no matter what their t
 
 \begin{description}
 \item[Equals (=).] For a match, the value must match \textit{exactly} as provided.  This implies that the attribute has actually been \textit{set}.  For instance, an empty string matches an empty string.  But it does not match if the value has not been set (i.e. if it is \textit{null}, in technical terms).
-\item[Set.] For a match, the value must be set to any value. \textbf{Note:} A \textit{default value} does not represent a match.
+\item[Set.] For a match, the value must be set to any value. \textbf{Note:} A \term{default value} does not represent a match.
 \item[Not set.] For a match, the value must not be set. \textbf{Note:} If the attribute in question does not exist, then there will not be a match either.  See example below.
 \end{description}
 
