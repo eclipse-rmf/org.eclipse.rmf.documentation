@@ -208,6 +208,7 @@ Lastly, there are seven \term{DatatypeDefinitions}, some of which can be customi
 DatatypeDefinitions are the fundamental types in ReqIF and include:
 
 \begin{itemize}
+\item
 \item Boolean -- true or false
 \item Integer -- the range can be customized
 \item Real -- range and precision can be customized
@@ -225,7 +226,7 @@ DatatypeDefinitions are the fundamental types in ReqIF and include:
 With the basic terminology in place, we have a quick look at the \pror{} user interface and compare it with Excel.  We do this, as most readers will be familiar with Excel, and it is sometimes used for simple requirements engineering. 
 
 \begin{description}
-  \item[Specification.] (Excel-equivalent: Sheet) A ReqIF model can have an arbitrary number of specifications. In the GUI, it is represented as an Excel-like grid view (see Figure~\ref{fig:spec_example}).
+  \item[Specification.] (Excel-equivalent: Sheet) A ReqIF model can have an arbitrary number of Specifications. In the GUI, it is represented as an Excel-like grid view (see Figure~\ref{fig:spec_example}).
 
  The \term{Specification} is the ``container'' for the requirements.  Think of an Excel document that allows you to create an arbitrary number of sheets.  Each sheet can be compared to a single Specification.  Most notable differences are: (1) the Specifications are \term{references} rather than independent entities (which means that the same requirement can be referenced and can appear in multiple places); (2) A Specification manages a hierarchy of requirements, while an Excel sheet is a flat list.  This is shown in the Figure, where INF-1 is the parent to three requirements.  The hierarchy is visible both in the main editor, as well as in the outline.
 
