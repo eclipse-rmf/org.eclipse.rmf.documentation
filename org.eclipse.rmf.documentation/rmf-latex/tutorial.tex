@@ -18,11 +18,11 @@
 In this tutorial, we will use the ReqIF terminology, which can be confusing.  Therefore, please familiarize yourself with the terminology first (Section~\ref{sec:terminology}).
 
 \begin{warning}
-In ReqIF terminology, a requirement is called \term{SpecObject}, a link is a \term{SpecRelation}, and the document view consists of \term{SpecHierarchies}.  Confused? Then please take the time to at least glance over Section~\ref{sec:terminology}.
+In ReqIF terminology, a requirement is called \term{SpecObject}, a link is a \term{SpecRelation}, and the document view consists of \term{SpecHierarchies}.  Confused? Then please have a look at Section~\ref{sec:terminology}, where the terminology is described.
 \end{warning}
 
 % ===================================================================================
-\section{Tutorial 1: Creating a basic ReqIF Model}
+\section{Tutorial 1: Creating a Basic ReqIF Model}
 % ===================================================================================
 
 In this section, we will build a ReqIF model from scratch, step by step.
@@ -74,13 +74,13 @@ The \menu{Outline} (3) has four folders:
 \index{outline view}
 
 \begin{description}
-\item[Specifications] shows the Specifications in the ReqIF.  You can expand the tree to expose the hierarchy of SpecObjects in the ReqIF model.
-\item[SpecObjects] shows all SpecObjects in the ReqIF model as a flat list.  Keep in mind that SpecObjects in Specifications are references.  In contrast, this folder shows all SpecObjects created for the ReqIF model, whether or not they are referenced.
-\item[SpecRelations] shows all SpecRelations in the ReqIF as a flat list.  For now, we will ignore SpecRelations.
-\item[SpecRelationsGroups] are special constructs to can be used for grouping SpecRelations with the same source and target.
+\item[Specifications.] Shows the Specifications in the ReqIF.  You can expand the tree to expose the hierarchy of SpecObjects in the ReqIF model.
+\item[SpecObjects.] Shows all SpecObjects in the ReqIF model as a flat list.  Keep in mind that SpecObjects in Specifications are references.  In contrast, this folder shows all SpecObjects created for the ReqIF model, whether or not they are referenced.
+\item[SpecRelations.] Shows all SpecRelations in the ReqIF as a flat list.  For now, we will ignore SpecRelations.
+\item[SpecRelationsGroups.] These are special constructs that can be used for grouping SpecRelations with the same source and target.
 \end{description}
 
-The properties of a selected \term{SpecElement} are shown in the \menu{Properties View} (4).  As the only SpecObject in the model is selected, we see its \term{SpecType} (``Requirements Type'') and its only \term{Attribute} (``Description'') with the value ``Start editing here.''.  There are two tabs \menu{Standard Attributes} and \menu{All Attributes} at the bottom of the Properties View.  The \menu{Standard Attributes} tab shows you all standard attributes of the selected element.  The \menu{All Attributes} shows all existing ReqIF attributes of the selected element.
+The properties of a selected \term{SpecElement} are shown in the \menu{Properties View} (4).  As the only SpecObject in the model is selected, we see its \term{SpecType} (``Requirements Type'') and its only \term{Attribute} (``Description'') with the value ``Start editing here.''  There are two tabs \menu{Standard Attributes} and \menu{All Attributes} at the bottom of the \menu{Properties View}.  The \menu{Standard Attributes} tab shows you all standard attributes of the selected element.  \menu{All Attributes} shows all existing ReqIF attributes of the selected element.
 
 Above the main working windows it the tool bar (5) and, at the very top, the menu bar (6).
 
@@ -106,18 +106,18 @@ The results of this are shown in Figure~\ref{fig:datatype_configuration}.
 \label{fig:datatype_configuration}
 \end{figure}
 
-To add new attributes, we open the Datatype Configuration dialog with \menu{ProR | Datatype Configuration}.  Alternatively you can also click on \includegraphics[height=0.8em]{../rmf-images/icons/full/obj16/SpecType.png} in the Tool Bar.
+To add new attributes, we open the \menu{Datatype Configuration} dialog with \menu{ProR | Datatype Configuration}.  Alternatively you can also click on \includegraphics[height=0.8em]{../rmf-images/icons/full/obj16/SpecType.png} in the Tool Bar.
 
-The resulting dialog box has two folders in the upper pane: one for \term{SpecTypes} and one for \term{Datatypes}.  Currently, there is only one Datatype ``T\_String32k'' and two SpecTypes, one called ``Requirements Type'' with one attribute ``Description'' and one called ``Specification Type'' with one attribute ``Description''.
+The resulting dialog box has two folders in the upper pane: one for \term{SpecTypes} and one for \term{Datatypes}.  Currently, there is only one Datatype ``T\_String32k'' and two SpecTypes, one called ``Requirements Type'' with the attribute ``Description'' and one called ``Specification Type'' with the attribute ``Description''.
 
 In the lower pane are the details in regards to each attribute.
 
-We add more Attributes to ``Requirements Type'' by right-clicking ``Requirements Type'' and selecting \menu{New Child | Attribute Definition String}.  This will create a new element.  Upon selecting, we can rename it and tailor the details.  Double-click on the ``Long Name'' variable and type in ``ID''.  Change the Type by double-clicking the field and choosing ``T\_String32k'' from the drop-down menu.  Repeat the process but this time change the ``Long Name'' to ``Owner''.  In the end, the dialog should look as follows
+We add more Attributes to ``Requirements Type'' by right-clicking it and selecting \menu{New Child | Attribute Definition String}.  This will create a new element.  Upon selecting it, we can rename it and tailor the details.  Double-click on the ``Long Name'' variable and type in ``ID''.  Change the Type by double-clicking the field and choosing ``T\_String32k'' from the drop-down menu.  Repeat the process but this time change the ``Long Name'' to ``Owner''.  In the end, the dialog should look as shown in Figure~\ref{fig:datatype_configuration}.
 
 Upon closing the dialog, little will have changed - the Specification still shows just two columns, Description and Link.  However, if you select the requirement, you will see the new Properties (ID and Owner) in the Property view.
 
 % -----------------------------------------------------------------------------------
-\subsection{Showing the new Attributes in the Specification}
+\subsection{Showing the New Attributes in the Specification}
 % -----------------------------------------------------------------------------------
 
 \begin{figure}
@@ -127,7 +127,7 @@ Upon closing the dialog, little will have changed - the Specification still show
 \label{fig:column_configuration}
 \end{figure}
 
-To show the new Attributes in the Specification, we have to configure the columns shown in the Specification Editor.  We do this by selecting \menu{ProR | Column Configuration}.  You can also click on \includegraphics[height=0.8em]{../rmf-images/icons/full/obj16/Column.png} in the Tool Bar.
+To show the new Attributes in the Specification, we have to configure the columns shown in the \menu{Specification Editor}.  We do this by selecting \menu{ProR | Column Configuration}.  You can also click on \includegraphics[height=0.8em]{../rmf-images/icons/full/obj16/Column.png} in the Tool Bar.
 
 The resulting Dialog shows one entry, ``Description'' for the one and only Column of the Specification.  In the ``Value'' column double click on ``Description to choose it and replace it with ``ID''.
 
@@ -159,7 +159,7 @@ In both menus, there are three entries \menu{Spec Hierarchy}, \menu{SpecObject} 
 \index{SpecHierarchy}
 We said before that Specifications contain references to SpecObjects.  A \menu{SpecHierarchy} is the wrapper that allows the hierarchical structure and that points to the referenced SpecObject.  Usually, we don't have to be concerned with them.  Therefore the second option: If selected, a new SpecHierarchy is created and associated with a new SpecObject, which in turn is set immediately to the given \term{SpecType}.  If we had more than just one SpecType (besides ``Requirements Type''), there would be an entry for each SpecType in the context menu.
 
-To continue the exercise, select the \menu{New Child | SpecObject (Requirement Type)}.  Now we have two SpecObjects.  The original is numbered on the far left-hand side of the pane with a \menu{1.}  The second one, the child, is numbered \menu{1.1}.  Now we should change the ID's of each entry.  Click in the cell of the column ``ID`` (in row 1) and type in INF-1.  Under Description, type ''A ProR tutorial``.  For the second, change the ID to REQ-1 and ''Learn now to create a new requirement'' in the Description column.
+To continue the exercise, select the \menu{New Child | SpecObject (Requirement Type)}.  Now we have two SpecObjects.  The original is numbered on the far left-hand side of the pane with a ``1''.  The second one, the child, is numbered ``1.1''.  Now we should change the ID's of each entry.  Click in the cell of the column ``ID`` (in row 1) and type in INF-1.  Under Description, type ''A ProR tutorial.``  For the second, change the ID to REQ-1 and ''Learn how to create a new requirement'' in the ``Description'' column.
 
 Feel free to add a few more rows and or even new structures.  Yours should look somethinig similar to Figure~\ref{fig:requirements_hierarchy}.
 
@@ -228,7 +228,7 @@ In this tutorial we will introduce \term{Presentations}.  Presentations are Ecli
 \subsection{ID Presentation}
 % -----------------------------------------------------------------------------------
 
-It would be nice if every SpecObject had its own unique ID.  Actually, it does: It is shown in the \menu{All Attributes} tab of the \menu{Property View}, if a SpecObject is selected.  But that ID is meant for machines and is not practical.
+It would be nice if every SpecObject had its own unique ID.  Actually, they do: The unique ID is shown in the \menu{All Attributes} tab of the \menu{Property View}, if a SpecObject is selected.  But that ID is meant for machines and is not practical.
 
 The ID Presentation allows the automatic creation of more user-friendly IDs.  Let's create one.
 
@@ -243,11 +243,13 @@ The next step is the association of the Datatype with the Presentation.
 \label{fig:idConfig}
 \end{figure}
 
-We open the Presentation Configuration and create a new Presentation from the dropdown menu \menu{Select Action...}, of type ``Id'' Presentation.  We associate it with the newly created Datatype.  After configuration, ould look as shown in Figure~\ref{fig:idConfig}.
+We open the Presentation Configuration and create a new Presentation from the dropdown menu \menu{Select Action...}, of type ``Id'' Presentation.  We associate it with the newly created Datatype.  After configuration, it would look as shown in Figure~\ref{fig:idConfig}.
 
 Note that you can adjust the prefix, count and the vertical alignment of the presentation.
 
-NOTE: At this point, the Presentation doesn't check yet for duplicates.  It simply grabs a new value from count, increments it and uses it.  Also, existing values are never overwritten.
+\begin{warning}
+At this point, the Presentation does not yet check for duplicates.  It simply grabs a new value from count, increments it and uses it.  Also, existing values are never overwritten.
+\end{warning}
 
 % ===================================================================================
 \section{Tutorial 3: Advanced SpecTypes}
@@ -264,11 +266,11 @@ The first entry in our Specification (``A \pror{} Tutorial'') isn't really a req
 \begin{itemize}
 
 \item
-  Create a new \term{SpecType} for headlines;
+  Create a new \term{SpecType} for headlines.
 \item
-  Create a new \term{Datatype} that will be used for the headline content
+  Create a new \term{Datatype} that will be used for the headline content.
 \item
-  Associate that Datatype with the \menu{Headline Presentation}
+  Associate that Datatype with the \menu{Headline Presentation}.
 \end{itemize}
 
 \begin{figure}
@@ -280,19 +282,19 @@ The first entry in our Specification (``A \pror{} Tutorial'') isn't really a req
 
 By selecting \menu{ProR | Datatype Configuration}, we open the dialog where we can create new SpecTypes and Datatypes.  For the first time, we create a new SpecType by right-clicking on \menu{SpecTypes}.  One of the entries in the child menu is \menu{SpecObject Type}.
 
-Once created, we select it and rename to ``Headline Type'' it in the \menu{Property Pane}.
+Once created, we select it and rename as ``Headline Type'' in the \menu{Property Pane}.
 
 Then we give it a new Attribute called ``Description'' by right-clicking it and selecting \menu{String}.
 
 \begin{warning}
-It is important that we call it description.  This matches the Attribute name from ``Requirement Type''.  By using the same name, we ensure that the Attributes \textbf{appear in the same column}, even though they are different Attributes from different SpecTypes.
+It is important that we call it ``Description''.  This matches the Attribute name from ``Requirement Type''.  By using the same name, we ensure that the Attributes \textbf{appear in the same column}, even though they are different Attributes from different SpecTypes.
 \end{warning}
 
-We do not set the type yet, as we need to create a new one.  We do this, as before, by right-clicking on the \menu{Datatypes} folder in the upper pane.  Create a child of type \menu{Definition String}.  Call it ``T\_Headline'' and set the length to 50.  Now we can go back to the ``Description'' Attribute (in the upper pane) and set the type to T\_Headline, which is now available from the dropdown.
+We do not set the type yet, as we need to create a new Datatype.  We do this, as before, by right-clicking on the \menu{Datatypes} folder in the upper pane.  Create a child of type \menu{Definition String}.  Call it ``T\_Headline'' and set the length to 50.  Now we can go back to the ``Description'' Attribute (in the upper pane) and set the type to T\_Headline, which is now available from the dropdown.
 
 When all this is done, the resulting configuration should look as shown in Figure~\ref{fig:headlineConfig}.
 
-You can change the type of a SpecObject by selecting it and changing it in the Properties view.  Please note that currently all existing values are lost when changing the type.
+You can change the type of a SpecObject by selecting it and changing it in the \menu{Properties View}.  Please note that currently all existing values are lost when changing the type.
 
 Note the following:
 
@@ -320,7 +322,7 @@ Note the following:
 \label{fig:headlineConfig2}
 \end{figure}
 
-Last, we will create a \menu{Headline Presentation} and actiave it for the type ``T\_Headline''.  This is done via the \menu{Presentation Configuration}, as before.  The configuration allows you to change the font size of the headline in the ``Size'' property.  The presentation configuration is shown in Figure~\ref{fig:headlineConfig2}.
+Last, we will create a \menu{Headline Presentation} and activate it for the type ``T\_Headline''.  This is done via the \menu{Presentation Configuration}, as before.  The configuration allows you to change the font size of the headline in the ``Size'' property.  The presentation configuration is shown in Figure~\ref{fig:headlineConfig2}.
 
 After all the changes, the Specification should look as shown in Figure~\ref{fig:activeHeadlineConfig}.  Note that the formatting is also applied in the \menu{Properties View}.
 
@@ -342,7 +344,7 @@ We will now create a \term{SpecificationType} and assign it to our Specification
 Try to create a \term{Specification Type} and configure it as shown in Figure~\ref{fig:newSpecType}:
 
 Next, we will assign this type to the one Specification that we have.  To do this we select the Specification in the \menu{Outline View} (first element in the Folder \menu{Specifications}).  That will show
-the Specification's properties in the \menu{Properties View}.  The \menu{Type} property is empty.  We select ``Specification Type'' from the drop down.
+the Specification's properties in the \menu{Properties View}.  The \menu{Type} property is empty.  We select ``Specification Type'' from the dropdown.
 
 As soon as it is selected, the Attribute ``Description'' will appear in the Properties View, as now the Specification has an attribute of that name.  If we set it to a meaningful name, the label in the Outline View will change as well.
 
@@ -359,7 +361,7 @@ A central feature of professional requirements tools is the ability to connect r
 There are two ways of creating SpecRelations: (1) via the context menu and (2) via drag and drop.
 
 \begin{info}
-We recommend to use the context menu for linking.  It works even if source and target are not visible, it allows n:m linking, and it allows to assign a SpecType to the newly created SpecRelations in one step.
+We recommend to use the context menu for linking.  It works even if source and target are not visible, it allows n:m linking, and it allows for the assignment of a SpecType to the newly created SpecRelations in one step.
 \end{info}
 
 
@@ -372,7 +374,7 @@ Linking via context menu happens in two steps: initiating linking and completing
 
 Linking is initiated by right-clicking on one SpecObject, or a selection of SpecObjects.  The context menu contains the option \menu{Initiate Linking}, with a number in parentheses. The number indicates the count of affected SpecObjects.
 
-Linking can only be completed if it has been initiated.  In that case, right-clicking on a single SpecObject or a selection of SpecObjects will show two more entries in the context menu.  These are \menu{Complete Linking to selection} and \menu{Complete Linking from selection}.  It will also indicate in parentheses with how many SpecObjects the linking had been initialized.
+Linking can only be completed if it has been initiated.  In that case, right-clicking on a single SpecObject or a selection of SpecObjects will show two more entries in the context menu.  These are \menu{Complete Linking To Selection} and \menu{Complete Linking From Selection}.  It will also indicate in parentheses with how many SpecObjects the linking had been initialized.
 
 Each of these entries has a submenu, listing all SpecTypes for SpecRelations.  By selecting the appropriate option, SpecRelations will be created between the two sets of SpecObjects.  The SpecRelations will have the selected SpecType.
 
@@ -382,15 +384,15 @@ Each of these entries has a submenu, listing all SpecTypes for SpecRelations.  B
 
 SpecRelations are also be created by ``Link-Dragging''.  This is platform specific:
 
-\begin{itemize}
+\begin{description}
 
 \item
-  Linux: Dragging with Ctrl-Shift
+  [Linux.] Dragging with Ctrl-Shift.
 \item
-  Mac: Hold down OPTION and APPLE/COMMAND keys while dragging.
+  [Mac.] Hold down OPTION and APPLE/COMMAND keys while dragging.
 \item
-  Windows: Dragging with Alt
-\end{itemize}
+  [Windows] Dragging with Alt.
+\end{description}
 
 % -----------------------------------------------------------------------------------
 \subsection{SpecRelations in the User Interface}
