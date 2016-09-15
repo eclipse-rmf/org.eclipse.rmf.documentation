@@ -11,7 +11,7 @@
 
 The Specification Editor shows the SpecObjects of a Specification, arranged in a grid view.  The hierarchy is shown via the indent of the first column, as well as through the numbering in the row header.
 
-The columns show the Attributes with the names that match the column names (as shown in the header).  The columns can be resized by dragging.  Other operations, in particular reordering, adding and deleting columns are done via the \menu{Column Dialog}, accessible via \menu{ProR | Column Configuration } or the toolbar \includegraphics[height=0.8em]{../rmf-images/icons/full/obj16/Column.png}. 
+The columns show the Attributes with the names that match the column names (as shown in the header).  The columns can be resized by dragging.  Other operations, in particular reordering, adding and deleting columns are done via the \menu{Column Dialog}, accessible via \menu{Studio | Column Configuration } or the toolbar \includegraphics[height=0.8em]{../rmf-images/icons/full/obj16/Column.png}. 
 
 The leftmost column shows the hierarchy and carries an icon.  The icon indicates whether it is a lone SpecHierarchy \includegraphics[height=0.8em]{../rmf-images/icons/full/obj16/spechierarchy.png} or a SpecObject \includegraphics[height=0.8em]{../rmf-images/icons/full/obj16/requirement.png}.
 
@@ -87,7 +87,7 @@ ReqIF is spreading, and partners start handing .reqif and .reqifz files back and
 The validation results are shown in the Eclipse Problem View.  In addition, it is possible to open the ReqIF file in question in a text editor and to generate error markers, as shown in Figure~\ref{fig:error-marker}.
 
 \begin{info}
-In addition to the validator that is built into the tool, there is also a command line version available, which can be downloaded for free from \url{http://formalmind.com/consequent}.
+In addition to the validator that is built into the tool, there is also a command line version available, which can be downloaded for free from \url{https://reqif.academy}.
 \end{info}
 
 \begin{figure}
@@ -139,16 +139,16 @@ Both the current model, as well as \pror{} as a whole, can be configured and cus
 \index{preferences}
 % -----------------------------------------------------------------------------------
 
-The application-wide settings of \pror{} are accessed via \menu{Window | Preferences | ProR}.  Configuration elements are:
+The application-wide settings of \pror{} are accessed via \menu{Window | Preferences | ReqIF}.  Configuration elements are:
 
 \begin{description}
-\item[Pror.] In the top level menu, the warning message for encountering simplified XHTML can be disabled.
+\item[ReqIF.] In the top level menu, the warning message for encountering simplified XHTML can be disabled.
 \item[Default Presentations.] \pror{} has basic cell editors for each ReqIF \term{Datatypes}.  But it is possible to install new editors with better or different capabilities.  With this setting, Presentations can be selected to handle certain Datatypes by default.
 \end{description}
 
 \begin{info}
 \index{XHTML}
-Particularly popular is the free Presentation from formalmind Essentials for handling XHTML.  The standard editor from ProR converts rich text to plain text.  The rich text Presentation is preinstalled with formalmind Studio.
+Particularly popular is the free Presentation from Essentials for handling XHTML.  The standard editor from RMF converts rich text to plain text.  The rich text Presentation is preinstalled with ReqIF Studio.
 \end{info}
 
 % -----------------------------------------------------------------------------------
@@ -157,7 +157,7 @@ Particularly popular is the free Presentation from formalmind Essentials for han
 \label{sec:general_configuration}
 % -----------------------------------------------------------------------------------
 
-This configuration is accessed either via \menu{ProR | General Configuration}, or
+This configuration is accessed either via \menu{Studio | General Configuration}, or
 via the \includegraphics[height=0.8em]{../rmf-images/ReqIFUIToolExtension.png} button on the toolbar.
 
 Currently, there is only one configuration element: \menu{Label Configuration}.
@@ -202,7 +202,7 @@ have a unique identifier that is typically also used for communication.
 \label{fig:DatatypeConfig}
 \end{figure}
 
-This configuration is opened via \menu{ProR | Datatype Configuration...}
+This configuration is opened via \menu{Studio | Datatype Configuration...}
 
 The dialog shows two folders, one for SpecTypes and one for Datatypes.
 SpecTypes are created for typing elements that have attributes
@@ -298,7 +298,7 @@ The following importers exist:
 
 \item[Axiom.] This commercial importer supports the selective merging of exchange data with an existing ReqIF model.  It is described in detail in Section~\ref{sec:axiom}.
 
-More information at the \href{http://formalmind.com/axiom}{Formal Mind Product Site}.
+More information at the \href{https://reqif.academy}{ReqIF Academy}.
 
 \end{description}
 
@@ -359,7 +359,7 @@ The following exporters exist:
 \begin{description}
 \item[ReqIFz Export.] This standard exporter takes an Eclipse project and produces a ReqIF archive (.reqifz).
 
-\item[Axiom.] This commercial exporter supports the selective exporting of exchange data for supplier communication.  More information at the \href{http://formalmind.com/axiom}{Formal Mind Product Site}.
+\item[Axiom.] This commercial exporter supports the selective exporting of exchange data for supplier communication.  More information at the \href{https://reqif.academy}{ReqIF Academy}.
 
 \item[HTML.] The HTML export is not a ``real'' export, as it is accessed differently.  It produces an HTML view from an open Specification.  To use it, you need to have a Specification Editor open.  Then select \menu{File | Print...}.
 \end{description}

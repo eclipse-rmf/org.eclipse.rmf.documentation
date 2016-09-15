@@ -31,9 +31,9 @@ In this section, we will build a ReqIF model from scratch, step by step.
 \subsection{Install \pror{}}
 % -----------------------------------------------------------------------------------
 
-The easiest way for installing \pror{} is downloading \href{http://formalmind.com/studio}{formalmind Stu\-dio}.  This is a standalone-application that is based on Eclipse ProR, combined with some enhancements.
+The easiest way for installing \pror{} is downloading \href{https://reqif.academy}{ReqIF Studio}.  This is a standalone-application that is based on Eclipse RMF, combined with some enhancements.
 
- Alternatively, you can install ProR in any Eclipse-Installation via its update site (listed on the \href{https://www.eclipse.org/rmf/download.php}{RMF Download page}).  This is recommended for advanced users only who need to integrate RMF with other Eclipse-based components.
+ Alternatively, you can install RMF in any Eclipse-Installation via its update site (listed on the \href{https://www.eclipse.org/rmf/download.php}{RMF Download page}).  This is recommended for advanced users only who need to integrate RMF with other Eclipse-based components.
 
 \begin{info}
 The installation is described in detail in Section~\ref{sec:installation}.
@@ -106,7 +106,7 @@ The results of this are shown in Figure~\ref{fig:datatype_configuration}.
 \label{fig:datatype_configuration}
 \end{figure}
 
-To add new attributes, we open the \menu{Datatype Configuration} dialog with \menu{ProR | Datatype Configuration}.  Alternatively you can also click on \includegraphics[height=0.8em]{../rmf-images/icons/full/obj16/SpecType.png} in the Tool Bar.
+To add new attributes, we open the \menu{Datatype Configuration} dialog with \menu{Studio | Datatype Configuration}.  Alternatively you can also click on \includegraphics[height=0.8em]{../rmf-images/icons/full/obj16/SpecType.png} in the Tool Bar.
 
 The resulting dialog box has two folders in the upper pane: one for \term{SpecTypes} and one for \term{Datatypes}.  Currently, there is only one Datatype ``T\_String32k'' and two SpecTypes, one called ``Requirements Type'' with the attribute ``Description'' and one called ``Specification Type'' with the attribute ``Description''.
 
@@ -127,7 +127,7 @@ Upon closing the dialog, little will have changed - the Specification still show
 \label{fig:column_configuration}
 \end{figure}
 
-To show the new Attributes in the Specification, we have to configure the columns shown in the \menu{Specification Editor}.  We do this by selecting \menu{ProR | Column Configuration}.  You can also click on \includegraphics[height=0.8em]{../rmf-images/icons/full/obj16/Column.png} in the Tool Bar.
+To show the new Attributes in the Specification, we have to configure the columns shown in the \menu{Specification Editor}.  We do this by selecting \menu{Studio | Column Configuration}.  You can also click on \includegraphics[height=0.8em]{../rmf-images/icons/full/obj16/Column.png} in the Tool Bar.
 
 The resulting Dialog shows one entry, ``Description'' for the one and only Column of the Specification.  In the ``Value'' column double click on ``Description to choose it and replace it with ``ID''.
 
@@ -159,7 +159,7 @@ In both menus, there are three entries \menu{Spec Hierarchy}, \menu{SpecObject} 
 \index{SpecHierarchy}
 We said before that Specifications contain references to SpecObjects.  A \menu{SpecHierarchy} is the wrapper that allows the hierarchical structure and that points to the referenced SpecObject.  Usually, we don't have to be concerned with them.  Therefore the second option: If selected, a new SpecHierarchy is created and associated with a new SpecObject, which in turn is set immediately to the given \term{SpecType}.  If we had more than just one SpecType (besides ``Requirements Type''), there would be an entry for each SpecType in the context menu.
 
-To continue the exercise, select the \menu{New Child | SpecObject (Requirement Type)}.  Now we have two SpecObjects.  The original is numbered on the far left-hand side of the pane with a ``1''.  The second one, the child, is numbered ``1.1''.  Now we should change the ID's of each entry.  Click in the cell of the column ``ID`` (in row 1) and type in INF-1.  Under Description, type ''A ProR tutorial.``  For the second, change the ID to REQ-1 and ''Learn how to create a new requirement'' in the ``Description'' column.
+To continue the exercise, select the \menu{New Child | SpecObject (Requirement Type)}.  Now we have two SpecObjects.  The original is numbered on the far left-hand side of the pane with a ``1''.  The second one, the child, is numbered ``1.1''.  Now we should change the ID's of each entry.  Click in the cell of the column ``ID`` (in row 1) and type in INF-1.  Under Description, type ''A ReqIF tutorial.``  For the second, change the ID to REQ-1 and ''Learn how to create a new requirement'' in the ``Description'' column.
 
 Feel free to add a few more rows and or even new structures.  Yours should look somethinig similar to Figure~\ref{fig:requirements_hierarchy}.
 
@@ -261,7 +261,7 @@ So far, we have a model with only one SpecObjectType.  In this tutorial, we will
 \subsection{Multiple SpecTypes}
 % -----------------------------------------------------------------------------------
 
-The first entry in our Specification (``A \pror{} Tutorial'') isn't really a requirement.  Thus, it doesn't need an ID or an owner, and it would be nice to highlight it somehow.  For highlighting, we have the \menu{Headline Presentation}.  We will:
+The first entry in our Specification (``A ReqIF Tutorial'') isn't really a requirement.  Thus, it doesn't need an ID or an owner, and it would be nice to highlight it somehow.  For highlighting, we have the \menu{Headline Presentation}.  We will:
 
 \begin{itemize}
 
@@ -280,7 +280,7 @@ The first entry in our Specification (``A \pror{} Tutorial'') isn't really a req
 \label{fig:headlineConfig}
 \end{figure}
 
-By selecting \menu{ProR | Datatype Configuration}, we open the dialog where we can create new SpecTypes and Datatypes.  For the first time, we create a new SpecType by right-clicking on \menu{SpecTypes}.  One of the entries in the child menu is \menu{SpecObject Type}.
+By selecting \menu{Studio | Datatype Configuration}, we open the dialog where we can create new SpecTypes and Datatypes.  For the first time, we create a new SpecType by right-clicking on \menu{SpecTypes}.  One of the entries in the child menu is \menu{SpecObject Type}.
 
 Once created, we select it and rename as ``Headline Type'' in the \menu{Property Pane}.
 
