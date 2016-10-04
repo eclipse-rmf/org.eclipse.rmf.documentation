@@ -538,6 +538,42 @@ Only the standard operators (equals, set, not set) are available.
 % -----------------------------------------------------------------------------------
 
 % -----------------------------------------------------------------------------------
+\subsubsection{Named Filters}
+\label{sec:named-filters}
+% -----------------------------------------------------------------------------------
+
+\pror{} provides a mechanism for saving filters, in order to allow reuse. Filters are saved within the project and can be applied to ReqIF files within a project.
+
+\begin{warning}
+Please note that applying filters to other ReqIF files within the same project will not
+work. \pror{} will insert an empty filter, which need to be removed or reconstructed manually.
+\end{warning}
+
+By saving the filter for the project as a whole, they will survive if the file is renamed, as long as it stays in the project.
+
+The filters are managed from the panel shown on the bottom of the filter panel, as shown in Figure~\ref{fig:named_filter}. To create a named filter, enter the name in the text box and press \menu{Save}.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.8\textwidth]{../rmf-images/reqIF_search_3.png}
+  \caption{Controls for managing named filters}
+  \label{fig:named_filter}
+\end{figure}
+
+The combo dropdown contains all named filters. After selecting them, a number of operations on the chosen filter are possible:
+
+\begin{description}
+\item[Load.] If the name in the combo does exist as a named filter, it can be loaded with \menu{Load}. The current filter settings will be lost.
+\item[Save.] If the name in the combo does not exist as a named filter yet, \menu{Save} will create a new named filter.
+\item[Update.] If the name in the combo does exist as a named filter, \menu{Update} will override it with the current filter configuration.
+\item[Delete.] If the name in the combo does exist as a named filter, \menu{Delete} will remove it. This will not affect the current filter settings.
+\end{description}
+
+\begin{info}
+Filters can be renamed in two steps: By saving an existing filter with a new name, and then deleting the old filter.
+\end{info}
+
+% -----------------------------------------------------------------------------------
 \subsection{Raw ReqIF Search}
 \label{sec:raw_search}
 \index{searcHraw ReqIF search}
