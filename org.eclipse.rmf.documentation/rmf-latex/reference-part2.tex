@@ -172,11 +172,19 @@ Currently, there is only one configuration element: \menu{Label Configuration}.
 The \menu{Label Configuration} is used to determine what to use for the text labels of elements
 in places, where a shorthand is needed.  Examples are elements in the \menu{Outline View} or the link targets in the \menu{Link} column.
 
-\pror{} will determine the label by looking at the label configuration, which is a list of Strings.
-It will go through the list, top to bottom.  If the element has an attribute with a matching name,
-that attribute value is used as the label.
+\begin{figure}
+\centering     
+\includegraphics[width=0.8\linewidth]{../rmf-images/label-configuration.png}
+\caption{The Label Configuration consists of a list of attribute names. To find the label for a SpecElement, the list is scanned from top to bottom to find a matching attribute, which is then used as the label. If none is found, the internal ID is used.}
+\label{fig:label-configuration}
+\end{figure}
+
+\pror{} will determine the label by looking at the \menu{Label Configuration}, which is a list of text strings (see Figure~\ref{fig:label-configuration}.
+To identify the label of an element, \pror{} will go through the list, top to bottom.  If the element has an attribute with a matching name, that attribute value is used as the label.
 
 If none is found, then the element's internal ID is displayed.
+
+Figure~\ref{fig:label-configuration} provides an example. For instance, the label for a SpecObject in the \menu{Outline View} is found by first looking for an attribute named ``ReqIF.ChapterNumber''. If one is found, it is used as the label. If not, \pror{} looks for ``ReqIF.ChapterName'', and so on, until one is found. If none is found, the internal ID is used.
 
 To configure, select \menu{Label Configuration} in the top pane of the dialog.  On the bottom pane, you see the \menu{Default Label} property.  Doubleclick the value (on the right), then click on the ellipses (...) to open the configuration dialog.  Under \menu{Feature}, you will see the list of attribute names that will be used for the label, if found.
 
