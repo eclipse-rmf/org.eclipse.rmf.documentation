@@ -12,7 +12,7 @@ This book is concerned with \pror{} a tool for requirements engineering.
 \index{requirements engineering}
 ``Requirements engineering (RE) refers to the process of formulating, documenting and maintaining software requirements.'' (\href{http://en.wikipedia.org/wiki/Requirements_engineering}{Wikipedia}).
 
-We'd argue that RE also includes \textit{system} requirements.  Further, requirements are typically unstructured natural language.  Of high interest these days is model-driven requirements engineering.
+Requirements are typically recorded in unstructured natural language. However, it is possible to use a formal language as well. Of high interest these days is model-driven requirements engineering.
 \end{definition}
 
 But engineering the requirements is not enough: they need to be \textit{managed}.
@@ -28,14 +28,13 @@ But engineering the requirements is not enough: they need to be \textit{managed}
 \index{tools}
 % ===================================================================================
 
-There are many tools available for requirements engineering.  These include free or cheap ones, like Microsoft Word and Excel, Wikis and issue trackers.  There are expensive, professional ones available, like IBM\textregistered{} Rational\textregistered{} DOORS\textregistered{}, PTC Integrity or Visure IRQA.  Lately, there are also web-based tools, like Polarion.
+There are many tools available for requirements engineering.  These include free or cheap ones, like Microsoft Word and Excel, Wikis and issue trackers.  There are expensive, professional ones available, like IBM\textregistered{} Rational\textregistered{} DOORS\textregistered{}, PTC Integrity or Visure IRQA.  Lately, there are also web-based tools, like Siemens Polarion.
 
 \pror{} falls into the category of free tools.  But compared to the ones mentioned, it contains important features from professional tools, including traceability and typed attributes.  Further, by taking advantage of the Eclipse ecosystem, the tool can be augmented by plug-ins for version support, model integration and much more.
 
 \begin{info}
   Professional support, commercial components and integration services are available from \href{http://formalmind.com}{Formal Mind}, via a \href{https://reqif.academy}{ReqIF Academy premium membership}.
 \end{info}
-
 
 % ===================================================================================
 \section{Requirements Interchange Format (ReqIF)}
@@ -67,7 +66,7 @@ The Requirements Interchange Format (ReqIF) described in this RFC defines such a
 In 2004, the HIS (Hersteller Initiative Software), a panel of Germany's automotive manufacturers (Daimler, VW, Porsche, Audi and BMW Group) developed the idea of creating the ``Requirements Interchange Format''.  In 2005, the first version of that format was presented at the REConf, a conference about requirements engineering and management, in Munich.  In 2008, the HIS Steering Committee decided that the internationalization and maintenance of the Requirements Interchange Format should be proceeded with the ProSTEP iViP Association.  A project was set up and a team was built that includes members of the ProSTEP iViP Association, representatives of manufacturing companies (Audi, BMW  Group, Daimler, VW, Bosch and Continental), tool vendors (Atego, IBM, MKS) and development partners (HOOD GmbH, PROSTEP AG).
 
 \begin{info}
-Further reading: \href{https://reqif.academy/faq/his-process/}{The HIS Exchange Process for Requirements–all you ever wanted to know} at ReqIF Academy.
+Further reading: \href{https://reqif.academy/faq/his-process/}{The HIS Exchange Process for Requirements–all you ever wanted to know} at ReqIF.academy.
 \end{info}
 
 The ReqIF team expects that making the Requirements Interchange Format an OMG standard increases the number of interoperable exchange tool implementations on the market, fosters the trust of companies exchanging requirement information in the exchange format and provides safety of investments to tool vendors.
@@ -83,7 +82,7 @@ This document is submitted as RFC of the Requirements Interchange Format (ReqIF)
 As the acronym RIF has an ambiguous meaning within the OMG, the acronym ReqIF has been introduced to separate it from the W3C`s Rule Interchange Format.  ReqIF 1.0 is the direct successor of the ProSTEP iViP recommendation RIF 1.2.
 
 \begin{warning}
-The ProR GUI does not currently support RIF.
+The \pror{} user interface does not currently support RIF.
 \end{warning}
 
 % -----------------------------------------------------------------------------------
@@ -126,6 +125,7 @@ Before defining the most important elements, we will provide a brief overview wi
 
 % -----------------------------------------------------------------------------------
 \subsection{The Most Important ReqIF Elements}
+\label{sec:important_elements}
 % -----------------------------------------------------------------------------------
 
 Figure~\ref{fig:spec_example} shows a simple ReqIF model, open in \pror{}.  
@@ -221,6 +221,8 @@ DatatypeDefinitions are the fundamental types in ReqIF and include:
 
 % -----------------------------------------------------------------------------------
 \subsection{Comparing Excel and ReqIF}
+\label{sec:excel_reqif}
+\index{Excel}
 % -----------------------------------------------------------------------------------
 
 With the basic terminology in place, we have a quick look at the \pror{} user interface and compare it with Excel.  We do this, as most readers will be familiar with Excel, and it is sometimes used for simple requirements engineering. 
