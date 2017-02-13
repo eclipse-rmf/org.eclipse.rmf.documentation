@@ -12,7 +12,8 @@
 
 % ===================================================================================
 \section{Basic Concepts}
-\index{Concepts}
+\label{sec:tutorial-basic-concepts}
+\index{concepts}
 % ===================================================================================
 
 In this tutorial, we will use the ReqIF terminology, which can be confusing.  Therefore, please familiarize yourself with the terminology first (Section~\ref{sec:terminology}).
@@ -23,12 +24,15 @@ In ReqIF terminology, a requirement is called \term{SpecObject}, a link is a \te
 
 % ===================================================================================
 \section{Tutorial 1: Creating a Basic ReqIF Model}
+\label{sec:tutorial-create-basic-model}
 % ===================================================================================
 
 In this section, we will build a ReqIF model from scratch, step by step.
 
 % -----------------------------------------------------------------------------------
 \subsection{Install \pror{}}
+\label{sec:install-reqif-studio}
+\index{installation}
 % -----------------------------------------------------------------------------------
 
 The easiest way for installing \pror{} is downloading \href{https://reqif.academy}{ReqIF Studio}.  This is a standalone-application that is based on Eclipse RMF, combined with some enhancements.
@@ -41,6 +45,9 @@ The installation is described in detail in Section~\ref{sec:installation}.
 
 % -----------------------------------------------------------------------------------
 \subsection{Create the Model}
+\label{sec:create-model}
+\index{create ReqIF model}
+\index{ReqIF model!create}
 % -----------------------------------------------------------------------------------
 
 \begin{itemize}
@@ -86,6 +93,11 @@ Above the main working windows it the tool bar (5) and, at the very top, the men
 
 % -----------------------------------------------------------------------------------
 \subsection{Customizing the SpecType}
+\label{sec:customize-spec-type}
+\index{SpecType configuration}
+\index{Datatype configuration}
+\index{configuration!SpecType}
+\index{configuration!Datatype}
 % -----------------------------------------------------------------------------------
 
 To get familiar with the tool, we will:
@@ -118,6 +130,9 @@ Upon closing the dialog, little will have changed - the Specification still show
 
 % -----------------------------------------------------------------------------------
 \subsection{Showing the New Attributes}
+\label{sec:show-new-attributes}
+\index{configuration!columns}
+\index{column configuration}
 % -----------------------------------------------------------------------------------
 
 \begin{figure}
@@ -143,6 +158,9 @@ You can actually adjust the width of the columns simply by dragging the column h
 
 % -----------------------------------------------------------------------------------
 \subsection{Adding new SpecObjects}
+\label{sec:add-specobjects}
+\index{SpecObjects!create}
+\index{create!SpecObjects}
 % -----------------------------------------------------------------------------------
 
 \begin{figure}
@@ -165,6 +183,8 @@ Feel free to add a few more rows and or even new structures.  Yours should look 
 
 % -----------------------------------------------------------------------------------
 \subsection{Rearranging Elements}
+\label{sec:rearrange-elements}
+\index{SpecObjects!rearrange}
 % -----------------------------------------------------------------------------------
 
 \begin{figure}
@@ -186,18 +206,23 @@ You can also move elements by using cut and paste.  Pasting will insert an eleme
 
 % -----------------------------------------------------------------------------------
 \subsection{Export Specification as HTML}
+\label{sec:export-specs}
+\index{printing}
+\index{HTML export}
 % -----------------------------------------------------------------------------------
 
 If you want to export your Specification as HTML, open the Specification you would like to export and initiate printing \menu{File | Print...}.  The HTML representation is generated and opened in your system's web browser.
 
 % -----------------------------------------------------------------------------------
 \subsection{Conclusion}
+\label{sec:tutorial-conclusion}
 % -----------------------------------------------------------------------------------
 
 Quite an achievement—but there's still a bit of a way to go.  One improvement we can make is simplifying data entry.  Another is improving  the visibility of the descriptions.  In the next part of the tutorial, we will address these issues.
 
 % ===================================================================================
 \section{Tutorial 2: Use Presentations}
+\label{sec:tutorial-presentations}
 \index{presentation}
 \index{plugin}
 % ===================================================================================
@@ -226,6 +251,9 @@ In this tutorial we will introduce \term{Presentations}.  Presentations are Ecli
 
 % -----------------------------------------------------------------------------------
 \subsection{ID Presentation}
+\label{sec:id-presentation}
+\index{create!IDs}
+\index{ID creation}
 % -----------------------------------------------------------------------------------
 
 It would be nice if every SpecObject had its own unique ID.  Actually, they do: The unique ID is shown in the \menu{All Attributes} tab of the \menu{Property View}, if a SpecObject is selected.  But that ID is meant for machines and is not practical.
@@ -253,12 +281,14 @@ At this point, the Presentation does not yet check for duplicates.  It simply gr
 
 % ===================================================================================
 \section{Tutorial 3: Advanced SpecTypes}
+\label{sec:tutorial-spec-types}
 % ===================================================================================
 
 So far, we have a model with only one SpecObjectType.  In this tutorial, we will show how we can work with multiple SpecTypes, and we will introduce other SpecTypes.
 
 % -----------------------------------------------------------------------------------
 \subsection{Multiple SpecTypes}
+\label{sec:multiple-spec-types}
 % -----------------------------------------------------------------------------------
 
 The first entry in our Specification (``A ReqIF Tutorial'') isn't really a requirement.  Thus, it doesn't need an ID or an owner, and it would be nice to highlight it somehow.  For highlighting, we have the \menu{Headline Presentation}.  We will:
@@ -328,6 +358,7 @@ After all the changes, the Specification should look as shown in Figure~\ref{fig
 
 % -----------------------------------------------------------------------------------
 \subsection{Other SpecTypes}
+\label{sec:other-spec-types}
 % -----------------------------------------------------------------------------------
 
 \begin{figure}
@@ -350,12 +381,15 @@ As soon as it is selected, the Attribute ``Description'' will appear in the Prop
 
 % ===================================================================================
 \section{Tutorial 4: Links Between Elements}
+\label{sec:tutorial-links}
+\index{create!SpecRelations}
 % ===================================================================================
 
 A central feature of professional requirements tools is the ability to connect requirements with each other.  These are typically called links, traces or relations.  In ReqIF, these are \term{SpecRelations}.
 
 % -----------------------------------------------------------------------------------
 \subsection{Creating SpecRelations}
+\label{sec:create-links}
 % -----------------------------------------------------------------------------------
 
 There are two ways of creating SpecRelations: (1) via the context menu and (2) via drag and drop.
@@ -368,6 +402,7 @@ We recommend to use the context menu for linking.  It works even if source and t
 
 % -----------------------------------------------------------------------------------
 \subsection{Linking Via Context Menu}
+\label{sec:context-links}
 % -----------------------------------------------------------------------------------
 
 Linking via context menu happens in two steps: initiating linking and completing linking.
@@ -380,6 +415,7 @@ Each of these entries has a submenu, listing all SpecTypes for SpecRelations.  B
 
 % -----------------------------------------------------------------------------------
 \subsection{Linking Via Drag and Drop}
+\label{sec:drag-links}
 % -----------------------------------------------------------------------------------
 
 SpecRelations are also be created by ``Link-Dragging''.  This is platform specific:
@@ -396,6 +432,7 @@ SpecRelations are also be created by ``Link-Dragging''.  This is platform specif
 
 % -----------------------------------------------------------------------------------
 \subsection{SpecRelations in the User Interface}
+\label{sec:links-ui}
 % -----------------------------------------------------------------------------------
 
 \begin{figure}   
@@ -422,8 +459,27 @@ Selecting the \menu{Link} column of a SpecRelation allows the link target to be 
 Figure~\ref{fig:linksInGui} shows a Specification where REQ-1a and REQ-3a are linked.
 
 % -----------------------------------------------------------------------------------
-\subsection{SpecRelations in the Outline View}
+\subsection{Following SpecRelations}
+\label{sec:follow-links}
+\index{SpecRelations!follow}
+\index{follow SpecRelations}
 % -----------------------------------------------------------------------------------
 
-The \menu{Outline View} has a folder showing all SpecRelations.
+It is possible to navigate along SpecRelations. To do so, make the links visible, as described in Section~\ref{sec:links-ui}. Double-clicking on the label of the link target will open the appropriate Specification and select the SpecObject.
+
+As Specifications contain references to SpecObjects, there are two other situations that can occur:
+\begin{description}
+
+\item
+  [The target SpecObject is not used in any Specification.] In that situation, double-clicking will have no effect. But clicking on the label will show the target SpecObject's attributes in the Properties View, where they can be inspected and edited.
+\item
+  [The target SpecObject is referenced multiple times in Specifications.] In that case, a menu will open to show all places where the SpecObject is used. The user can select the place to navigate to.
+\end{description}
+
+% -----------------------------------------------------------------------------------
+\subsection{SpecRelations in the Outline View}
+\label{sec:links-outline}
+% -----------------------------------------------------------------------------------
+
+The \menu{Outline View} has a folder showing all SpecRelations. This folder is shown only when the ReqIF editor (Section~\ref{}) is active.
 

@@ -178,9 +178,68 @@ Upon opening a ReqIF model, the editor opens providing an overview of the model.
 \eclipsehelp{org.eclipse.platform.doc.user/reference/ref-43.htm}{Eclipse's Workbench User Guide}.
 
 \begin{info}
-  There may be more than one editor for a given file type.  To pick a specific one, right-click the file and select \menu{Open With...}, which will give you the list of installed editors.  In particular, the \menu{fmStudio Main Editor} from Formal Mind is more powerful than the stock editor (see Section~\ref{sec:StudioSpecEditor}).
+  There may be more than one editor for a given file type.  To pick a specific one, right-click the file and select \menu{Open With...}, which will give you the list of installed editors.  In particular, the \menu{ReqIF Studio Main Editor} from Formal Mind is more powerful than the stock editor (see Section~\ref{sec:StudioSpecEditor}).
 \end{info}
 
 A model contains any number of Specifications, and the details of each Specification can be inspected individually.  The windows in which all relevant information appears are called \term{views}.  At your disposal are many views with productivity, debugging, help and team resources.  We will be focusing only on the views relevant to \pror{}.
 
+\begin{figure}
+\centering
+\includegraphics[width=.7\textwidth]{../rmf-images/reqif-editor.png}
+\caption{ReqIF Editor}
+\label{fig:reqif-editor}
+\end{figure}
 
+% -----------------------------------------------------------------------------------
+\subsection{ReqIF Editor}
+\label{sec:reqif-editor}
+\index{editor!ReqIF}
+\index{ReqIF editor}
+% -----------------------------------------------------------------------------------
+
+The \menu{ReqIF Editor} is the first editor that opens when opening a ReqIF file. It is shown in Figure~\ref{fig:reqif-editor}.
+
+The \menu{ReqIF Editor} lists all Specifications, which can be opened by double-clicking. 
+
+\begin{info}
+If only one Specification is contained in the ReqIF file, it is opened automatically in a \menu{Specification Editor}.
+\end{info}
+
+Further, there are a few sections that are collapsed by default:
+
+\begin{description}
+\item[RMF - Getting Started.] This section contains some basic information for new users.
+\item[Document Properties.] This section show the embedded metadata. Some of it can be edited, some elements are read-only, as they are set by the tool.
+\end{description}
+
+\begin{figure}
+\centering
+\includegraphics[width=.7\textwidth]{../rmf-images/error-editor.png}
+\caption{ReqIF Editor With an active error tab}
+\label{fig:error-editor}
+\end{figure}
+
+% -----------------------------------------------------------------------------------
+\subsection{Errors in ReqIF Editor}
+\label{sec:errors-reqif-editor}
+\index{errors}
+\index{problems}
+% -----------------------------------------------------------------------------------
+
+If a ReqIF file is invalid, then \pror{} makes an attempt to recover. If this succeeds, then the \menu{ReqIF Editor} will show two tabs, as shown in Figure~\ref{fig:error-editor}. 
+
+On the bottom, the editor now has two tabs, labeled \menu{Selection} and \menu{Problems}. The \menu{Problems} tab has three options:
+
+\begin{description}
+\item[Open with Text Editor.] This button will open the raw XML in a text editor. It is recommended to press \menu{Create Markers} first.
+\item[Create Markers.]  This button will create error markers. This helps to pinpoint the problematic XML in the text editor.
+\item[Details.] This will open an area showing the error tree. This information will also be shown in the \menu{Problem View}.
+\end{description}
+
+The \menu{Selection} tab shows the recovered ReqIF. Depending on the reason for the error condition, most or even all of the ReqIF is still there.
+
+Saving the file will remove all problematic elements.
+
+\begin{info}
+A problematic ReqIF file can be fixed by simply by saving the ReqIF file again. It is recommended to inspect hte recovered ReqIF first, and to make a backup.
+\end{info}
