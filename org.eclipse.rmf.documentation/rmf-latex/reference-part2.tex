@@ -1,5 +1,6 @@
 % -----------------------------------------------------------------------------------
 \subsection{RMF Specification Editor}
+\label{sec:spec-editor}
 % -----------------------------------------------------------------------------------
 
 \begin{figure}
@@ -18,6 +19,9 @@ The leftmost column shows the hierarchy and carries an icon.  The icon indicates
 \begin{info}
 Would you like to rearrange the columns?
 
+In ReqIF Studio, you can simply drag the columns by grabbing them by their headers.
+
+In Eclipse RMF, this does not work. Instead, use the following approach, which also works with ReqIF Studio:
 In the top half of the \menu{Column Configurator} {\includegraphics[scale=0.6]{../rmf-images/icons/full/obj16/Column.png}} window, a list of the exiting columns appear. Simply drag and drop them into the desired order. The changes appear in real time in the \menu{Specification Editor}. Close the window and the changes will be accepted.
 \end{info}
 
@@ -70,6 +74,7 @@ By right clicking on any cell, you have a few options at your disposal. Outside 
 
 % -----------------------------------------------------------------------------------
 \subsection{Project Explorer View}\index{project explorer}
+\label{sec:project-explorer}
 % -----------------------------------------------------------------------------------
 
 The \menu{Project Explorer View} is by default on the left side of the main window. Here you can inspect files and models associated with any project. If for some reason the Project Explorer View does not appear, Navigate to \menu{Window | Show View | Other | Project Explorer View}.
@@ -131,6 +136,7 @@ Consequent is part of the open source Eclipse project and was financed by the Pr
 
 % ===================================================================================
 \section{Configuration and Preferences}
+\label{sec:config-preferences}
 % ===================================================================================
 
 Both the current model, as well as \pror{} as a whole, can be configured and customized extensively.
@@ -138,6 +144,7 @@ Both the current model, as well as \pror{} as a whole, can be configured and cus
 % -----------------------------------------------------------------------------------
 \subsection{Global Preferences}
 \index{preferences}
+\label{sec:global-prefs}
 % -----------------------------------------------------------------------------------
 
 The application-wide settings of \pror{} are accessed via \menu{Window | Preferences | ReqIF}.  Configuration elements are:
@@ -167,6 +174,7 @@ Currently, there is only one configuration element: \menu{Label Configuration}.
 \subsubsection{Label Configuration}
 \index{label configuration}
 \index{configuration!label}
+\label{sec:label-configuration}
 % -----------------------------------------------------------------------------------
 
 The \menu{Label Configuration} is used to determine what to use for the text labels of elements
@@ -277,6 +285,7 @@ column.
 \index{access control}
 \index{permissions}
 \index{read-only}
+\label{sec:access-control}
 % ===================================================================================
 
 The ReqIF standard provides a flag for marking certain elements as read-only.  This flag is accessible through the \menu{Properties View} by selecting the tab \menu{All Attributes}.  However, this flag is not honored in the user interface: even if an element is marked as read-only, it is normally writable.  We may implement this in the future.
@@ -287,6 +296,7 @@ Access Control is a ReqIF feature designed for data exchange.  As \pror{} uses R
 
 % ===================================================================================
 \section{Import and Export}
+\label{sec:import-export}
 % ===================================================================================
 
 Importers and Exporters are accessed via \menu{File | Import...} and \menu{File | Export...}.  The corresponding dialogs will show generic Importers and Exporters, as well as specific ones.  The specific ones are in a folder called \menu{\pror{} (ReqIF)}.
@@ -296,7 +306,7 @@ This section also lists Importers and Exporters from third parties. Note that no
 % -----------------------------------------------------------------------------------
 \subsection{Import}
 \index{import}
-% -----------------------------------------------------------------------------------
+\label{sec:import}% -----------------------------------------------------------------------------------
 
 The following importers exist:
 
@@ -314,6 +324,7 @@ More information at the \href{https://reqif.academy}{ReqIF Academy}.
 % -----------------------------------------------------------------------------------
 \subsubsection{CSV Import}
 \index{import!CSV}
+\label{sec:csv-import}
 % -----------------------------------------------------------------------------------
 
 The CSV import adds the content from a comma-separated file into an existing specification.  Therefore, you first need to create a ReqIF model.  Once this is done, the importer is used as follows:
@@ -361,6 +372,7 @@ You can read more in the \href{http://formalmind.com/blog/new-stuff-new-committe
 % -----------------------------------------------------------------------------------
 \subsection{Export}
 \index{export}
+\label{sec:export}
 % -----------------------------------------------------------------------------------
 
 The following exporters exist:
@@ -406,6 +418,7 @@ You can just begin typing in the box.  With every keystroke, the view will updat
 
 % -----------------------------------------------------------------------------------
 \subsection{ReqIF Search}
+\label{sec:reqif-search}
 % -----------------------------------------------------------------------------------
 
 Searching is initiated via \menu{Search | Search... | ReqIF Search}, or via the search icon \includegraphics[height=1em]{../rmf-images/icons/full/obj16/search.png} on the toolbar.  This will present you the wizard shown in Figure~\ref{fig:reqif_search}.
