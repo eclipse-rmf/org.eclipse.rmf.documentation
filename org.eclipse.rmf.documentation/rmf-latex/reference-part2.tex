@@ -144,19 +144,45 @@ Both the current model, as well as \pror{} as a whole, can be configured and cus
 % -----------------------------------------------------------------------------------
 \subsection{Global Preferences}
 \index{preferences}
+\index{validation!on save}
+\index{Consequent!validate on save}
 \label{sec:global-prefs}
 % -----------------------------------------------------------------------------------
 
-The application-wide settings of \pror{} are accessed via \menu{Window | Preferences | ReqIF}.  Configuration elements are:
+The application-wide settings of \pror{} are accessed via \menu{Window | Preferences | ReqIF}, as shown in Figure~\ref{fig:rmf-preferences}.  Configuration elements are:
+
+\begin{figure}
+\centering     
+\includegraphics[width=0.8\linewidth]{../rmf-images/rmf-preferences.png}
+\caption{The Global Preferences, with a sub-page for Defaultt Presentations.}
+\label{fig:rmf-preferences}
+\end{figure}
 
 \begin{description}
-\item[ReqIF.] In the top level menu, the warning message for encountering simplified XHTML can be disabled.
-\item[Default Presentations.] \pror{} has basic cell editors for each ReqIF \term{Datatypes}.  But it is possible to install new editors with better or different capabilities.  With this setting, Presentations can be selected to handle certain Datatypes by default.
+\item[Warning regarding isSimplified.] This allows a warning to be issued if the content of a rich text attribute has the ``isSimplified'' flag set, which is defined by the ReqIF standard. This is relevant for tools that are not capable of editing rich text, without converting it to plain text first. This is only relevant when not using the rich text editor from ReqIF Studio. It is also possible to disable the rich text editor via the \menu{Default Presentations} sub-page.
+\item[Validate ReqIF on save.] When checked, Consequent, the ReqIF validator, is automatically run on saving, with the validation result shown in the \menu{Problem View}. For larger files, this can take a while. If disabled, it is recommended to run the validator manually once in a while (via the ReqIF file's context menu).
+\item[Generate a new ReqIF ID on save.] Every time a ReqIF file changes, its ID should change. However, in a team environment, this can create problems: When two people work on the same file, there would always be a conflict, as both IDs would have changed. Therefore, this can be disabled. If disabled, then the ReqIF Exporter (Section~\ref{sec:export}) should always be used, as it can change the ID upon export.
+\item[Store Settings in ReqIF file.] The configuration of the columns of a Specification can be stored inside the ReqIF file. This is useful when the recipient of a ReqIF file should have a certain configuration of the columns. However, this can create problems in a team environment, as changes in the column configuration can create conflicts. If unchecked, this information will be stored in a separate file, which has the same name as the ReqIF file, but ends in \menu{.rmf}. That file should not be put under version control.
+
 \end{description}
+
+\subsubsection{Default Presentations}
+
+\pror{} has basic cell editors for each ReqIF \term{Datatypes}.  But it is possible to install new editors with better or different capabilities.  With this setting, Presentations can be selected to handle certain Datatypes by default. It is not recommended to change the settings here.
+
+\begin{warning}
+There is no validation taking place in this dialog, use at your own risk.
+\end{warning}
+
+By default, the setting for each Datatype is ¸¸None''. This means that the build-in handler is used. However, Presentations can signal that they can improve the handling of the Datatype and install themselves as the handler automatically.
+
+The use of the built-in handler can be forced by selecting ``Use Build-in''.
+
+For each of the seven Datatypes, there is a dropdown listing all installed Presentations. Note that \strong{all} are listed, there is no checking on whether a Presentation can actually handle the given datatype. A Presentation can be actively selected, then the use if it is fixed.
 
 \begin{info}
 \index{XHTML}
-Particularly popular is the free Presentation from Essentials for handling XHTML.  The standard editor from RMF converts rich text to plain text.  The rich text Presentation is preinstalled with ReqIF Studio.
+Particularly popular is the free Presentation from Essentials for handling XHTML.  The standard editor from RMF converts rich text to plain text.  The rich text Presentation is preinstalled with ReqIF Studio and will register itself automatically as the handler for XHTML.
 \end{info}
 
 % -----------------------------------------------------------------------------------
